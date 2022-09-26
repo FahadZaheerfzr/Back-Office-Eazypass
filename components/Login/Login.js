@@ -42,7 +42,9 @@ export default function Login() {
                         </div>
 
                         <div className={`${styles.loginRectangle} flex justify-center items-center md:w-80 lg:w-96 md:py-2 lg:py-3`}>
-                            <img src='/Login/Google.svg' className='pr-4' />
+                            <div className='pr-4 flex justify-center items-center'>
+                                <Image src='/Login/Google.svg' width={30} height={30}  />
+                            </div>
                             <span className={`${styles.loginInterText} sm:text-lg md:text-xl lg:text-xl`}>Login through Google</span>
                         </div>
 
