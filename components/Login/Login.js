@@ -1,7 +1,8 @@
-import React from 'react'
-import Layout from '../Layout'
-import styles from './Login.module.css'
 import Image from 'next/image'
+import Layout from '../Layout'
+import React from 'react'
+import styles from './Login.module.css'
+
 export default function Login() {
     return (
         <Layout title="Login">
@@ -56,11 +57,11 @@ export default function Login() {
 
                         <div className={``}>
                             <div className='md:ml-4 lg:ml-8'>
-                                <label className={`${styles.loginInterText} text-[#231F20] md:text-lg lg:text-xl`}>
+                                <label htmlFor='email' className={`${styles.loginInterText} text-[#231F20] md:text-lg lg:text-xl`}>
                                     Email*
                                 </label>
                             </div>
-                            <input className={`${styles.inputRectangle} bg-white text-[#231F20]
+                            <input id='email' className={`${styles.inputRectangle} bg-white text-[#231F20]
                             md:w-80 lg:w-96 sm:text-lg md:text-xl lg:text-xl md:py-2 md:px-3 lg:py-3 lg:px-4`} 
                             type={"text"}/>
                         </div>
@@ -68,11 +69,11 @@ export default function Login() {
 
                         <div className={`${styles.passwordMargin}`}>
                             <div className='md:ml-4 lg:ml-8'>
-                                <label className={`${styles.loginInterText} text-[#231F20] md:text-lg lg:text-xl`}>
+                                <label htmlFor='password' className={`${styles.loginInterText} text-[#231F20] md:text-lg lg:text-xl`}>
                                     Password*
                                 </label>
                             </div>
-                            <input className={`${styles.inputRectangle} bg-white text-[#231F20]
+                            <input id='password' className={`${styles.inputRectangle} bg-white text-[#231F20]
                             md:w-80 lg:w-96 sm:text-lg md:text-xl lg:text-xl md:py-2 md:px-3 lg:py-3 lg:px-4`}
                             type={"password"} />
                         </div>
@@ -110,7 +111,7 @@ export default function Login() {
                     </div>
 
                     <div className='mt-8'>
-                        <button className={`${styles.loginButton}`}>Login</button>
+                        <button type='button' className={`${styles.loginButton}`}>Login</button>
                     </div>
 
                     <div className=' mt-4'>
