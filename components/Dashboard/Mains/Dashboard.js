@@ -5,35 +5,35 @@ import Styles from './Dashboard.module.css'
 const stats = [
     {
         "id":0,
-        "figure":103,
+        "figure":"103",
         "icon":"/Dashboard/users.svg",
         "description":"collaborateurs",
-        "index":10.2,
-        "profit":1.01
+        "index":"10.2",
+        "profit":"1.01"
     },
     {
         "id":1,
         "figure":"37,08",
         "icon":"/Dashboard/case.svg",
         "description":"équivalents TP sur site",
-        "index":3.1,
-        "profit":0.49
+        "index":"3.1",
+        "profit":"0.49"
     },
     {
         "id":2,
         "figure":75,
         "icon":"/Dashboard/completed.svg",
         "description":"places au bureau",
-        "index":2.00,
-        "profit":-0.91
+        "index":"2.00",
+        "profit":"-0.91"
     },
     {
         "id":3,
         "figure":"3,2",
         "icon":"/Dashboard/return.svg",
         "description":"jours TT / semaine",
-        "index":0.2,
-        "profit":1.51
+        "index":"0.2",
+        "profit":"1.51"
     },
 ]
 

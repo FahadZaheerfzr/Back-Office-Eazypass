@@ -18,7 +18,7 @@ export default function Stats({ figure, icon, description, index, profit, border
                 <Image src={"/Dashboard/profit.svg"} width={20} height={20} />
                 : <Image src={"/Dashboard/loss.svg"} width={20} height={20} />
             }
-                <span className='font-Poppins text-sm text-[#7C8DB5]'>{index.toFixed(1)}</span>
+                <span className='font-Poppins text-sm text-[#7C8DB5]'>{parseFloat(index).toFixed(1)}</span>
 
                 <span className='font-Poppins text-sm ml-3 text-[#7C8DB5]'>{profit>0 ? "+" : ""}{profit}% ce mois</span>
 
