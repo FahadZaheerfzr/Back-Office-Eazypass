@@ -1,0 +1,15 @@
+.customSelect {
+    background: #FFFFFF;
+    outline: none;
+    /* Shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 10px rgba(124, 141, 181, 0.12);
+    border-radius: 8px;
+    padding: 4px 8px 4px 12px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}

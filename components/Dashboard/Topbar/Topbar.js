@@ -5,8 +5,8 @@ export default function Topbar({name, description, icon}) {
   return (
     <div className='w-full'>
         <Image src={'/Dashboard/topbar.svg'} layout={'responsive'} width={1000} height={28} />
-        <div className='w-full mt-10 flex justify-between'>
-            <div className='w-1/2  pl-[5%]'>
+        <div className='w-full mt-10 px-[5%] flex justify-between'>
+            <div className='w-1/2  '>
                 <div className=''>
                 <Image src={icon} width={17} height={17} />
 
@@ -19,7 +19,7 @@ export default function Topbar({name, description, icon}) {
                 </div>
             </div>
 
-            <div className='w-1/2 pr-[5%] h-fit flex items-center justify-end'>
+            <div className='w-1/2  h-fit flex items-center justify-end'>
             <div>
                 <Image src={'/Dashboard/search.svg'} width={20} height={20}/>
             </div>

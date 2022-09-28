@@ -42,7 +42,7 @@ export default function Login() {
                             Connexion
                         </div>
 
-                        <div className={`${styles.loginRectangle} flex justify-center items-center md:w-80 lg:w-96 md:py-2 lg:py-3`}>
+                        <div className={`${styles.loginRectangle} cursor-pointer flex justify-center items-center md:w-80 lg:w-96 md:py-2 lg:py-3`}>
                             <div className='pr-4 flex justify-center items-center'>
                                 <Image src='/Login/Google.svg' width={30} height={30}  />
                             </div>
