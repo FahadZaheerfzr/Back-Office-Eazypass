@@ -41,11 +41,11 @@ export default function Dashboard() {
     return (
         <div className='w-full'>
             <div className='flex justify-end'>
-                <select className={`${Styles.customSelect} mr-5`}>
-                    <option selected>Toute l’entreprise</option>
+                <select defaultValue={'Toute l’entreprise'} className={`${Styles.customSelect} mr-5`}>
+                    <option>Toute l’entreprise</option>
                 </select>
-                <select className={`${Styles.customSelect}`}>
-                    <option selected>7 derniers jours</option>
+                <select defaultValue={'7 derniers jours'}  className={`${Styles.customSelect}`}>
+                    <option >7 derniers jours</option>
                 </select>
             </div>
 

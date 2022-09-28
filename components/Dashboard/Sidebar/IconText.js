@@ -4,7 +4,7 @@ import React from 'react'
 export default function IconText({ icon, name, unread, clickEvent, active }) {
 
   return (
-    <div role={"button"} className={`w-full mt-7 cursor-pointer flex items-center justify-between pl-[20%] font-Poppins text-base 
+    <div aria-hidden role={"button"} className={`w-full mt-7 cursor-pointer flex items-center justify-between pl-[20%] font-Poppins text-base 
     ${active ? 'text-black border-r-4 border-black' : 'text-[#7C8DB5]'} `}
       onClick={() => clickEvent(name)}>
 
