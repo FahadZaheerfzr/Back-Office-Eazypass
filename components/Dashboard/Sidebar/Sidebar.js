@@ -61,7 +61,6 @@ export default function Sidebar({handleClick, active}) {
         <div className='h-screen w-full flex flex-col justify-between'>
             <div>
                 <Image src={'/Dashboard/eazy-pass-header.svg'} layout={'responsive'} width={264} height={63} />
-
             </div>
 
             <div className={`${Styles.container}`}>
