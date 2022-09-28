@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Layout from '../Layout'
+import Layout from './Layout'
 import React from 'react'
 import styles from './Login.module.css'
 
