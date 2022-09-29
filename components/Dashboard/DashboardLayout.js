@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { useState } from 'react'
-import Sidebar from './Sidebar/Sidebar'
-import Topbar from './TopBar/Topbar'
+import Sidebar from './Sidebar/Navbar'
+import Topbar from './Topbar/ProfileBar'
 import Dashboard from './Mains/Dashboard'
 
 const pageHeadingText = {
