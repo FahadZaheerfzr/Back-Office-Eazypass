@@ -3,3 +3,9 @@
     border-right: 1px solid #E6EDFF;
     height: 100%;
 }
+
+@media screen and (max-width:1024px) {
+    .container{
+        margin-top: 6%;
+    }
+}

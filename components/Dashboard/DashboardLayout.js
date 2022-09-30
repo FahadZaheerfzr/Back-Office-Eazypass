@@ -47,9 +47,13 @@ const pageHeadingText = {
 
 export default function DashboardLayout(props) {
   const [active, setActive] = useState("Résumé");
-
+  const [visible, setVisible] = useState(false)
   const handleClick = (name) => {
     setActive(name);
+  }
+
+  const toggleVisible = () => {
+    setVisible(!visible);
   }
   return (
 
@@ -57,11 +61,27 @@ export default function DashboardLayout(props) {
       <Head>
         <title>{props.title}</title>
       </Head>
+      
       <div className='w-full flex'>
-        <div className='w-[20%]'>
+        <div className={`bg-white md:fixed z-40 ${visible?'md:block':'md:hidden'} lg:block md:w-[30%] lg:w-[20%] lg:fixed`}>
           <Sidebar handleClick={handleClick} active={active} />
         </div>
-        <div className='w-[80%] '>
+        <div role={"button"} className='h-screen lg:hidden  z-50 flex mt-[40%]' 
+        onClick={()=>toggleVisible()}>
+                <div className='fixed side-panel'>
+                    <div className='side-panel-content'>
+                    { visible?
+                        "X"
+                        :<>
+                        <div className=' w-4 h-[2px] bg-white '></div>
+                        <div className=' mt-1 w-4 h-[2px] bg-white '></div>
+                        <div className=' mt-1 w-4 h-[2px] bg-white '></div>
+                        </>
+                    }
+                    </div>
+                </div>
+            </div>
+        <div className='md:w-[100%] lg:w-[80%] lg:ml-[20%]'>
           <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description}
             icon={pageHeadingText[active].icon}
           />

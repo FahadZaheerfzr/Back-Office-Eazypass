@@ -22,3 +22,22 @@ a {
   width: 100vw;
   margin: auto;
 }
+
+.recharts-cartesian-axis-tick {    
+  font-family: "Poppins";
+}
+
+.side-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 30px;
+  height: 80px;
+  background: #49a197;
+  transform: perspective(10px) rotateY(10deg);
+}
+.side-panel-content{
+  transform: perspective(10px) rotateY(-10deg);
+
+}
