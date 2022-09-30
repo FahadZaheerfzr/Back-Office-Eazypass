@@ -1,0 +1,11 @@
+.changeAccount {
+    background: #F7F7F7;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 16px;
+    width: 270px;
+}
+
+.profileRectangle {
+    background: linear-gradient(81.62deg, #95DB50 2.25%, #191E9A 79.87%);
+    border-radius: 12px;
+}

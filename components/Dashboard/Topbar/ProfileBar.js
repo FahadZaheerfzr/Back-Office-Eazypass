@@ -1,7 +1,13 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import Styles from './Profile.module.css'
 
 export default function Topbar({ name, description, icon }) {
+    const [visible, setVisible] = useState(false);
+
+    const toggleVisible = () => {
+        setVisible(!visible);
+    }
     return (
         <div className='w-full'>
             <Image src={'/Dashboard/topbar.svg'} layout={'responsive'} width={1000} height={28} />
@@ -21,21 +27,55 @@ export default function Topbar({ name, description, icon }) {
                 </div>
 
                 <div className='w-1/2 h-fit flex items-center justify-end'>
-                    <div>
+                    <div className='' >
                         <Image src={'/Dashboard/search.svg'} width={20} height={20} />
                     </div>
-                    <div className='md:ml-2 xl:ml-7'>
+                    <div className='md:ml-2 xl:ml-7 '>
                         <Image src={'/Dashboard/notification.svg'} width={20} height={20} />
                     </div>
-                    <div className='md:ml-5 lg:ml-7 xl:ml-9'>
-                        <Image src={'/Dashboard/avatar.svg'} width={42} height={42} />
-                    </div>
+                    <div className={`${visible? '${Styles.changeAccount}': ''} md:ml-5 lg:ml-7 xl:ml-9 py-2 px-1`}>
+                        <div className='flex items-center'>
+                            <div className=''>
+                                <Image src={'/Dashboard/avatar.svg'} width={42} height={42} />
+                            </div>
 
-                    <div className='md:ml-2 xl:ml-3'>
-                        <span className='font-Poppins md:text-sm lg:text-base'>Maxime Duvauchelle</span>
-                    </div>
-                    <div className='mt-1 md:ml-2 xl:ml-3'>
-                        <Image src={'/Dashboard/chevron-down.svg'} width={15} height={15} />
+
+
+                            <div className='md:ml-2 xl:ml-3'>
+                                <span className='font-Poppins md:text-sm lg:text-base'>Maxime Duvauchelle</span>
+                            </div>
+                            <div className='mt-1 md:ml-2 xl:ml-3 cursor-pointer'
+                            onClick={()=>toggleVisible()}>
+                                <Image src={'/Dashboard/chevron-down.svg'} width={15} height={15} />
+                            </div>
+                        </div>
+                        {visible?
+                        <div className={`${Styles.changeAccount} z-10 mt-0 pt-3 pb-4 flex flex-col absolute`}>
+                            <div className='flex items-center pl-2'>
+                                <div className={`${Styles.profileRectangle} w-10 h-10`}>
+                                    <Image src={'/Dashboard/user.svg'} width={100} height={100} />
+                                </div>
+                                <span className='font-Poppins ml-2'>Administrateur</span>
+                                <div className='ml-4'>
+                                <Image src={'/Dashboard/active.svg'} width={15} height={15} />
+                                </div>
+                            </div>
+
+                            <div className='flex items-center mt-4 pl-2'>
+                                <div className={`${Styles.profileRectangle} w-10 h-10`}>
+                                    <Image src={'/Dashboard/manager.svg'} width={100} height={100} />
+                                </div>
+                                <span className='font-Poppins ml-2'>Manager</span>
+                            </div>
+
+                            <div className='flex items-center mt-4 pl-2'>
+                                <div className={`${Styles.profileRectangle} w-10 h-10 flex justify-center items-center`}>
+                                    <Image src={'/Dashboard/person.svg'} width={14} height={14} />
+                                </div>
+                                <span className='font-Poppins ml-2'>Collaborateur</span>
+                            </div>
+                        </div>:null
+                        }
                     </div>
                 </div>
 
