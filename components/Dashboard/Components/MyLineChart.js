@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,ResponsiveContainer } from 'recharts';
 import Styles from './Components.module.css'
 const data = [
@@ -34,7 +34,88 @@ const data = [
 
 ];
 
+
+const data_monthly = [
+  {
+    name: 'Lun',
+    attendance: 28.6,
+  },
+  {
+    name: 'Mar',
+    attendance: 49.7,
+  },
+  {
+    name: 'Mer',
+    attendance: 65.8,
+  },
+  {
+    name: 'Jeu',
+    attendance: 42.9,
+  },
+  {
+    name: 'Ven',
+    attendance: 21.3,
+  },
+  {
+    name: 'Sam',
+    attendance: 45.6,
+
+  },
+  {
+    name: 'Dim',
+    attendance: 34.8,
+  },
+
+];
+
+const data_90_days = [
+  {
+    name: 'Lun',
+    attendance: 38.6,
+  },
+  {
+    name: 'Mar',
+    attendance: 42.7,
+  },
+  {
+    name: 'Mer',
+    attendance: 57.8,
+  },
+  {
+    name: 'Jeu',
+    attendance: 49.9,
+  },
+  {
+    name: 'Ven',
+    attendance: 34.3,
+  },
+  {
+    name: 'Sam',
+    attendance: 42.6,
+
+  },
+  {
+    name: 'Dim',
+    attendance: 39.8,
+  },
+
+];
+
 export default function Charts() {
+  const [activeData, setActiveData] = useState(data);
+
+  const changeData = (e) => {
+    const val = e.target.value;
+
+    if(val === '7 days'){
+      setActiveData(data);
+    }else if(val === 'month'){
+      setActiveData(data_monthly);
+    }else{
+      setActiveData(data_90_days);
+    }
+
+  }
   return (
     <div className='mt-8 lg:w-[742px] border border-[#E6EDFF] rounded-xl '>
     <div className='flex px-5 items-center h-8 mt-8'>
@@ -44,13 +125,16 @@ export default function Charts() {
       </div>
       <span className='text-xs ml-2 mt-1 font-Poppins'>% de collaborateurs présents</span>
     
-      <select className={`ml-3 text-xs ${Styles.chartSelect}`} defaultValue={"Ce mois"}>
-        <option>Ce mois</option>
+      <select className={`ml-3 text-xs ${Styles.chartSelect} box-shadow-style`} defaultValue={"7 days"} onChange={changeData}>
+        <option value={"7 days"}>7 jours</option>
+        <option value={"month"}>Ce mois</option>
+        <option value={"3 months"}>3 mois</option>
+
       </select>
     </div>
     <ResponsiveContainer width="97%" height={250}>
       <LineChart
-        data={data}
+        data={activeData}
         margin={{
           top: 25,
           right: 10,

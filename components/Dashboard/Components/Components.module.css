@@ -2,14 +2,13 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    box-shadow: 0px 2px 10px rgba(124, 141, 181, 0.12);
-    border-radius: 8px;
-    padding: 4px 8px 4px 12px;
 }
 
-.tableData {
-    box-shadow: 0px 2px 10px rgba(124, 141, 181, 0.12);
-    border-radius: 8px;
-    padding: 4px 12px;
+.editCollaboratorForm {
+    background: linear-gradient(168.04deg, rgba(255, 255, 255, 0.8) -9.27%, rgba(255, 255, 255, 0.2) 100%);
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(21px);
+    /* Note: backdrop-filter has minimal browser support */
 
+    border-radius: 20px;
 }

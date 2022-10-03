@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -18,12 +19,12 @@ a {
   box-sizing: border-box;
 }
 
-.main-container{
+.main-container {
   width: 100vw;
   margin: auto;
 }
 
-.recharts-cartesian-axis-tick {    
+.recharts-cartesian-axis-tick {
   font-family: "Poppins";
 }
 
@@ -37,7 +38,15 @@ a {
   background: #49a197;
   transform: perspective(10px) rotateY(10deg);
 }
-.side-panel-content{
+
+.side-panel-content {
   transform: perspective(10px) rotateY(-10deg);
 
+}
+
+.box-shadow-style {
+  /* Shadow */
+  padding: 4px 8px 4px 12px;
+  box-shadow: 0px 2px 10px rgba(124, 141, 181, 0.12);
+  border-radius: 8px;
 }

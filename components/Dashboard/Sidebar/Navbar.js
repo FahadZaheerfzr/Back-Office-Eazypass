@@ -78,7 +78,7 @@ export default function Sidebar({ handleClick, active }) {
     return (
             <div className={`h-screen w-full flex flex-col justify-between`}>
                 <div>
-                    <Image src={'/Dashboard/eazy-pass-header.svg'} layout={'responsive'} width={264} height={63} />
+                    <Image src={'/Dashboard/Home/eazy-pass-header.svg'} layout={'responsive'} width={264} height={63} />
                 </div>
 
                 <div className={`${Styles.container}`}>
@@ -102,7 +102,7 @@ export default function Sidebar({ handleClick, active }) {
 
                 <div>
 
-                    <Image src={'/Dashboard/eazy-pass-footer.svg'} layout={'responsive'} width={264} height={48} />
+                    <Image src={'/Dashboard/Home/eazy-pass-footer.svg'} layout={'responsive'} width={264} height={48} />
                 </div>
             </div>
             

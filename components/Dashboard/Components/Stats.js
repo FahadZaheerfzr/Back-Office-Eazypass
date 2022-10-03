@@ -15,8 +15,8 @@ export default function Stats({ figure, icon, description, index, profit, border
 
             <div className='mt-3 px-[10%] flex items-center'>
             {profit>0?
-                <Image src={"/Dashboard/profit.svg"} width={20} height={20} />
-                : <Image src={"/Dashboard/loss.svg"} width={20} height={20} />
+                <Image src={"/Dashboard/Home/profit.svg"} width={20} height={20} />
+                : <Image src={"/Dashboard/Home/loss.svg"} width={20} height={20} />
             }
                 <span className='font-Poppins md:text-xs xl:text-sm text-[#7C8DB5]'>{parseFloat(index).toFixed(1)}</span>
 

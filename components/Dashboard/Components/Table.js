@@ -77,7 +77,7 @@ export default function Table() {
                                             <td className="whitespace-nowrap py-4 px-3 text-xs text-black">
                                                 <div className='flex items-center'>
                                                     <div className='w-2 h-2 bg-[#279A44] rounded-full' />
-                                                    <span className={`${Styles.tableData}`}>{row.paiement}</span>
+                                                    <span className={`box-shadow-style`}>{row.paiement}</span>
                                                 </div>
                                             </td>
 

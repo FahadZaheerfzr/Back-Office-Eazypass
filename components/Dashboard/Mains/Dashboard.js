@@ -18,34 +18,34 @@ const stats = [
     {
         "id": 0,
         "figure": "103",
-        "icon": "/Dashboard/users.svg",
+        "icon": "/Dashboard/Home/users.svg",
         "description": "collaborateurs",
         "index": "10.2",
-        "profit": "1.01"
+        "profit": "1.01",
     },
     {
         "id": 1,
         "figure": "37,08",
-        "icon": "/Dashboard/case.svg",
+        "icon": "/Dashboard/Home/case.svg",
         "description": "équivalents TP sur site",
         "index": "3.1",
-        "profit": "0.49"
+        "profit": "0.49",
     },
     {
         "id": 2,
         "figure": 75,
-        "icon": "/Dashboard/completed.svg",
+        "icon": "/Dashboard/Home/completed.svg",
         "description": "places au bureau",
         "index": "2.00",
-        "profit": "-0.91"
+        "profit": "-0.91",
     },
     {
         "id": 3,
         "figure": "3,2",
-        "icon": "/Dashboard/return.svg",
+        "icon": "/Dashboard/Home/return.svg",
         "description": "jours TT / semaine",
         "index": "0.2",
-        "profit": "1.51"
+        "profit": "1.51",
     },
 ]
 

@@ -3,12 +3,15 @@ import React, { useState } from 'react'
 import Sidebar from './Sidebar/Navbar'
 import Topbar from './Topbar/ProfileBar'
 import Dashboard from './Mains/Dashboard'
+import Collaborators from './Mains/Collaborators'
+import Documents from './Mains/Documents'
 
 const pageHeadingText = {
   "Résumé": {
     "heading": "Bienvenue à nouveau, Maxime",
     "description": "Voici le résumé de la présence de vos collaborateurs au bureau",
-    "icon": ""
+    "icon": "",
+    "component": <Dashboard />,
   },
 
   "Rappels": {
@@ -20,12 +23,14 @@ const pageHeadingText = {
   "Collaborateurs": {
     "heading": "Collaborateurs",
     "description": "Ajoutez vos nouveaux collaborateurs et supprimez ceux qui ont quitté l’entreprise",
-    "icon": "/Dashboard/Sidebar/user-black.svg"
+    "icon": "/Dashboard/Sidebar/user-black.svg",
+    "component": <Collaborators />,
   },
   "Documents": {
     "heading": "Documents",
     "description": "Contrôlez les attestations de télétravail de l’assurance habitation de vos collaborateurs",
     "icon": "/Dashboard/Sidebar/checkout-black.svg",
+    "component": <Documents />,
   },
   "Télétravail": {
     "heading": "Télétravail",
@@ -81,12 +86,12 @@ export default function DashboardLayout(props) {
                     </div>
                 </div>
             </div>
-        <div className='md:w-[100%] lg:w-[80%] lg:ml-[20%]'>
+        <div className='md:w-[100%] h-screen lg:w-[80%] lg:ml-[20%]'>
           <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description}
             icon={pageHeadingText[active].icon}
           />
           <div className='px-[5%]'>
-            <Dashboard />
+            {pageHeadingText[active].component}
           </div>
 
         </div>

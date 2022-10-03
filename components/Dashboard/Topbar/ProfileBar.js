@@ -10,7 +10,7 @@ export default function Topbar({ name, description, icon }) {
     }
     return (
         <div className='w-full'>
-            <Image src={'/Dashboard/topbar.svg'} layout={'responsive'} width={1000} height={28} />
+            <Image src={'/Dashboard/Home/topbar.svg'} layout={'responsive'} width={1000} height={28} />
 
             <div className='w-full mt-10 px-[5%] flex justify-between'>
                 <div className='w-1/2'>
@@ -28,15 +28,15 @@ export default function Topbar({ name, description, icon }) {
 
                 <div className='w-1/2 h-fit flex items-center justify-end'>
                     <div className='' >
-                        <Image src={'/Dashboard/search.svg'} width={20} height={20} />
+                        <Image src={'/Dashboard/Home/search.svg'} width={20} height={20} />
                     </div>
                     <div className='md:ml-2 xl:ml-7 '>
-                        <Image src={'/Dashboard/notification.svg'} width={20} height={20} />
+                        <Image src={'/Dashboard/Home/notification.svg'} width={20} height={20} />
                     </div>
                     <div className={`${visible? '${Styles.changeAccount}': ''} md:ml-5 lg:ml-7 xl:ml-9 py-2 px-1`}>
                         <div className='flex items-center'>
                             <div className=''>
-                                <Image src={'/Dashboard/avatar.svg'} width={42} height={42} />
+                                <Image src={'/Dashboard/Home/avatar.svg'} width={42} height={42} />
                             </div>
 
 
