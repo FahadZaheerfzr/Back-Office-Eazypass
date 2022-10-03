@@ -46,7 +46,7 @@ export default function Topbar({ name, description, icon }) {
                             </div>
                             <div className='mt-1 md:ml-2 xl:ml-3 cursor-pointer'
                             onClick={()=>toggleVisible()}>
-                                <Image src={'/Dashboard/chevron-down.svg'} width={15} height={15} />
+                                <Image src={'/Dashboard/Home/chevron-down.svg'} width={15} height={15} />
                             </div>
                         </div>
                         {visible?
