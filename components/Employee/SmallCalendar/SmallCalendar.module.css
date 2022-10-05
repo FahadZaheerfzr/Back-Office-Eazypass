@@ -1,0 +1,83 @@
+.monthBox {
+    /* Rectangle 1 */
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    left: 55px;
+    top: 30px;
+    display: flex;
+    margin: auto 0;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(205.81deg, #25F53A 0%, #555CFF 100%);
+    border-radius: 20px;
+}
+
+.monthTxt {
+    /* Avril */
+    /* position: absolute; */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    /* line-height: 23px; */
+    letter-spacing: 0.17em;
+    color: #ffffff;
+    transform: rotate(-90deg);
+
+}
+
+.dayBox {
+    /* Rectangle 3 */
+    position: absolute;
+    /* width: 265.96px; */
+    height: 124px;
+    left: 140px;
+    top: 27px;
+    right: 55px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%);
+    backdrop-filter: blur(25px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+
+
+.dayTxt {
+    /* Mercredi */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    display: block;
+}
+
+.dateTxt {
+    /* 24 */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.timeCheck {
+    /* Matin */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    color: #787878;
+}
+
+.liTxt {
+    /* Télétravail */
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: #5A3A3A;
+}
