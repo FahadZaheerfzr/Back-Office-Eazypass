@@ -39,7 +39,7 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                       <span className="capitalize">{day}</span>
                       {" " + date + " " + month + " " + year}
                     </div>
-                    <div className="w-1/2 flex bg-[rgb(255,255,255,0.93)] rounded-full my-4 px-2">
+                    <div className="w-1/2 flex rounded-full my-4 px-2">
                       {/* <input
                         type="text"
                         placeholder="Rechercher"
@@ -48,18 +48,18 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                         <BsSearch className="w-1/6 my-auto" size={25} />
                       </input> 
                       <div className="w-1/6"></div>*/}
-                      <form className="flex items-center">
+                      <form className="flex items-center ">
                         <label htmlFor="simple-search" className="sr-only">
                           Search
                         </label>
-                        <div className="relative w-full">
+                        <div className="relative w-full ">
                           <div className="flex text-black absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                             <BsSearch className="my-auto" size={25} />
                           </div>
                           <input
                             type="text"
                             id="simple-search"
-                            className="placeholder-black focus:ring-0 text-center font-Roboto rounded-full block w-full pl-10 p-2.5 "
+                            className="placeholder-black bg-opacity-10 bg-white text-center font-Roboto rounded-full block w-full pl-10 p-2.5 "
                             placeholder="Rechercher"
                             required
                           />
@@ -69,7 +69,10 @@ export default function index({ isOpen, setIsOpen, avatars }) {
 
                     {avatars.map((avatar, index) => {
                       return (
-                        <div key={index} className="w-5/6 flex px-4 my-4 justify-between">
+                        <div
+                          key={index}
+                          className="w-5/6 flex px-4 my-4 justify-between"
+                        >
                           <div className="space-x-4 flex ">
                             <img
                               className="relative  z-20 inline-block h-10 w-10 rounded-full"

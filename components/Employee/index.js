@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Header from "../../components/Employee/Header";
 import SmallCalendar from "./SmallCalendar";
 import Places from "./Places";
@@ -36,9 +35,8 @@ export default function Employee() {
   ];
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] px-2 sm:px-0 mx-auto pb-8">
       <Header />
-      {/* <Modal /> */}
       <SmallCalendar />
       <Places />
       <Avatar />

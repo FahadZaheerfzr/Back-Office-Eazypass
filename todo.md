@@ -1,7 +1,7 @@
 # Screen 1 todo
-- [ ]  bring bell icon in card
+- [x]  bring bell icon in card
 - [ ] make responsive
-- [ ] search bar set in modal
-- [ ] avatars replace
-- [ ] give gradient bg to entire pages
+- [x] search bar set in modal
+- [x] avatars replace
+- [x] give gradient bg to entire pages
 - [ ] 

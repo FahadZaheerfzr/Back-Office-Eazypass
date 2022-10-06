@@ -11,7 +11,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="mobile-container">
+      <div className="">
         <Employee />
       </div>
     </div>

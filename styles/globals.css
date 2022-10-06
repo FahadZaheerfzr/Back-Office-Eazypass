@@ -50,13 +50,3 @@ a {
   border-radius: 8px;
 }
 
-.mobile-container {
-  z-index: -10;
-  background: linear-gradient(
-    167.94deg,
-    rgba(255, 255, 255, 0.66) 0%,
-    rgba(196, 196, 196, 0.13) 100%
-  );
-  border-radius: 30px;
-  
-}

@@ -13,9 +13,8 @@ export default function Calendar() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">
+      <div className="md:hidden bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] pb-8 mx-auto">
         <Header />
-
         <Container />
       </div>
     </>

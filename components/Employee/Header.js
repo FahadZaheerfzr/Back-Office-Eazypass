@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <>
-      <div className="flex flex-col ">
+      <div className="flex flex-col">
         <div className="flex  justify-center">
           <div className="w-1/3"> </div>
           <div className="pt-6 w-1/3 flex justify-center">
