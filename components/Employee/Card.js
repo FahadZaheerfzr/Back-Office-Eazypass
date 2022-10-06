@@ -1,15 +1,24 @@
 import React from "react";
-import Image from "next/image"; 
+import { useRouter } from "next/router";
+import Image from "next/image";
 export default function Card({
   title = "This is heading",
   desc = "Some desc",
   image = "/Employee/card2.svg",
   notis = 1,
+  index,
 }) {
+  const router = useRouter();
   return (
     <div
       className={`flex flex-col my-6 py-6 px-4 min-h-[200px] w-11/12 rounded-xl mx-auto`}
       style={{ boxShadow: "0px 6px 20px rgba(14, 7, 51, 0.1)" }}
+      onClick={() => {
+        console.log(index);
+        if (index == 2) {
+          router.push("/employee/calendar");
+        }
+      }}
     >
       <div className="flex font-Poppins font-bold justify-between">
         <div className="text-3xl "> {title}</div>
@@ -30,5 +39,3 @@ export default function Card({
     </div>
   );
 }
-
-

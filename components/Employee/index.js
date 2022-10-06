@@ -1,10 +1,10 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Header from "../../components/Employee/Header";
 import SmallCalendar from "./SmallCalendar";
 import Places from "./Places";
 import Avatar from "./Avatar";
 import Card from "./Card";
-import Modal from "./Modal";
 
 export default function Employee() {
   const Cards = [
@@ -44,6 +44,7 @@ export default function Employee() {
       <Avatar />
       {Cards.map((card, index) => (
         <Card
+          index={index}
           key={index}
           title={card.title}
           desc={card.desc}
