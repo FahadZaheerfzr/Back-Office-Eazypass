@@ -13,3 +13,39 @@
     font-weight: 400;
     font-size: 12px;
 }
+
+@media screen and (max-height:1400px) {
+    .customHeight{
+        height: 1000px;
+    }
+}
+@media screen and (max-height:1200px) {
+    .customHeight{
+        height: 800px;
+    }
+}
+@media screen and (max-height:1000px) {
+    .customHeight{
+        height: 700px;
+    }
+}
+@media screen and (max-height:900px) {
+    .customHeight{
+        height: 600px;
+    }
+}
+
+
+@media screen and (max-height:800px) {
+    .customHeight{
+        height: 550px;
+    }
+}
+
+@media screen and (max-height:760px) {
+    .customHeight{
+        height: 500px;
+    }
+}
+
+

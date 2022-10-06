@@ -5,6 +5,8 @@ import Topbar from './Topbar/ProfileBar'
 import Dashboard from './Mains/Dashboard'
 import Collaborators from './Mains/Collaborators'
 import Documents from './Mains/Documents'
+import Telework from './Mains/Telework'
+import Flex from './Mains/Flex'
 
 const pageHeadingText = {
   "Résumé": {
@@ -36,11 +38,14 @@ const pageHeadingText = {
     "heading": "Télétravail",
     "description": "Définissez votre politique de télétravail, par service, par direction,  pour l’ensemble de l’entreprise",
     "icon": "/Dashboard/Sidebar/checkout-black.svg",
+    "component": <Telework />,
   },
   "Flex-office": {
     "heading": "Flex-office",
     "description": "Pilotez l’affluence au bureau ainsi que votre nombre de places",
     "icon": "/Dashboard/Sidebar/case-black.svg",
+    "component": <Flex />,
+
   },
   "Paramètres": {
     "heading": "Paramètres",
