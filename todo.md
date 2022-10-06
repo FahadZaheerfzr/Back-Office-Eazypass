@@ -3,4 +3,5 @@
 - [ ] make responsive
 - [ ] search bar set in modal
 - [ ] avatars replace
+- [ ] give gradient bg to entire pages
 - [ ] 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 export default function Avatars() {
-  const [modalStatus, setModalStatus] = useState(true);
+  const [modalStatus, setModalStatus] = useState(false);
   const numberOfAttendees = 8;
 
   const avatars = [
