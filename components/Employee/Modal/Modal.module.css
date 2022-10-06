@@ -1,22 +1,20 @@
 .container {
-    /* Rectangle 2 */
-/* Rectangle 2 */
-z-index: 5;
-position: absolute;
-width: 85%;
-border: 2px solid red;
-height: 600px;
-top: 134px;
-left:0;
-right:0;
+  /* Rectangle 2 */
+  /* Rectangle 2 */
+  z-index: 5;
+  position: relative;
+  width: 85%;
+  height: 65vh;
 
-margin-left: auto;
-margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 
-background: linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%);
-backdrop-filter: blur(25px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 20px;
-
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.64) 0%,
+    rgba(255, 255, 255, 0.41) 100%
+  );
+  backdrop-filter: blur(25px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 20px;
 }
-

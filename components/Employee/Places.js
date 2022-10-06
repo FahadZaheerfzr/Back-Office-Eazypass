@@ -15,22 +15,22 @@ export default function index() {
           places disponsibles
         </div>
       </div>
-      <div class="w-10/12 my-4 rounded-full bg-[#E3E1E1]">
+      <div className="w-10/12 my-4 rounded-full bg-[#E3E1E1]">
         {places <= 50 && (
           <div
-            class="bg-[#76E234] text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            className="bg-[#76E234] text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
             style={{ width: `${places}%` }}
           />
         )}
                 {places <= 75 && places > 50 && (
           <div
-            class="bg-[#FFEB3B] text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            className="bg-[#FFEB3B] text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
             style={{ width: `${places}%` }}
           />
         )}
                 {places > 75 && (
           <div
-            class="bg-[#F44336] text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            className="bg-[#F44336] text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
             style={{ width: `${places}%` }}
           />
         )}
