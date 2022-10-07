@@ -1,7 +1,13 @@
 # Screen 1 todo
 - [x]  bring bell icon in card
-- [ ] make responsive
 - [x] search bar set in modal
 - [x] avatars replace
 - [x] give gradient bg to entire pages
-- [ ] 
+- [x] card dimensions set
+- [x] use manager calendar coding in employee calendar
+- [ ] make responsive
+- [ ] make spacing n stuff as it is
+- [ ] configure fonts
+- [ ] how to make table with loops
+- [ ] how to store monthly date in array javascript
+- [ ]

@@ -7,14 +7,22 @@ export default function SmallCalendar() {
   return (
     <>
       <div className="flex h-40 relative justify-center">
-        <div className={`${styles.monthBox}`}>
-          <span className={`${styles.monthTxt} capitalize`}>{month}</span>
+        <div className={`${styles.monthBox} xs:rounded-[20px] xs:w-[77px] xs:h-[120px]
+        w-[60px] h-[100px] rounded-xl`}>
+          <span
+            className={`${styles.monthTxt} capitalize text-base xs:text-lg`}
+          >
+            {month}
+          </span>
         </div>
         <div className="my-auto bg">
-          <div className={`${styles.dayBox}`}>
+          <div className={`${styles.dayBox} xs:rounded-[20px] xs:-left-[5px] xs:w-[265.96px] xs:h-[124px]
+          w-[200px] h-[104px] rounded-xl -left-2 `}>
             <div>
-              <span className={`${styles.dayTxt} capitalize`}>{day}</span>
-              <span className={`${styles.dateTxt} `}>{date}</span>
+              <span className={`${styles.dayTxt} xs:text-xl capitalize`}>
+                {day}
+              </span>
+              <span className={`${styles.dateTxt} xs:text-2xl`}>{date}</span>
             </div>
             <div className="flex  mt-2">
               <div className={`${styles.timeCheck} w-1/2`}>Matin</div>

@@ -114,11 +114,17 @@ export default function Container() {
               </span>
             </div>
             <div className="flex text-center my-auto space-x-8">
-              <button className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl ">
-                <IoChevronBack className="mx-auto" onClick={handlePrev} />
+              <button
+                onClick={handlePrev}
+                className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl "
+              >
+                <IoChevronBack className="mx-auto" />
               </button>
-              <button className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl ">
-                <IoChevronForward className="mx-auto" onClick={handleNext} />
+              <button
+                onClick={handleNext}
+                className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl "
+              >
+                <IoChevronForward className="mx-auto" />
               </button>
             </div>
           </div>

@@ -12,12 +12,12 @@ export default function Avatars() {
     },
     {
       name: "Jimmy Khan",
-      avatar:"https://static.generated.photos/vue-static/face-generator/landing/wall/14.jpg",
+      avatar:
+        "https://static.generated.photos/vue-static/face-generator/landing/wall/14.jpg",
     },
     {
       name: "Elon Gates",
-      avatar:
-        "https://thispersondoesnotexist.com/image",
+      avatar: "https://thispersondoesnotexist.com/image",
     },
     {
       name: "Dominic Toretto",
@@ -27,7 +27,7 @@ export default function Avatars() {
   ];
 
   return (
-    <div className="flex justify-center my-12">
+    <div className="flex justify-center">
       {modalStatus && (
         <Modal
           isOpen={modalStatus}
@@ -39,34 +39,36 @@ export default function Avatars() {
         onClick={() => {
           setModalStatus(true);
         }}
-        className="flex -space-x-2 relative z-0 p-2 cursor-pointer"
+        className="flex -space-x-2 relative z-0 py-2 cursor-pointer"
       >
-        <span className="z-50 relative top-3 -left-1 block h-4 w-4 rounded-full ring-2 ring-white bg-green-400"></span>
+        <span className="z-50 relative top-3 -left-1 block h-4 w-4 rounded-full  bg-green-400"></span>
         <img
-          className="relative z-30 inline-block h-10 w-10 rounded-full ring-2 ring-white"
+          className="relative z-30 inline-block h-10 w-10 rounded-full "
           src={avatars[0].avatar}
           alt=""
         />
         <img
-          className="relative z-20 inline-block h-10 w-10 rounded-full ring-2 ring-white"
+          className="relative z-20 inline-block h-10 w-10 rounded-full "
           src={avatars[1].avatar}
           alt=""
         />
         <img
-          className="relative z-10 inline-block h-10 w-10 rounded-full ring-2 ring-white"
+          className="relative z-10 inline-block h-10 w-10 rounded-full "
           src={avatars[2].avatar}
           alt=""
         />
         <img
-          className="relative z-0 inline-block h-10 w-10 rounded-full ring-2 ring-white"
+          className="relative z-0 inline-block h-10 w-10 rounded-full "
           src={avatars[3].avatar}
           alt=""
         />
-        <div className="relative -z-10 inline-block h-10 w-10 rounded-full ring-2 ring-white bg-black text-center pt-1.5 font-bold text-white ">
+        <div className="relative -z-10 inline-block h-10 w-10 rounded-full  bg-black text-center pt-1.5 font-bold text-white ">
           +{numberOfAttendees - 4}
         </div>
       </div>
-      <div className="flex my-auto font-bold">sont presents aujourd'hui</div>
+      <div className="flex my-auto text-xs font-Roboto font-bold ml-2">
+        sont presents aujourd'hui
+      </div>
     </div>
   );
 }

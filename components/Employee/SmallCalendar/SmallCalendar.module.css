@@ -1,23 +1,17 @@
 .monthBox {
     /* Rectangle 1 */
     position: relative;
-    width: 77px;
-    height: 120px;
     display: flex;
     margin: auto 0;
     justify-content: center;
     align-items: center;
     background: linear-gradient(205.81deg, #25F53A 0%, #555CFF 100%);
-    border-radius: 20px;
 }
 
 .monthTxt {
     /* Avril */
-    /* position: absolute; */
     font-family: 'Roboto';
     font-style: normal;
-    font-size: 18px;
-    /* line-height: 23px; */
     letter-spacing: 0.17em;
     color: #ffffff;
     transform: rotate(-90deg);
@@ -25,14 +19,10 @@
 
 .dayBox {
     /* Rectangle 3 */
-    left: -5px;
     position: relative;
-    width: 265.96px;
-    height: 124px;
     background: linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%);
     backdrop-filter: blur(25px);
     /* Note: backdrop-filter has minimal browser support */
-    border-radius: 20px;
     margin: auto 0;
     padding: 10px 20px;
     box-sizing: border-box;
@@ -45,7 +35,6 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
     line-height: 23px;
     color: #000000;
     display: block;
@@ -56,7 +45,6 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
     line-height: 28px;
     color: #000000;
 }
