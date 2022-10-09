@@ -19,12 +19,14 @@ export default function Employee() {
       desc: "Déclarez votre présence au bureau et en télétravail",
       image: "/Employee/card2.svg",
       notis: 2,
+      redirect: '/employee/planner'
     },
     {
       title: "Demande exceptionnelle",
       desc: "Soumettez une demande ponctuelle de télétravail ",
       image: "/Employee/card3.svg",
       notis: 1,
+      redirect: '/employee/calendar'
     },
     {
       title: "Documents à soumettre",
@@ -42,13 +44,13 @@ export default function Employee() {
       <Avatar />
       {Cards.map((card, index) => (
         <Card
-          index={index}
           key={index}
           title={card.title}
           desc={card.desc}
           image={card.image}
           notis={card.notis}
           icon={card.icon}
+          redirect={card.redirect}
         />
       ))}
     </div>

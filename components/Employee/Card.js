@@ -6,20 +6,18 @@ export default function Card({
   desc = "Some desc",
   image = "/Employee/card2.svg",
   notis = 1,
-  index,
   icon = null,
+  redirect = null,
 }) {
   const router = useRouter();
   return (
     <div
       className={`flex flex-col bg-white my-6 pt-4 px-4 h-44
-      xs:w-[390px] mx-auto rounded-2xl ${
-        index == 2 && "cursor-pointer"
-      }`}
+      xs:w-[390px] mx-auto rounded-2xl ${redirect && "cursor-pointer"}`}
       style={{ boxShadow: "0px 6px 20px rgba(14, 7, 51, 0.1)" }}
       onClick={() => {
-        if (index == 2) {
-          router.push("/employee/calendar");
+        if (redirect) {
+          router.push(redirect);
         }
       }}
     >

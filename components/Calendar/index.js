@@ -3,8 +3,10 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import Avatars from "../Employee/Avatar";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useRouter } from "next/router";
 
 export default function Container() {
+  const router = useRouter();
   // call getDate function on date object and do +- 1 to get the next or previous day
   // use timestamp of middle div to get next or previous day
   // make state for previous and next day and set it to the timestamp of the middle div +- 1
@@ -182,7 +184,10 @@ export default function Container() {
               />
             </div>
             <div className="flex justify-center text-center mt-24">
-              <button className="bg-gradient-to-br from-[#59dd2b] to-[#282eca] rounded-lg py-1.5 px-8 text-xl text-white font-Roboto font-bold">
+              <button
+                onClick={() => router.back()}
+                className="bg-gradient-to-br from-[#59dd2b] to-[#282eca] rounded-lg py-1.5 px-8 text-xl text-white font-Roboto font-bold"
+              >
                 Soumettre
               </button>
             </div>

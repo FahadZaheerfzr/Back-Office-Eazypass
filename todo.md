@@ -5,9 +5,9 @@
 - [x] give gradient bg to entire pages
 - [x] card dimensions set
 - [x] use manager calendar coding in employee calendar
+- [x] how to make table with loops
+- [x] how to store monthly date in array javascript
 - [ ] make responsive
 - [ ] make spacing n stuff as it is
 - [ ] configure fonts
-- [ ] how to make table with loops
-- [ ] how to store monthly date in array javascript
 - [ ]
