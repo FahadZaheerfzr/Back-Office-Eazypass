@@ -93,7 +93,7 @@ export default class ToDoDragDropDemo extends Component {
             this.onDragStart(event, employee.employeeName)
           }
           draggable
-          className={`ml-[20%] cursor-pointer font-bold rounded-lg
+          className={`ml-[20%] cursor-pointer font-normal rounded-lg
             text-left px-2 font-Poppins text-sm my-5`}
         >
           <FaCircle
@@ -106,13 +106,13 @@ export default class ToDoDragDropDemo extends Component {
     });
 
     return (
-      <div className="flex flex-col mx-auto bg-blue-40  justify-center">
+      <div className="flex flex-col mx-auto bg-blue-40 justify-center">
         <div className={`mx-auto font-Inter text-xl`}>
           Planning soumis par votre équipe
         </div>
         <div className="flex flex-col bg-green-40 my-4">
           <div
-            className={`mb-6 flex justify-center text-center bg-[#347AE2] rounded-[10px] font-Poppins text-xl text-white`}
+            className={`mb-6 flex justify-center font-normal text-center bg-[#347AE2] rounded-[10px] font-Poppins text-xl text-white`}
           >
             <img src="/Employee/bureau.png" className="h-7 w-7" />
             <span className="mx-2">Bureau</span>
@@ -131,7 +131,7 @@ export default class ToDoDragDropDemo extends Component {
 
         <div className="flex flex-col bg-yellow-40 my-4">
           <div
-            className={`mb-6 flex justify-center text-center bg-[#8572FF] rounded-[10px] font-Poppins text-xl text-white`}
+            className={`mb-6 flex justify-center font-normal text-center bg-[#8572FF] rounded-[10px] font-Poppins text-xl text-white`}
           >
             <img src="/Employee/teletravail.png" className="h-7 w-7" />
             <span className="mx-2">Télétravail</span>
@@ -148,7 +148,7 @@ export default class ToDoDragDropDemo extends Component {
         <div className="mx-auto">
             <button 
             style={{background: "linear-gradient(136.64deg, #59DD2B 1.59%, #282ECA 98.89%)"}}
-            className=" text-white font-Roboto text-xl rounded-[10px] px-4 py-2 mx-auto">Valider</button>
+            className=" text-white w-[146px] font-Roboto font-bold text-xl rounded-[10px] px-4 py-2 mx-auto">Valider</button>
         </div>
       </div>
     );

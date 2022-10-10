@@ -11,13 +11,13 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10 "
+        className="relative z-10 font-Roboto font-medium"
         onClose={() => {
           closeModal();
         }}
       >
-        <div className="fixed inset-0 overflow-y-auto w-full">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
+        <div className="fixed inset-0 overflow-y-auto w-full ">
+          <div className="flex min-h-full items-center justify-center py-4 px-2 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -38,28 +38,28 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                     "linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%)",
                   backdropFilter: "blur(25px)",
                 }}
-                className="w-[86%] max-w-[371px] transform overflow-hidden p-6 text-left align-middle shadow-xl transition-all rounded-[20px]"
+                className="max-w-[260px] xs:min-w-min xs:w-[94%] xs:max-w-[371px] transform overflow-hidden relative -top-12 p-6 text-left align-middle shadow-xl transition-all rounded-[20px]"
               >
                 {date && !confirmation ? (
                   <div
                     className={`
-                    ${noon === "" && morning === "" ? "" : "h-[490px]"}
-                    flex flex-col min-h-[420px]   `}
+                    ${noon === "" && morning === "" ? "" : "xs:h-[490px]"}
+                    flex flex-col xs:min-h-[420px]  `}
                   >
-                    <div className="mb-6">
-                      <div className="font-Roboto text-2xl text-center">
+                    <div className="mb-2 xs:mb-6">
+                      <div className="font-Roboto xs:text-2xl text-center">
                         Indiquez votre présence en télétravail ou au bureau
                       </div>
                     </div>
-                    <div className="font-Roboto text-4xl translate-x-4 text-[#787878] mb-10">
+                    <div className="font-Roboto text-2xl xs:text-4xl translate-x-4 text-[#787878] mb-4 xs:mb-10">
                       Matin
                     </div>
-                    <div className="flex flex-row justify-between w-full mb-10">
+                    <div className="flex flex-row justify-between w-full mb-4 xs:mb-10">
                       <button
                         onClick={() => {
                           setMorning("Télétravail");
                         }}
-                        className="font-Roboto text-[20px] h-10 w-[37%] rounded-[20px] text-white"
+                        className="font-normal font-Roboto text-xs xs:text-[20px] h-6 xs:h-10 w-20 xs:w-36 rounded-[20px] text-white"
                         style={{
                           background:
                             morning === "Télétravail" || morning === ""
@@ -73,7 +73,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                         onClick={() => {
                           setMorning("Bureau");
                         }}
-                        className="font-Roboto text-[20px] h-10 w-[37%] rounded-[20px] text-white"
+                        className="font-normal font-Roboto text-xs xs:text-[20px] h-6 xs:h-10 w-20 xs:w-36 rounded-[20px] text-white"
                         style={{
                           background:
                             morning === "Bureau" || morning === ""
@@ -84,15 +84,15 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                         Bureau
                       </button>
                     </div>
-                    <div className="font-Roboto text-4xl translate-x-4 text-[#787878] mb-10">
+                    <div className="font-Roboto text-2xl xs:text-4xl translate-x-4 text-[#787878] mb-4 xs:mb-10">
                       Après-midi
                     </div>
-                    <div className="flex flex-row justify-between w-full mb-10">
+                    <div className="flex flex-row justify-between w-full mb-4 xs:mb-10">
                       <button
                         onClick={() => {
                           setNoon("Télétravail");
                         }}
-                        className="font-Roboto text-[20px] h-10 w-[37%] rounded-[20px] text-white"
+                        className="font-normal font-Roboto text-xs xs:text-[20px] h-6 xs:h-10 w-20 xs:w-36 rounded-[20px] text-white"
                         style={{
                           background:
                             noon === "Télétravail" || noon === ""
@@ -106,7 +106,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                         onClick={() => {
                           setNoon("Bureau");
                         }}
-                        className="font-Roboto text-[20px] h-10 w-[37%] rounded-[20px] text-white"
+                        className="font-normal font-Roboto text-xs xs:text-[20px] h-6 xs:h-10 w-20 xs:w-36 rounded-[20px] text-white"
                         style={{
                           background:
                             noon === "Bureau" || noon === ""
@@ -117,7 +117,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                         Bureau
                       </button>
                     </div>
-                    <div className="flex justify-center mt-4">
+                    <div className="flex font-normal justify-center mt-4">
                       <button
                         onClick={() => {
                           setDate((current) =>
@@ -139,7 +139,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                           //   closeModal();
                           setConfirmation(true);
                         }}
-                        className="font-Roboto text-3xl text-white rounded-[20px] w-1/2  h-12"
+                        className="font-Roboto text-lg xs:text-3xl text-white rounded-[20px] w-1/2  h-7 xs:h-12"
                         style={{
                           background:
                             "linear-gradient(263.44deg, #30D686 0%, #2B54E6 220.87%)",
@@ -151,11 +151,11 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                   </div>
                 ) : (
                   date && (
-                    <div className="flex flex-col font-Roboto text-xl h-[380px]">
+                    <div className="flex flex-col font-Roboto xs:text-xl xs:h-[380px]">
                       <div className="flex text-center">
                         Votre déclaration a été soumise avec succès.
                       </div>
-                      <div className="flex text-[#7ED957] justify-center my-12">
+                      <div className="flex text-[#7ED957] justify-center my-6 xs:my-12">
                         <FaCheckCircle size={80} />
                       </div>
 
@@ -176,7 +176,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                           " - matinée"}
                         <span className="capitalize block">{morning}</span>
                       </div>
-                      <div className="flex-col text-center my-4">
+                      <div className="flex-col text-center my-2 xs:my-4">
                         <span className="capitalize">
                           {date.timestamp.toLocaleString("fr", {
                             weekday: "short",

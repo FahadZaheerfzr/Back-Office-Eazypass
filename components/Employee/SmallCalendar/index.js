@@ -7,38 +7,50 @@ export default function SmallCalendar() {
   return (
     <>
       <div className="flex h-40 relative justify-center">
-        <div className={`${styles.monthBox} xs:rounded-[20px] xs:w-[77px] xs:h-[120px]
-        w-[60px] h-[100px] rounded-xl`}>
+        <div
+          className={`relative flex my-auto justify-center items-center xs:rounded-[20px] xs:w-[77px] xs:h-[120px]
+        w-[60px] h-[100px] rounded-xl`}
+          style={{
+            background: "linear-gradient(205.81deg, #25F53A 0%, #555CFF 100%)",
+          }}
+        >
           <span
-            className={`${styles.monthTxt} capitalize text-base xs:text-lg`}
+            className={`text-white -rotate-90 tracking-widest capitalize font-medium font-Roboto text-base xs:text-lg`}
           >
             {month}
           </span>
         </div>
         <div className="my-auto bg">
-          <div className={`${styles.dayBox} xs:rounded-[20px] xs:-left-[5px] xs:w-[265.96px] xs:h-[124px]
-          w-[200px] h-[104px] rounded-xl -left-2 `}>
+          <div
+            className={`relative my-auto px-5 py-[10px] box-border xs:rounded-[20px] xs:-left-[5px] xs:w-[265.96px] xs:h-[124px]
+          w-[200px] h-[104px] rounded-xl -left-2 `}
+            style={{
+              background:
+                "linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%)",
+              backdropFilter: "blur(25px)",
+            }}
+          >
             <div>
-              <span className={`${styles.dayTxt} xs:text-xl capitalize`}>
+              <span className={`font-Roboto font-medium text-black block xs:text-xl capitalize`}>
                 {day}
               </span>
-              <span className={`${styles.dateTxt} xs:text-2xl`}>{date}</span>
+              <span className={`font-Roboto font-medium text-black xs:text-2xl`}>{date}</span>
             </div>
             <div className="flex  mt-2">
-              <div className={`${styles.timeCheck} w-1/2`}>Matin</div>
-              <div className={`${styles.timeCheck} w-1/2`}>Après-midi</div>
+              <div className={`font-Roboto text-[#787878] font-medium w-1/2`}>Matin</div>
+              <div className={`font-Roboto text-[#787878] font-medium w-1/2`}>Après-midi</div>
             </div>
             <div className="flex list-[circle] text-2xl">
               <div className="text-[#D0D312] w-1/2">
                 <li>
-                  <span className={`text-lg relative -left-4 ${styles.liTxt}`}>
+                  <span className={`text-lg relative -left-4 font-Roboto text-[15px] text-[#5a3a3a]`}>
                     Télétravail
                   </span>
                 </li>
               </div>
               <div className="text-[#1400FF] w-1/2 ">
                 <li>
-                  <span className={`text-lg relative -left-4 ${styles.liTxt}`}>
+                  <span className={`text-lg relative -left-4 font-Roboto text-[15px] text-[#5a3a3a]`}>
                     Bureau
                   </span>
                 </li>

@@ -109,7 +109,7 @@ export default function Container() {
       <div className="p-4 rounded-2xl bg-white max-w-[420px] sm:max-w-md mx-auto">
         <div className="flex flex-col">
           <div className="flex justify-between">
-            <div className="font-Poppins text-xl font-semibold capitalize">
+            <div className="font-Poppins text-xl font-medium capitalize ">
               Calendrier
               <span className="text-[#7C8DB5] block">
                 {dateState.month + " " + dateState.year}
@@ -131,37 +131,37 @@ export default function Container() {
             </div>
           </div>
 
-          <div className="text-[#1E293B] font-Inter text-center my-6 pl-3 text-xl">
+          <div className="text-[#1E293B] font-Inter text-center my-6 pl-3 text-xl font-semibold">
             Demande ponctuelle - Télétravail
           </div>
           <div className="flex flex-col"></div>
-          <div className="font-Inter text-[#1E293B] pl-3 text-lg">
+          <div className="font-Inter text-[#1E293B] pl-3 text-lg font-medium">
             Choisissez le jour
           </div>
           <div className="flex w-full my-2 justify-between px-3">
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 rounded-lg">
+            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 font-semibold rounded-lg">
               {previousDay.date}
-              <span className="capitalize text-base font-Roboto">
+              <span className="text-xs capitalize font-Inter font-normal">
                 {previousDay.day}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#5E8BE2] w-[22.5%] font-Inter text-white align-middle h-36 rounded-lg">
+            <div className="flex flex-col justify-center text-2xl text-center bg-[#5E8BE2] w-[22.5%] font-Inter text-white align-middle h-36 font-semibold rounded-lg">
               {dateState.date}
-              <span className="capitalize text-base font-Roboto">
+              <span className="text-xs capitalize font-Inter font-normal">
                 {" "}
                 {dateState.day}{" "}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 rounded-lg">
+            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 font-semibold rounded-lg">
               {nextDay.date}
-              <span className="capitalize text-base font-Roboto">
+              <span className="text-xs capitalize font-Inter font-normal">
                 {" "}
                 {nextDay.day}{" "}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 rounded-lg">
+            <div className="flex flex-col justify-center text-sm text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 font-semibold  rounded-lg">
               Autre{" "}
-              <span className="capitalize text-base font-Roboto"> Date </span>
+              <span className="text-xs capitalize font-Inter font-normal"> Date </span>
               {/* 
               // when date picker will be used this library will be used
               <DatePicker
@@ -170,11 +170,11 @@ export default function Container() {
               /> */}
             </div>
           </div>
-          <div className="">
+          <div className="my-12">
             <Avatars />
           </div>
 
-          <div className="font-Inter text-[#1E293B] pl-3 flex flex-col">
+          <div className="font-Inter text-[#1E293B] pl-3 flex flex-col font-medium">
             <div>
               Commentaire
               <textarea

@@ -33,21 +33,13 @@ export default function index({ isOpen, setIsOpen, avatars }) {
               >
                 <Dialog.Panel className={`p-4 ${styles.container}`}>
                   <div className="flex flex-col items-center">
-                    <div className="capitalize font-Roboto font-bold text-2xl">
+                    <div className="capitalize font-Roboto font-medium text-2xl">
                       Collaborateurs au bureau
                       <br />
                       <span className="capitalize">{day}</span>
                       {" " + date + " " + month + " " + year}
                     </div>
                     <div className="w-1/2 flex rounded-full my-4 px-2">
-                      {/* <input
-                        type="text"
-                        placeholder="Rechercher"
-                        className=" text-center bg-pink-500 placeholder-black text-black font-Roboto w-full h-9 rounded-3xl  "
-                      >
-                        <BsSearch className="w-1/6 my-auto" size={25} />
-                      </input> 
-                      <div className="w-1/6"></div>*/}
                       <form className="flex items-center ">
                         <label htmlFor="simple-search" className="sr-only">
                           Search
@@ -59,7 +51,7 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                           <input
                             type="text"
                             id="simple-search"
-                            className="placeholder-black bg-opacity-10 bg-white text-center font-Roboto rounded-full block w-full pl-10 p-2.5 "
+                            className="placeholder-black bg-opacity-10 bg-white text-center font-Roboto font-light rounded-full block w-full pl-10 p-2.5 "
                             placeholder="Rechercher"
                             required
                           />

@@ -6,17 +6,16 @@ import Card from "../../components/Employee/Card";
 export default function Manager() {
     const Cards = [
         {
-          title: "Télétravail",
-          desc: "Déclarez votre présence au bureau ou en télétravail chaque semaine.",
-          image: "/Employee/card1.svg",
-          notis: 0,
-          icon: "/Employee/bell.svg",
+          title: "Plannings de télétravail",
+          desc: "Révisez les déclarations télétravail/présentiel de votre équipe.",
+          image: "/Employee/card3.svg",
+          notis: 1,
         },
         {
-          title: "Déclarer son planning",
-          desc: "Déclarez votre présence au bureau et en télétravail",
-          image: "/Employee/card2.svg",
-          notis: 2,
+          title: "Demandes exceptionnelles",
+          desc: "Approuvez ou refusez les demandes ponctuelles de jours en télétravail.",
+          image: "/Employee/card4.svg",
+          notis: 0,
         },
       ];
 

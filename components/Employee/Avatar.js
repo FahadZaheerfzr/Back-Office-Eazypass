@@ -41,32 +41,32 @@ export default function Avatars() {
         }}
         className="flex -space-x-2 relative z-0 py-2 cursor-pointer"
       >
-        <span className="z-50 relative top-3 -left-1 block h-4 w-4 rounded-full  bg-green-400"></span>
+        <span className="z-50 relative top-3 -left-1 block xs:h-4 xs:w-4 h-3 w-3 rounded-full  bg-green-400"></span>
         <img
-          className="relative z-30 inline-block h-10 w-10 rounded-full "
+          className="relative z-30 inline-block h-8 w-8 xs:h-10 xs:w-10 rounded-full "
           src={avatars[0].avatar}
           alt=""
         />
         <img
-          className="relative z-20 inline-block h-10 w-10 rounded-full "
+          className="relative z-20 inline-block h-8 w-8 xs:h-10 xs:w-10 rounded-full "
           src={avatars[1].avatar}
           alt=""
         />
         <img
-          className="relative z-10 inline-block h-10 w-10 rounded-full "
+          className="relative z-10 inline-block h-8 w-8 xs:h-10 xs:w-10 rounded-full "
           src={avatars[2].avatar}
           alt=""
         />
         <img
-          className="relative z-0 inline-block h-10 w-10 rounded-full "
+          className="relative z-0 inline-block h-8 w-8 xs:h-10 xs:w-10 rounded-full "
           src={avatars[3].avatar}
           alt=""
         />
-        <div className="relative -z-10 inline-block h-10 w-10 rounded-full  bg-black text-center pt-1.5 font-bold text-white ">
+        <div className="relative -z-10 inline-block h-8 w-8 xs:h-10 xs:w-10 rounded-full xs:text-base text-sm bg-black text-center pt-1 xs:pt-1.5 font-bold text-white ">
           +{numberOfAttendees - 4}
         </div>
       </div>
-      <div className="flex my-auto text-xs font-Roboto font-bold ml-2">
+      <div className="flex my-auto text-[10px] xs:text-xs font-Roboto font-bold ml-1 xs:ml-2">
         sont presents aujourd'hui
       </div>
     </div>

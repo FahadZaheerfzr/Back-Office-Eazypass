@@ -10,8 +10,6 @@
 
 .monthTxt {
     /* Avril */
-    font-family: 'Roboto';
-    font-style: normal;
     letter-spacing: 0.17em;
     color: #ffffff;
     transform: rotate(-90deg);

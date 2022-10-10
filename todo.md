@@ -9,5 +9,5 @@
 - [x] how to store monthly date in array javascript
 - [ ] make responsive
 - [ ] make spacing n stuff as it is
-- [ ] configure fonts
-- [ ]
+- [ ] employee/planner & manager font set
+- [ ] card, avatar, places, employee calendar made responsive

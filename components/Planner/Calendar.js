@@ -80,20 +80,20 @@ export default function Calendar() {
   const emptyDivs = fetchDayNumber(monthFullOfDates[0].timestamp);
 
   return (
-    <div className="max-w-[428px] mx-auto ">
-      <div className="flex my-6">
+    <div className="max-w-[428px] mx-auto font-medium my-10 xs:my-20">
+      <div className="flex my-6 mx-1 xs:mx-3 justify-center">
         <div
-          className="w-28 h-[205px] rounded-[20px] tracking-widest font-Roboto text-white text-2xl flex flex-col justify-center items-center capitalize"
+          className="w-28 h-[173px] xs:h-[205px] rounded-[20px] tracking-widest font-Roboto text-white text-lg xs:text-2xl flex flex-col justify-center items-center capitalize"
           style={{
             background: "linear-gradient(205.81deg, #25F53A 0%, #555CFF 100%)",
           }}
         >
-          <span className="-rotate-90 relative -left-2">
+          <span className="-rotate-90 relative -left-2 font-semibold">
             {today.toLocaleString("fr", { month: "long" })}
           </span>
         </div>
         <div
-          className="flex flex-col rounded-[20px] w-64 h-52 relative -left-7 p-2 pl-6 "
+          className="flex flex-col rounded-[20px] w-64 h-44 xs:h-52 relative -left-7 p-2 pl-6 "
           style={{
             background:
               "linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%)",
@@ -101,22 +101,22 @@ export default function Calendar() {
           }}
         >
           <div className="flex ">
-            <div className="font-Roboto text-3xl font-bold w-1/3 ">
-              <span className="capitalize text-lg block">
+            <div className="font-Roboto text-xl xs:text-3xl font-bold w-1/3 ">
+              <span className="capitalize text-sm xs:text-lg block">
                 {today.toLocaleString("fr", { weekday: "long" })}
               </span>
               {today.toLocaleString("fr", { day: "2-digit" })}
             </div>
-            <div className="w-2/3 text-sm font-Roboto">
+            <div className="w-2/3 xs:text-sm text-xs font-Roboto font-light">
               <span
                 className={`${
                   places <= 50 ? "text-[#FFCE31]" : "text-[#F44336]"
-                } font-bold`}
+                } font-medium`}
               >
                 {places + " "}
               </span>
               places disponibles
-              <div className="w-10/12 my-4  rounded-full mx-auto bg-[#E3E1E1] p-[1px]  border border-black">
+              <div className="w-10/12 xs:my-4 my-2 rounded-full mx-auto bg-[#E3E1E1] p-[1px]  border border-black">
                 <div
                   className={` ${
                     places <= 50 ? "bg-[#FFCE31]" : "bg-[#F44336]"
@@ -128,13 +128,13 @@ export default function Calendar() {
           </div>
 
           <div className="flex flex-col list-[circle] font-Roboto">
-            <div className="flex  mt-2">
-              <div className={`text-lg text-[#787878]`}>Matin</div>
+            <div className="flex  xs:mt-2  ">
+              <div className={`xs:text-lg text-[#787878]`}>Matin</div>
             </div>
             <div className="text-[#D0D312]">
               <li>
                 <span
-                  className={`text-[#5A3A3A] relative -left-4 text-base pl-2`}
+                  className={`text-[#5A3A3A] relative -left-4 text-sm xs:text-base pl-2 font-normal`}
                 >
                   {monthFullOfDates[todayDate - 1].morningMode ? (
                     <>{monthFullOfDates[todayDate - 1].morningMode}</>
@@ -144,12 +144,12 @@ export default function Calendar() {
                 </span>
               </li>
             </div>
-            <div className={`text-lg text-[#787878] mt-2`}>Après-midi</div>
+            <div className={`xs:text-lg text-[#787878] xs:mt-2  `}>Après-midi</div>
 
             <div className="text-[#1400FF] ">
               <li>
                 <span
-                  className={`text-[#5A3A3A] relative -left-4 text-base pl-2`}
+                  className={`text-[#5A3A3A] relative -left-4 text-sm xs:text-base pl-2 font-normal`}
                 >
                   {monthFullOfDates[todayDate - 1].afternoonMode ? (
                     <>{monthFullOfDates[todayDate - 1].afternoonMode}</>
@@ -164,7 +164,7 @@ export default function Calendar() {
       </div>
 
       <div
-        className="max-w-[216px] mx-auto my-10 h-12 flex flex-col justify-center items-center font-Roboto text-2xl text-white rounded-[20px] "
+        className="xs:max-w-[216px] max-w-[140px] font-normal mx-auto my-6 xs:my-10 xs:h-12 h-6 flex flex-col justify-center items-center font-Roboto xs:text-2xl text-lg text-white rounded-xl xs:rounded-[20px] "
         style={{
           background: "linear-gradient(263.44deg, #30D686 0%, #2B54E6 220.87%)",
         }}
@@ -172,7 +172,7 @@ export default function Calendar() {
         Modifier
       </div>
 
-      <div className=" my-8">
+      <div className="my-4 xs:my-8">
         <div className="flex justify-center space-x-4">
 					<FaCircle/>
 					<FaCircle className="text-xs my-auto text-slate-50" />
@@ -180,14 +180,14 @@ export default function Calendar() {
 				</div>
       </div>
 
-      <div className=" text-center  font-Poppins text-2xl capitalize">
+      <div className=" text-center  font-Poppins text-lg xs:text-2xl capitalize font-normal">
         {" "}
         {fetchMonth(today) + " " + currentYear}
       </div>
       <div className="grid grid-cols-7 w-full text-center">
         {dayNames.map((dayName, index) => {
           return (
-            <div className="font-Roboto text-2xl my-4" key={index}>
+            <div className="font-Roboto xs:text-2xl text-lg font-normal my-2 xs:my-4" key={index}>
               {dayName}
             </div>
           );
@@ -201,7 +201,7 @@ export default function Calendar() {
         {monthFullOfDates.map((date, index) => {
           return (
             <div
-              className={` font-Poppins text-[20px] relative mb-4
+              className={` font-Poppins text-sm xs:text-[20px] relative xs:mb-4 mb-2 font-normal
             `}
               key={index}
             >

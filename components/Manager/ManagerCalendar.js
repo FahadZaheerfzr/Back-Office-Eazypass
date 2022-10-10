@@ -20,7 +20,7 @@ export default function ManagerCalendar() {
         <div>
           <img src="/Employee/calendar.png" />
         </div>
-        <div className="font-Poppins text-lg ml-2 xs:text-2xl xs:ml-4  my-auto font-bold">
+        <div className="font-Poppins text-lg font-semibold ml-2 xs:text-2xl xs:ml-4  my-auto">
           <span className="capitalize">{day + " "}</span>
           {date + " "} {month}
         </div>

@@ -115,28 +115,28 @@ export default function CalendarCarousel() {
           </button>
         </div>
       </div>
-      <div className="flex justify-evenly my-2">
+      <div className="flex justify-evenly my-2 font-bold">
         <div className="h-[79px] w-[14%] text-center flex flex-col justify-center rounded-2xl font-Inter capitalize text-lg text-[#1e293b]">
           {fetchDate(previousDay3)}
-          <span className="text-[#94a3b8] block text-xs font-light">
+          <span className="text-[#94a3b8] font-normal block text-xs ">
             {fetchDay(previousDay3)}
           </span>
         </div>
         <div className="h-[79px] w-[14%] text-center flex flex-col justify-center rounded-2xl font-Inter capitalize text-lg text-[#1e293b]">
           {fetchDate(previousDay2)}
-          <span className="text-[#94a3b8] block text-xs font-light">
+          <span className="text-[#94a3b8] font-normal block text-xs ">
             {fetchDay(previousDay2)}
           </span>
         </div>
         <div className="h-[79px] w-[14%] text-center flex flex-col justify-center rounded-2xl font-Inter capitalize text-lg text-[#1e293b]">
           {fetchDate(previousDay1)}
-          <span className="text-[#94a3b8] block text-xs font-light">
+          <span className="text-[#94a3b8] font-normal block text-xs ">
             {fetchDay(previousDay1)}
           </span>
         </div>
         <div className="h-[79px] relative w-[14%] text-center flex flex-col justify-center rounded-2xl text-[#497CDE] bg-[#f0f3ff] font-Inter text-lg ">
           {fetchDate(selectedDay)}
-          <span className="block text-xs font-light">
+          <span className="font-normal  block text-xs font-light">
             {fetchDay(selectedDay)}
           </span>
           <div className="absolute bottom-0 text-[#496ADE] mx-auto left-0 right-0 ">
@@ -145,19 +145,19 @@ export default function CalendarCarousel() {
         </div>
         <div className="h-[79px] w-[14%] text-center flex flex-col justify-center rounded-2xl font-Inter capitalize text-lg text-[#1e293b]">
           {fetchDate(nextDay1)}
-          <span className="text-[#94a3b8] block text-xs font-light">
+          <span className="text-[#94a3b8] font-normal block text-xs ">
             {fetchDay(nextDay1)}
           </span>
         </div>
         <div className="h-[79px] w-[14%] text-center flex flex-col justify-center rounded-2xl font-Inter capitalize text-lg text-[#1e293b]">
           {fetchDate(nextDay2)}
-          <span className="text-[#94a3b8] block text-xs font-light">
+          <span className="text-[#94a3b8] font-normal block text-xs ">
             {fetchDay(nextDay2)}
           </span>
         </div>
         <div className="h-[79px] w-[14%] text-center flex flex-col justify-center rounded-2xl font-Inter capitalize text-lg text-[#1e293b]">
           {fetchDate(nextDay3)}
-          <span className="text-[#94a3b8] block text-xs font-light">
+          <span className="text-[#94a3b8] font-normal block text-xs ">
             {fetchDay(nextDay3)}
           </span>
         </div>

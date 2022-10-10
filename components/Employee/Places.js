@@ -5,14 +5,14 @@ export default function index() {
     <div className=" bg-white flex flex-col my-6 mx-auto items-center rounded-2xl w-full max-w-[420px] sm:max-w-md">
       <img src="/Employee/placesBg.png" className="w-full rounded-t-2xl" />
 
-      <div className="flex flex-row w-full mt-4 justify-evenly">
-        <div className="my-auto">
-          <button className="bg-[#E51735] w-fit font-Roboto uppercase text-white font-semibold px-1 rounded">
+      <div className="flex flex-row w-full mt-4 justify-evenly ">
+        <div className="flex flex-col justify-center">
+          <button className="bg-[#E51735] w-fit font-Roboto uppercase text-white font-semibold pl-1 pr-1.5 xs:text-base text-sm rounded">
             • Live
           </button>
         </div>
-        <div className="  text-2xl">
-          <span className="font-bold">{places} &nbsp;</span>
+        <div className="font-light font-Roboto  xs:text-2xl">
+          <span className="font-medium">{places} &nbsp;</span>
           places disponsibles
         </div>
       </div>
@@ -24,7 +24,7 @@ export default function index() {
               : places <= 75 && places > 50
               ? "bg-[#FFEB3B]"
               : "bg-[#F44336]"
-          } text-xs h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
+          } text-xs h-3 xs:h-5 font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
           style={{ width: `${places}%` }}
         />
       </div>
