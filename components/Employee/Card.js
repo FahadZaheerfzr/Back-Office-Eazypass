@@ -11,7 +11,7 @@ export default function Card({
   const router = useRouter();
   return (
     <div
-      className={`flex flex-col bg-white my-6 pt-4 px-4 xs:h-44 
+      className={`flex flex-col bg-white my-2 xs:my-6 pt-4 px-4 xs:h-44 
       xs:w-[390px] mx-auto rounded-2xl ${redirect && "cursor-pointer"}`}
       style={{ boxShadow: "0px 6px 20px rgba(14, 7, 51, 0.1)" }}
       onClick={() => {

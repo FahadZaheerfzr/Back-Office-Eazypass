@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import Avatars from "../Employee/Avatar";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import { useRouter } from "next/router";
 
 export default function Container() {
@@ -109,7 +107,7 @@ export default function Container() {
       <div className="p-4 rounded-2xl bg-white max-w-[420px] sm:max-w-md mx-auto">
         <div className="flex flex-col">
           <div className="flex justify-between">
-            <div className="font-Poppins text-xl font-medium capitalize ">
+            <div className="font-Poppins  xs:text-xl font-medium capitalize ">
               Calendrier
               <span className="text-[#7C8DB5] block">
                 {dateState.month + " " + dateState.year}
@@ -118,50 +116,53 @@ export default function Container() {
             <div className="flex text-center my-auto space-x-8">
               <button
                 onClick={handlePrev}
-                className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl "
+                className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 xs:px-4 px-2 xs:text-xl "
               >
                 <IoChevronBack className="mx-auto" />
               </button>
               <button
                 onClick={handleNext}
-                className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl "
+                className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 xs:px-4 px-2 xs:text-xl "
               >
                 <IoChevronForward className="mx-auto" />
               </button>
             </div>
           </div>
 
-          <div className="text-[#1E293B] font-Inter text-center my-6 pl-3 text-xl font-semibold">
+          <div className="text-[#1E293B] font-Inter text-center my-6 pl-3 xs:text-xl font-semibold">
             Demande ponctuelle - Télétravail
           </div>
           <div className="flex flex-col"></div>
-          <div className="font-Inter text-[#1E293B] pl-3 text-lg font-medium">
+          <div className="font-Inter text-[#1E293B] pl-3 text-sm xs:text-lg font-medium">
             Choisissez le jour
           </div>
           <div className="flex w-full my-2 justify-between px-3">
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 font-semibold rounded-lg">
+            <div className="flex flex-col justify-center xs:text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold rounded-lg">
               {previousDay.date}
-              <span className="text-xs capitalize font-Inter font-normal">
+              <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                 {previousDay.day}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#5E8BE2] w-[22.5%] font-Inter text-white align-middle h-36 font-semibold rounded-lg">
+            <div className="flex flex-col justify-center xs:text-2xl text-center bg-[#5E8BE2] w-[22.5%] font-Inter text-white align-middle h-24 xs:h-36 font-semibold rounded-lg">
               {dateState.date}
-              <span className="text-xs capitalize font-Inter font-normal">
+              <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                 {" "}
                 {dateState.day}{" "}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 font-semibold rounded-lg">
+            <div className="flex flex-col justify-center xs:text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold rounded-lg">
               {nextDay.date}
-              <span className="text-xs capitalize font-Inter font-normal">
+              <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                 {" "}
                 {nextDay.day}{" "}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-sm text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-36 font-semibold  rounded-lg">
+            <div className="flex flex-col justify-center text-xs xs:text-sm text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold  rounded-lg">
               Autre{" "}
-              <span className="text-xs capitalize font-Inter font-normal"> Date </span>
+              <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
+                {" "}
+                Date{" "}
+              </span>
               {/* 
               // when date picker will be used this library will be used
               <DatePicker
@@ -170,20 +171,20 @@ export default function Container() {
               /> */}
             </div>
           </div>
-          <div className="my-12">
+          <div className="my-4 xs:my-12">
             <Avatars />
           </div>
 
-          <div className="font-Inter text-[#1E293B] pl-3 flex flex-col font-medium">
+          <div className="font-Inter text-[#1E293B] pl-3 flex flex-col font-medium xs:text-base text-sm">
             <div>
               Commentaire
               <textarea
-                className="flex bg-[#F1F5F9] rounded-xl w-full h-[135px] p-2 resize-none"
+                className="flex bg-[#F1F5F9] rounded-xl w-full h-[135px] p-2 resize-none text-xs xs:text-base"
                 value={comments}
                 onChange={(event) => setComments(event.target.value)}
               />
             </div>
-            <div className="flex justify-center text-center mt-24">
+            <div className="flex justify-center text-center mt-6 xs:mt-24">
               <button
                 onClick={() => router.back()}
                 className="bg-gradient-to-br from-[#59dd2b] to-[#282eca] rounded-lg py-1.5 px-8 text-xl text-white font-Roboto font-bold"

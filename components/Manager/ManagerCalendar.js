@@ -9,18 +9,18 @@ export default function ManagerCalendar() {
 
   return (
     <div
-      className={`h-[220px] xs:w-[390px] rounded-[20px] xs:p-4
-      flex flex-col my-6 w-full mx-2 xs:mx-auto
-      p-2`}
+      className={`xs:h-[220px] xs:w-[390px] w-11/12 rounded-xl xs:rounded-[20px] 
+      p-2 xs:p-4 flex flex-col my-6 mx-auto max-w-[300px] xs:max-w-none
+      `}
       style={{
         background: "linear-gradient(205.81deg, #20DE33 0%, #555CFF 100%)",
       }}
     >
-      <div className="flex">
+      <div className="flex justify-center">
         <div>
-          <img src="/Employee/calendar.png" />
+          <img src="/Employee/calendar.png" className="xs:w-20 w-14" />
         </div>
-        <div className="font-Poppins text-lg font-semibold ml-2 xs:text-2xl xs:ml-4  my-auto">
+        <div className="font-Poppins font-semibold text-lg xs:text-2xl ml-4 my-auto">
           <span className="capitalize">{day + " "}</span>
           {date + " "} {month}
         </div>

@@ -31,27 +31,28 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className={`p-4 ${styles.container}`}>
-                  <div className="flex flex-col items-center">
-                    <div className="capitalize font-Roboto font-medium text-2xl">
+                <Dialog.Panel className={`p-2 xs:p-4 xs:w-[85%] w-full min-h-[400px] xs:min-h-[442px]  ${styles.container}`}>
+                  <div className="flex flex-col items-center ">
+                    <div className="capitalize font-Roboto font-medium text-lg xs:text-2xl">
                       Collaborateurs au bureau
                       <br />
                       <span className="capitalize">{day}</span>
                       {" " + date + " " + month + " " + year}
                     </div>
-                    <div className="w-1/2 flex rounded-full my-4 px-2">
+
+                    <div className="xs:w-52 w-40 flex rounded-full my-4 px-2">
                       <form className="flex items-center ">
                         <label htmlFor="simple-search" className="sr-only">
                           Search
                         </label>
                         <div className="relative w-full ">
                           <div className="flex text-black absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                            <BsSearch className="my-auto" size={25} />
+                            <BsSearch className="my-auto " />
                           </div>
                           <input
                             type="text"
                             id="simple-search"
-                            className="placeholder-black bg-opacity-10 bg-white text-center font-Roboto font-light rounded-full block w-full pl-10 p-2.5 "
+                            className="placeholder-black bg-opacity-10 bg-white text-center font-Roboto font-light rounded-full block w-full pl-10 p-1 xs:p-2.5 "
                             placeholder="Rechercher"
                             required
                           />
@@ -63,20 +64,20 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                       return (
                         <div
                           key={index}
-                          className="w-5/6 flex px-4 my-4 justify-between"
+                          className="w-full px-2 xs:w-11/12 flex xs:px-4 my-4 justify-between text-left bg"
                         >
-                          <div className="space-x-4 flex ">
+                          <div className="space-x-1 xs:space-x-4 flex ">
                             <img
-                              className="relative  z-20 inline-block h-10 w-10 rounded-full"
+                              className="relative  z-20 inline-block h-8 xs:h-10 w-8 xs:w-10 rounded-full"
                               src={avatar.avatar}
                               alt=""
                             />
-                            <div className="font-Roboto text-xl my-auto ">
+                            <div className="font-Roboto text-base xs:text-xl my-auto ">
                               {avatar.name}
                             </div>
                           </div>
-                          <div className="my-auto text-yellow-500">
-                            <IoStar size={25} />{" "}
+                          <div className="my-auto text-[#F4C01E]">
+                            <IoStar className="text-lg xs:text-2xl" />{" "}
                           </div>
                         </div>
                       );

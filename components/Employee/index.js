@@ -19,14 +19,14 @@ export default function Employee() {
       desc: "Déclarez votre présence au bureau et en télétravail",
       image: "/Employee/card2.svg",
       notis: 2,
-      redirect: '/employee/planner'
+      redirect: "/employee/planner",
     },
     {
       title: "Demande exceptionnelle",
       desc: "Soumettez une demande ponctuelle de télétravail ",
       image: "/Employee/card3.svg",
       notis: 1,
-      redirect: '/employee/calendar'
+      redirect: "/employee/calendar",
     },
     {
       title: "Documents à soumettre",

@@ -10,6 +10,7 @@ export default function Manager() {
           desc: "Révisez les déclarations télétravail/présentiel de votre équipe.",
           image: "/Employee/card3.svg",
           notis: 1,
+          redirect: "/manager/calendar",
         },
         {
           title: "Demandes exceptionnelles",
@@ -20,7 +21,8 @@ export default function Manager() {
       ];
 
   return (
-    <div className="bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479]">
+    <div className="bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] ">
+      <div className="mx-2">
       <Header />
       <ManagerCalendar/>
       {Cards.map((card, index) => (
@@ -32,8 +34,10 @@ export default function Manager() {
           image={card.image}
           notis={card.notis}
           icon={card.icon}
+          redirect={card.redirect}
         />
       ))}
+    </div>
     </div>
   );
 }

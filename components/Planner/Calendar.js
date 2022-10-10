@@ -107,7 +107,7 @@ export default function Calendar() {
               </span>
               {today.toLocaleString("fr", { day: "2-digit" })}
             </div>
-            <div className="w-2/3 xs:text-sm text-xs font-Roboto font-light">
+            <div className="w-2/3 xs:text-sm text-xs font-Roboto font-light text-center">
               <span
                 className={`${
                   places <= 50 ? "text-[#FFCE31]" : "text-[#F44336]"
@@ -201,7 +201,7 @@ export default function Calendar() {
         {monthFullOfDates.map((date, index) => {
           return (
             <div
-              className={` font-Poppins text-sm xs:text-[20px] relative xs:mb-4 mb-2 font-normal
+              className={`xs:text-center xs:pl-0 pl-3 text-left font-Poppins text-sm xs:text-[20px] relative xs:mb-4 mb-2 font-normal
             `}
               key={index}
             >
@@ -226,7 +226,7 @@ export default function Calendar() {
                     className={`text-[#11A628] cursor-pointer absolute top-0 bottom-0 my-auto w-4
                   ${
                     date.timestamp.getDate() == today.getDate()
-                      ? "-right-1.5"
+                      ? "xs:-right-1.5 -right-1"
                       : "right-0"
                   }`}
                   />

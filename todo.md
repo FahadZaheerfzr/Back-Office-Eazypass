@@ -7,7 +7,7 @@
 - [x] use manager calendar coding in employee calendar
 - [x] how to make table with loops
 - [x] how to store monthly date in array javascript
-- [ ] make responsive
-- [ ] make spacing n stuff as it is
-- [ ] employee/planner & manager font set
-- [ ] card, avatar, places, employee calendar made responsive
+- [x] make spacing n stuff as it is
+- [x] employee responsive
+- [x] manager responsive
+- [ ] drag n drop not working on mobile
