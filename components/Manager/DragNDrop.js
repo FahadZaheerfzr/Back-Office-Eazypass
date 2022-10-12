@@ -66,6 +66,7 @@ export default class ToDoDragDropDemo extends Component {
   };
 
   onDrop = (event, cat) => {
+    console.log("drag over on", cat);
     let id = event.dataTransfer.getData("id");
 
     let employees = this.state.employees.filter((employee) => {
@@ -90,16 +91,18 @@ export default class ToDoDragDropDemo extends Component {
       employees[employee.type].push(
         <div
           key={employee.id}
-          onDragStart={(event) =>
-            this.onDragStart(event, employee.id)
-          }
+          onTouchStart={(event) => {
+            console.log("touch detected", event);
+          }}
+          onDragStart={(event) => this.onDragStart(event, employee.id)}
           draggable
-          className={`ml-[20%] cursor-pointer font-normal rounded-lg
-            text-left px-2 font-Poppins text-xs xs:text-sm my-2 xs:my-5`}
+          className={` cursor-pointer font-normal rounded-lg
+            text-left px-2 font-Poppins text-xs xs:text-sm my-2 xs:my-5 shadow-xl w-fit
+            `}
         >
           <FaCircle
             className={`inline-block text-[10px] text-white mr-2
-          ${employee.type == "bureau" ? "text-[#347AE2]" : "text-[#772AD8]"}`}
+            ${employee.type == "bureau" ? "text-[#347AE2]" : "text-[#772AD8]"}`}
           />
           {employee.employeeName}
         </div>
@@ -126,7 +129,7 @@ export default class ToDoDragDropDemo extends Component {
               this.onDrop(event, "bureau");
             }}
           >
-            {employees.bureau}
+            <div className="w-3/5 mx-auto">{employees.bureau}</div>
           </div>
         </div>
 
@@ -134,7 +137,10 @@ export default class ToDoDragDropDemo extends Component {
           <div
             className={`mb-2 xs:mb-6 flex justify-center font-normal text-center bg-[#8572FF] rounded-[10px] font-Poppins xs:text-xl text-white`}
           >
-            <img src="/Employee/teletravail.png" className="h-5 w-5 xs:h-7 xs:w-7" />
+            <img
+              src="/Employee/teletravail.png"
+              className="h-5 w-5 xs:h-7 xs:w-7"
+            />
             <span className="mx-2">Télétravail</span>
           </div>
 
@@ -143,13 +149,19 @@ export default class ToDoDragDropDemo extends Component {
             onDragOver={(event) => this.onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "teletravail")}
           >
-            {employees.teletravail}
+            <div className="w-3/5 mx-auto">{employees.teletravail}</div>
           </div>
         </div>
         <div className="mx-auto">
-            <button 
-            style={{background: "linear-gradient(136.64deg, #59DD2B 1.59%, #282ECA 98.89%)"}}
-            className="xs:mt-0 mt-4 text-white  xs:w-[146px] font-Roboto font-bold text-xl rounded-[10px] xs:px-0 px-8 xs:py-2 mx-auto">Valider</button>
+          <button
+            style={{
+              background:
+                "linear-gradient(136.64deg, #59DD2B 1.59%, #282ECA 98.89%)",
+            }}
+            className="xs:mt-0 mt-4 text-white  xs:w-[146px] font-Roboto font-bold text-xl rounded-[10px] xs:px-0 px-8 xs:py-2 mx-auto"
+          >
+            Valider
+          </button>
         </div>
       </div>
     );
