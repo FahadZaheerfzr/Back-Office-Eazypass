@@ -194,7 +194,7 @@ export default function Container() {
               // trigger a click on the input
               onClick={() => {
                 setShowDatePicker(true);
-                console.log('sohwing')
+                console.log("sohwing");
                 if (startDate) {
                   setStartDate(null);
                 }
@@ -219,7 +219,7 @@ export default function Container() {
                   open={showDatePicker}
                 />
               </div>
-              {!startDate  ? (
+              {!startDate ? (
                 <>
                   <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                     Date
