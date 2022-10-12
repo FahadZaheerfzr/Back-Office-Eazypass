@@ -10,4 +10,6 @@
 - [x] make spacing n stuff as it is
 - [x] employee responsive
 - [x] manager responsive
-- [ ] drag n drop not working on mobile
+- [x] drag n drop not working on mobile
+- [ ] date picker
+- [ ] only select 7 days

@@ -144,7 +144,9 @@ export default function Calendar() {
                 </span>
               </li>
             </div>
-            <div className={`xs:text-lg text-[#787878] xs:mt-2  `}>Après-midi</div>
+            <div className={`xs:text-lg text-[#787878] xs:mt-2  `}>
+              Après-midi
+            </div>
 
             <div className="text-[#1400FF] ">
               <li>
@@ -174,10 +176,10 @@ export default function Calendar() {
 
       <div className="my-4 xs:my-8">
         <div className="flex justify-center space-x-4">
-					<FaCircle/>
-					<FaCircle className="text-xs my-auto text-slate-50" />
-					<FaCircle className="text-xs my-auto text-slate-50" />
-				</div>
+          <FaCircle />
+          <FaCircle className="text-xs my-auto text-slate-50" />
+          <FaCircle className="text-xs my-auto text-slate-50" />
+        </div>
       </div>
 
       <div className=" text-center  font-Poppins text-lg xs:text-2xl capitalize font-normal">
@@ -187,7 +189,10 @@ export default function Calendar() {
       <div className="grid grid-cols-7 w-full text-center">
         {dayNames.map((dayName, index) => {
           return (
-            <div className="font-Roboto xs:text-2xl text-lg font-normal my-2 xs:my-4" key={index}>
+            <div
+              className="font-Roboto xs:text-2xl text-lg font-normal my-2 xs:my-4"
+              key={index}
+            >
               {dayName}
             </div>
           );
@@ -215,8 +220,11 @@ export default function Calendar() {
 
               <span
                 onClick={() => {
-                  if (!date.hasPassed) {
+                  const limitDate = new Date();
+                  limitDate.setDate(limitDate.getDate() + 7);
+                  if (!date.hasPassed && date.timestamp < limitDate) {
                     openModal();
+                    console.log(typeof limitDate);
                   }
                   setClickedDate(date);
                 }}

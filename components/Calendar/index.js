@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import Avatars from "../Employee/Avatar";
 import { useRouter } from "next/router";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Container() {
+  const inputRef = useRef(null);
   const router = useRouter();
   // call getDate function on date object and do +- 1 to get the next or previous day
   // use timestamp of middle div to get next or previous day
   // make state for previous and next day and set it to the timestamp of the middle div +- 1
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
   const [comments, setComments] = useState("");
   /* INITIALIZING DATE STATES */
+  const [selectedDay, setSelectedDay] = useState("");
   const [dateState, setDateState] = useState({
     timestamp: new Date(),
     date: new Date().toLocaleString("fr", { day: "2-digit" }),
@@ -40,10 +45,10 @@ export default function Container() {
       year: date.toLocaleString("fr", { year: "numeric" }),
     };
   });
-  const [selectedDay, setSelectedDay] = useState(dateState);
 
   /* UPDATING DATES */
   const handleNext = () => {
+    setStartDate(null);
     const date = new Date(dateState.timestamp);
     date.setDate(date.getDate() + 1);
     setDateState({
@@ -53,6 +58,7 @@ export default function Container() {
       month: date.toLocaleString("fr", { month: "long" }),
       year: date.toLocaleString("fr", { year: "numeric" }),
     });
+    setSelectedDay(date);
     const pDate = new Date(previousDay.timestamp);
     pDate.setDate(pDate.getDate() + 1);
     setPreviousDay({
@@ -74,6 +80,7 @@ export default function Container() {
   };
 
   const handlePrev = () => {
+    setStartDate(null);
     const date = new Date(dateState.timestamp);
     date.setDate(date.getDate() - 1);
     setDateState({
@@ -83,6 +90,8 @@ export default function Container() {
       month: date.toLocaleString("fr", { month: "long" }),
       year: date.toLocaleString("fr", { year: "numeric" }),
     });
+    setSelectedDay(date);
+
     const pDate = new Date(previousDay.timestamp);
     pDate.setDate(pDate.getDate() - 1);
     setPreviousDay({
@@ -102,6 +111,8 @@ export default function Container() {
       year: nDate.toLocaleString("fr", { year: "numeric" }),
     });
   };
+
+  console.log("selected", selectedDay.toLocaleString("fr", { day: "2-digit" }));
   return (
     <>
       <div className="p-4 rounded-2xl bg-white max-w-[420px] sm:max-w-md mx-auto">
@@ -137,38 +148,95 @@ export default function Container() {
             Choisissez le jour
           </div>
           <div className="flex w-full my-2 justify-between px-3">
-            <div className="flex flex-col justify-center xs:text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold rounded-lg">
+            <div
+              onClick={() => {
+                handlePrev();
+              }}
+              className="flex flex-col justify-center xs:text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold rounded-lg"
+            >
               {previousDay.date}
               <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                 {previousDay.day}
               </span>
             </div>
-            <div className="flex flex-col justify-center xs:text-2xl text-center bg-[#5E8BE2] w-[22.5%] font-Inter text-white align-middle h-24 xs:h-36 font-semibold rounded-lg">
+            <div
+              onClick={() => {
+                setSelectedDay(dateState);
+                setShowDatePicker(false);
+                setStartDate(null);
+              }}
+              className={`flex flex-col justify-center xs:text-2xl text-center w-[22.5%] font-Inter align-middle h-24 xs:h-36 font-semibold rounded-lg
+              ${
+                startDate
+                  ? "bg-[#F1F5F9] text-[#4A4A4A] "
+                  : "bg-[#5E8BE2] text-white "
+              }`}
+            >
               {dateState.date}
               <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                 {" "}
                 {dateState.day}{" "}
               </span>
             </div>
-            <div className="flex flex-col justify-center xs:text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold rounded-lg">
+            <div
+              onClick={() => {
+                handleNext();
+              }}
+              className="flex flex-col justify-center xs:text-2xl text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold rounded-lg"
+            >
               {nextDay.date}
               <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
                 {" "}
                 {nextDay.day}{" "}
               </span>
             </div>
-            <div className="flex flex-col justify-center text-xs xs:text-sm text-center bg-[#F1F5F9] w-[22.5%] font-Inter text-[#4A4A4A] align-middle h-24 xs:h-36 font-semibold  rounded-lg">
-              Autre{" "}
-              <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
-                {" "}
-                Date{" "}
-              </span>
-              {/* 
-              // when date picker will be used this library will be used
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-              /> */}
+            <div
+              // trigger a click on the input
+              onClick={() => {
+                setShowDatePicker(true);
+                console.log('sohwing')
+                if (startDate) {
+                  setStartDate(null);
+                }
+              }}
+              className={`flex flex-col justify-center text-xs xs:text-sm text-center  w-[22.5%] font-Inter align-middle h-24 xs:h-36 font-semibold  rounded-lg
+              ${
+                startDate
+                  ? "bg-[#5E8BE2] text-white "
+                  : "bg-[#F1F5F9] text-[#4A4A4A] "
+              }`}
+            >
+              <div className={`${startDate && "hidden"}`}>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => {
+                    setStartDate(date);
+                    setSelectedDay(date);
+                    setShowDatePicker(false);
+                  }}
+                  autoFocus
+                  placeholderText="Autre"
+                  open={showDatePicker}
+                />
+              </div>
+              {!startDate  ? (
+                <>
+                  <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal">
+                    Date
+                  </span>
+                </>
+              ) : (
+                <span className="leading-3">
+                  <span className="text-xl block">
+                    {startDate.toLocaleString("fr", { day: "2-digit" })}
+                  </span>
+                  {" " + startDate.toLocaleString("fr", { month: "short" })}
+                  {" " + startDate.toLocaleString("fr", { year: "numeric" })}
+                  <span className="text-[10px] xs:text-xs capitalize font-Inter font-normal block">
+                    {startDate.toLocaleString("fr", { weekday: "short" })}
+                  </span>
+                </span>
+              )}
             </div>
           </div>
           <div className="my-4 xs:my-12">

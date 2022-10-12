@@ -50,3 +50,12 @@ a {
   border-radius: 8px;
 }
 
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F1F5F9;
+}
