@@ -125,7 +125,7 @@ export default function Login() {
                     </div>
 
                     <div className='mt-8'>
-                        <button onClick={submitForm} type='button' className={`${styles.loginButton}`}>Login</button>
+                        <button type='button' className={`${styles.loginButton}`}>Login</button>
                     </div>
 
                     <div className=' mt-4'>

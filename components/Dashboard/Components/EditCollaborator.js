@@ -24,18 +24,18 @@ export default function EditCollaborator({ toggleVisible, collaborator }) {
   const result = rows.find(obj => {
     return obj.id === collaborator
   })
-  console.log(result);
+
   return (
     <div className={`${Styles.editCollaboratorForm} h-full w-full pt-12 pb-8 pr-8`}>
       <div className='flex  pl-12'>
-        <Image className='cursor-pointer' src={'/Dashboard/back-arrow.svg'} width={45} height={31}
+        <Image className='cursor-pointer' src={'/Dashboard/Home/back-arrow.svg'} width={45} height={31}
           onClick={toggleVisible}
         />
         <span className='font-Roboto font-medium text-2xl ml-5'>Retour</span>
       </div>
 
       <div className='flex items-center'>
-        <Image src={"/Dashboard/dummy-pic.svg"} width={300} height={300} />
+        <Image src={"/Dashboard/Home/dummy-pic.svg"} width={300} height={300} />
 
         <span className='font-Roboto font-medium text-3xl text-[#373737] mr-6'>{result.nom}</span>
         <Image src={"/Dashboard/edit.svg"} width={21} height={23} />
