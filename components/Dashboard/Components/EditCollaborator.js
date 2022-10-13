@@ -38,7 +38,7 @@ export default function EditCollaborator({ toggleVisible, collaborator }) {
         <Image src={"/Dashboard/Home/dummy-pic.svg"} width={300} height={300} />
 
         <span className='font-Roboto font-medium text-3xl text-[#373737] mr-6'>{result.nom}</span>
-        <Image src={"/Dashboard/edit.svg"} width={21} height={23} />
+        <Image src={"/Dashboard/Home/edit.svg"} width={21} height={23} />
       </div>
 
       <div className='pl-[9%]'>
@@ -78,7 +78,7 @@ export default function EditCollaborator({ toggleVisible, collaborator }) {
           </div>
           <div className='ml-[25%]'>
             <div className='value flex flex-col justify-center h-14'>
-              <span className='text-xl font-Roboto font-medium'>{result.fanction}</span>
+              <span className='text-xl font-Roboto font-medium capitalize'>{result.fanction}</span>
               <span className='text-sm font-Roboto text-[#5d5d5d]'>Service {result.service}</span>
             </div>
 
