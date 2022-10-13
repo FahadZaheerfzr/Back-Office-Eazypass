@@ -14,6 +14,12 @@
     font-size: 12px;
 }
 
+.remindersBoxShadow{
+    border: 1px solid #E6E5E5;
+    box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
 @media screen and (max-height:1400px) {
     .customHeight{
         height: 1000px;
