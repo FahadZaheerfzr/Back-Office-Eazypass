@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Styles from './Profile.module.css'
+import { useRouter } from 'next/router'
 
 export default function Topbar({ name, description, icon }) {
     const [visible, setVisible] = useState(false);
-
+    const router = useRouter();
     const toggleVisible = () => {
         setVisible(!visible);
     }
@@ -51,28 +52,38 @@ export default function Topbar({ name, description, icon }) {
                         </div>
                         {visible?
                         <div className={`${Styles.changeAccount} z-10 mt-0 pt-3 pb-4 flex flex-col absolute`}>
-                            <div className='flex items-center pl-2'>
+                            <div className='flex items-center pl-2 cursor-pointer'
+                            >
                                 <div className={`${Styles.profileRectangle} w-10 h-10`}>
-                                    <Image src={'/Dashboard/user.svg'} width={100} height={100} />
+                                    <Image src={'/Dashboard/Home/user.svg'} width={100} height={100} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Administrateur</span>
+                              
                                 <div className='ml-4'>
-                                <Image src={'/Dashboard/active.svg'} width={15} height={15} />
+                                <Image src={'/Dashboard/Home/active.svg'} width={15} height={15} />
                                 </div>
+                            
+                               
                             </div>
 
-                            <div className='flex items-center mt-4 pl-2'>
+                            <div className='flex items-center mt-4 pl-2 cursor-pointer'
+                            onClick={()=>router.push("/manager")}
+                            >
                                 <div className={`${Styles.profileRectangle} w-10 h-10`}>
-                                    <Image src={'/Dashboard/manager.svg'} width={100} height={100} />
+                                    <Image src={'/Dashboard/Home/manager.svg'} width={100} height={100} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Manager</span>
+                               
                             </div>
 
-                            <div className='flex items-center mt-4 pl-2'>
+                            <div className='flex items-center mt-4 pl-2 cursor-pointer'
+                            onClick={()=>router.push("/employee")}
+                            >
                                 <div className={`${Styles.profileRectangle} w-10 h-10 flex justify-center items-center`}>
-                                    <Image src={'/Dashboard/person.svg'} width={14} height={14} />
+                                    <Image src={'/Dashboard/Home/person.svg'} width={14} height={14} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Collaborateur</span>
+                                
                             </div>
                         </div>:null
                         }
