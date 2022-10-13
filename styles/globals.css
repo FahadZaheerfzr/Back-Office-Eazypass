@@ -51,6 +51,26 @@ a {
   border-radius: 8px;
 }
 
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F1F5F9;
+}
+
+.my-box{
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  justify-content: center;
+  /* Shadow */
+  box-shadow: 0px 2px 10px rgba(124, 141, 181, 0.12);
+  border-radius: 8px;
+}
+
 .big-box {
   /* Drop-shadow */
   box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);

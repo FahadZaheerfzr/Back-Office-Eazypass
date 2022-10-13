@@ -7,6 +7,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'xs': '400px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         Poppins: ["Poppins", ...defaultTheme.fontFamily.sans],

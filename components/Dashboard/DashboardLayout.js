@@ -7,6 +7,8 @@ import Collaborators from './Mains/Collaborators'
 import Documents from './Mains/Documents'
 import Telework from './Mains/Telework'
 import Flex from './Mains/Flex'
+import Settings from './Mains/Settings'
+import Reminders from './Mains/Reminders'
 
 const pageHeadingText = {
   "Résumé": {
@@ -19,7 +21,8 @@ const pageHeadingText = {
   "Rappels": {
     "heading": "Rappels",
     "description": "Définissez le rythme des rappels pour que vos collaborateurs n’oublient pas leur déclaration",
-    "icon": "/Dashboard/Sidebar/bell-black.svg"
+    "icon": "/Dashboard/Sidebar/bell-black.svg",
+    "component": <Reminders />,
 
   },
   "Collaborateurs": {
@@ -51,6 +54,7 @@ const pageHeadingText = {
     "heading": "Paramètres",
     "description": "Configurez vos préférences",
     "icon": "/Dashboard/Sidebar/settings-black.svg",
+    "component": <Settings />,
   },
 
 }
@@ -71,8 +75,12 @@ export default function DashboardLayout(props) {
       <Head>
         <title>{props.title}</title>
       </Head>
+
+      <div className='lg:hidden flex text-red-600 h-screen justify-center items-center'>
+        Super Admin needs to login through desktop
+      </div>
       
-      <div className='w-full flex'>
+      <div className='hidden lg:flex w-full'>
         <div className={`bg-white md:fixed z-40 ${visible?'md:block':'md:hidden'} lg:block md:w-[30%] lg:w-[20%] lg:fixed`}>
           <Sidebar handleClick={handleClick} active={active} />
         </div>
