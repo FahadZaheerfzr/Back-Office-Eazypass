@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import Employee from "../../components/Employee";
+import Mobile from "../../components/Employee/Mobile";
+import Desktop from "../../components/Employee/Desktop";
 export default function Home() {
   return (
     <div>
@@ -11,8 +12,11 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">
-        <Employee />
+      <div className="md:hidden">
+        <Mobile />
+      </div>
+      <div className="hidden md:block">
+        <Desktop />
       </div>
     </div>
   );

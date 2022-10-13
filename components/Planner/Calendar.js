@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
-import { MdCancel } from "react-icons/md";
-import { BiCheckCircle } from "react-icons/bi";
+
 import { FaCircle } from "react-icons/fa";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import DateCard from "./DateCard";
 
 import DialogBox from "./DialogBox";
 
@@ -21,9 +21,7 @@ export default function Calendar() {
     const month = date.toLocaleString("fr", { month: "long" });
     return month;
   };
-
-  const [isOpen, setIsOpen] = useState(false);
-
+  /* MODAL FUNCTIONS */
   function closeModal() {
     setIsOpen(false);
   }
@@ -32,15 +30,39 @@ export default function Calendar() {
     setIsOpen(true);
   }
 
+  /* STATES AND VARIBALES */
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [showNextMonth, setShowNextMonth] = useState(false);
   const [clickedDate, setClickedDate] = useState();
   const today = new Date();
   const todayDate = today.getDate();
   const currentMonth = today.getMonth();
   const currentYear = today.getFullYear();
   const daysInMonth = 32 - new Date(currentYear, currentMonth, 32).getDate();
+  const daysInNextMonth =
+    32 - new Date(currentYear, currentMonth + 1, 32).getDate();
   const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const nextMonthFirstDate = new Date(currentYear, currentMonth + 1, 1);
 
-  const [monthFullOfDates, setMonthFullOfDates] = useState(() => {
+  const nextMonday = new Date();
+  nextMonday.setDate(
+    nextMonday.getDate() + ((1 + 7 - nextMonday.getDay()) % 7 || 7)
+  );
+  const [nextWeek] = useState(() => {
+    const nextWeek = [];
+    for (let i = 0; i < 7; i++) {
+      const start = new Date(nextMonday);
+      start.setDate(start.getDate() + i);
+      start.setHours(0, 0, 0, 0);
+      const day = start.toDateString();
+      nextWeek.push(day);
+    }
+    return nextWeek;
+  });
+
+  /* MONTH LISTS */
+  const [currentMonthList, setCurrentMonthList] = useState(() => {
     const dates = [];
     for (let i = 1; i <= daysInMonth; i++) {
       const timestamp = new Date(currentYear, currentMonth, i);
@@ -51,7 +73,7 @@ export default function Calendar() {
         currentYear === today.getFullYear();
       const hasPassed = timestamp < today;
       const declarationStatus =
-        timestamp.getDate() <= today.getDate()
+        timestamp.getDate() < nextMonday.getDate()
           ? ["declared", "not declared"][Math.floor(Math.random() * 2)]
           : "pending";
       const morningMode =
@@ -63,6 +85,7 @@ export default function Calendar() {
           ? ["Télétravail", "Bureau"][Math.floor(Math.random() * 2)]
           : "";
       const fixed = false;
+      const isEnabled = nextWeek.includes(timestamp.toDateString());
 
       dates.push({
         timestamp,
@@ -73,11 +96,50 @@ export default function Calendar() {
         morningMode,
         afternoonMode,
         fixed,
+        isEnabled,
       });
+      if (isEnabled) {
+        console.log(timestamp, "is enabled");
+      }
     }
     return dates;
   });
-  const emptyDivs = fetchDayNumber(monthFullOfDates[0].timestamp);
+  const [nextMonthList, setNextMonthList] = useState(() => {
+    const dates = [];
+    for (let i = 1; i <= daysInNextMonth; i++) {
+      const timestamp = new Date(currentYear, currentMonth + 1, i);
+      const date = i;
+      const isToday = false;
+      const hasPassed = false;
+      const declarationStatus =
+        timestamp < nextMonday
+          ? ["declared", "not declared"][Math.floor(Math.random() * 2)]
+          : "pending";
+      const morningMode = "";
+      const afternoonMode = "";
+      const fixed = false;
+      const isEnabled = nextWeek.includes(timestamp.toDateString());
+
+      dates.push({
+        timestamp,
+        date,
+        isToday,
+        hasPassed,
+        declarationStatus,
+        morningMode,
+        afternoonMode,
+        fixed,
+        isEnabled,
+      });
+      if (isEnabled) {
+        console.log(timestamp, "is enabled");
+      }
+    }
+    return dates;
+  });
+
+  const emptyDivs = fetchDayNumber(currentMonthList[0].timestamp);
+  const emptyDivsNextMonth = fetchDayNumber(nextMonthFirstDate);
 
   return (
     <div className="max-w-[428px] mx-auto font-medium my-10 xs:my-20">
@@ -136,8 +198,8 @@ export default function Calendar() {
                 <span
                   className={`text-[#5A3A3A] relative -left-4 text-sm xs:text-base pl-2 font-normal`}
                 >
-                  {monthFullOfDates[todayDate - 1].morningMode ? (
-                    <>{monthFullOfDates[todayDate - 1].morningMode}</>
+                  {currentMonthList[todayDate - 1].morningMode ? (
+                    <>{currentMonthList[todayDate - 1].morningMode}</>
                   ) : (
                     <>Not declared</>
                   )}
@@ -153,8 +215,8 @@ export default function Calendar() {
                 <span
                   className={`text-[#5A3A3A] relative -left-4 text-sm xs:text-base pl-2 font-normal`}
                 >
-                  {monthFullOfDates[todayDate - 1].afternoonMode ? (
-                    <>{monthFullOfDates[todayDate - 1].afternoonMode}</>
+                  {currentMonthList[todayDate - 1].afternoonMode ? (
+                    <>{currentMonthList[todayDate - 1].afternoonMode}</>
                   ) : (
                     <>Not declared</>
                   )}
@@ -181,10 +243,35 @@ export default function Calendar() {
           <FaCircle className="text-xs my-auto text-slate-50" />
         </div>
       </div>
-
-      <div className=" text-center  font-Poppins text-lg xs:text-2xl capitalize font-normal">
-        {" "}
-        {fetchMonth(today) + " " + currentYear}
+      {/* CALENDAR STARTS HERE */}
+      <div className=" text-center  font-Poppins text-lg xs:text-2xl capitalize font-normal flex justify-between">
+        <div className="">
+          <button
+            onClick={() => {
+              setShowNextMonth(false);
+            }}
+            className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-2 xs:px-4 xs:text-xl "
+          >
+            <IoChevronBack className="mx-auto" />
+          </button>
+        </div>
+        <div>
+          {!showNextMonth ? (
+            <>{fetchMonth(today) + " " + currentYear}</>
+          ) : (
+            <>{fetchMonth(nextMonthFirstDate) + " " + currentYear}</>
+          )}
+        </div>
+        <div className="">
+          <button
+            onClick={() => {
+              setShowNextMonth(true);
+            }}
+            className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-2 xs:px-4 xs:text-xl "
+          >
+            <IoChevronForward className="mx-auto" />
+          </button>
+        </div>
       </div>
       <div className="grid grid-cols-7 w-full text-center">
         {dayNames.map((dayName, index) => {
@@ -198,75 +285,65 @@ export default function Calendar() {
           );
         })}
 
-        {emptyDivs > 0 &&
-          [...Array(emptyDivs)].map((_, index) => {
-            return <div className="mt-3" key={index}></div>;
-          })}
+        {!showNextMonth
+          ? emptyDivs > 0 &&
+            [...Array(emptyDivs)].map((_, index) => {
+              return <div className="mt-3" key={index}></div>;
+            })
+          : emptyDivsNextMonth > 0 &&
+            [...Array(emptyDivsNextMonth)].map((_, index) => {
+              return <div className="mt-3" key={index}></div>;
+            })}
 
-        {monthFullOfDates.map((date, index) => {
-          return (
-            <div
-              className={`xs:text-center xs:pl-0 pl-3 text-left font-Poppins text-sm xs:text-[20px] relative xs:mb-4 mb-2 font-normal
-            `}
-              key={index}
-            >
-              <span
-                className={`${
-                  date.isToday && "text-[#B2BBC8] bg-black rounded-full p-1"
-                } `}
-              >
-                {fetchDate(date.timestamp)}
-              </span>
+        {!showNextMonth
+          ? currentMonthList.map((date, index) => {
+              return (
+                <>
+                  <DateCard
+                    key={index}
+                    date={date}
+                    fetchDate={fetchDate}
+                    today={today}
+                    index={index}
+                    setClickedDate={setClickedDate}
+                    openModal={openModal}
+                    enabledDays={nextWeek}
+                  />
+                </>
+              );
+            })
+          : nextMonthList.map((date, index) => {
+              return (
+                <>
+                  <DateCard
+                    key={index}
+                    date={date}
+                    fetchDate={fetchDate}
+                    today={today}
+                    index={index}
+                    setClickedDate={setClickedDate}
+                    openModal={openModal}
+                    enabledDays={nextWeek}
+                  />
+                </>
+              );
+            })}
 
-              <span
-                onClick={() => {
-                  const limitDate = new Date();
-                  limitDate.setDate(limitDate.getDate() + 7);
-                  if (!date.hasPassed && date.timestamp < limitDate) {
-                    openModal();
-                    console.log(typeof limitDate);
-                  }
-                  setClickedDate(date);
-                }}
-              >
-                {date.declarationStatus === "declared" ? (
-                  <BiCheckCircle
-                    className={`text-[#11A628] cursor-pointer absolute top-0 bottom-0 my-auto w-4
-                  ${
-                    date.timestamp.getDate() == today.getDate()
-                      ? "xs:-right-1.5 -right-1"
-                      : "right-0"
-                  }`}
-                  />
-                ) : date.declarationStatus === "not declared" ? (
-                  <MdCancel
-                    className={`text-[#ff3b3b] cursor-pointer absolute top-0 bottom-0 my-auto w-4
-                  ${
-                    date.timestamp.getDate() == today.getDate()
-                      ? "-right-1.5"
-                      : "right-0"
-                  }`}
-                  />
-                ) : (
-                  <BsFillQuestionCircleFill
-                    className={`text-[#F9CF00] cursor-pointer absolute top-0 bottom-0 my-auto w-4
-                  ${
-                    date.timestamp.getDate() == today.getDate()
-                      ? "-right-1.5"
-                      : "right-0"
-                  }`}
-                  />
-                )}
-              </span>
-            </div>
-          );
-        })}
-        <DialogBox
-          isOpen={isOpen}
-          closeModal={closeModal}
-          date={clickedDate}
-          setDate={setMonthFullOfDates}
-        />
+        {!showNextMonth ? (
+          <DialogBox
+            isOpen={isOpen}
+            closeModal={closeModal}
+            date={clickedDate}
+            setDate={setCurrentMonthList}
+          />
+        ) : (
+          <DialogBox
+            isOpen={isOpen}
+            closeModal={closeModal}
+            date={clickedDate}
+            setDate={setNextMonthList}
+          />
+        )}
       </div>
     </div>
   );

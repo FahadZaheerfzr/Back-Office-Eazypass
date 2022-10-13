@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../../components/Employee/Header";
+import Header from "./Header";
 import SmallCalendar from "./SmallCalendar";
 import Places from "./Places";
 import Avatar from "./Avatar";
 import Card from "./Card";
 
-export default function Employee() {
+export default function Mobile() {
   const Cards = [
     {
       title: "Télétravail",
@@ -37,7 +37,7 @@ export default function Employee() {
   ];
 
   return (
-    <div className="md:hidden bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] px-2 sm:px-0 mx-auto pb-8">
+    <div className="bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] px-2 sm:px-0 mx-auto pb-8">
       <Header />
       <SmallCalendar />
       <Places />
