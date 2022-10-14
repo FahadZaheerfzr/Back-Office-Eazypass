@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React from 'react'
 import Stats from '../Components/Stats'
 import Table from "../Components/Table";
@@ -50,6 +51,7 @@ const stats = [
 ]
 
 export default function Dashboard() {
+    const router = useRouter();
     return (
         <div className='w-full'>
             <div className='flex justify-end'>
@@ -72,10 +74,13 @@ export default function Dashboard() {
                 <DynamicChart />
                 <DynamicRoundedChart />
             </div>
-
-            <div>
+            {
+                router.pathname === "/manager"? null
+                : <div>
                 <Table />
             </div>
+           
+            }
            
         </div>
     )
