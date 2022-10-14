@@ -113,7 +113,6 @@ export default function Container() {
     });
   };
 
-  console.log("selected", selectedDay.toLocaleString("fr", { day: "2-digit" }));
   return (
     <>
       <div className="p-4 rounded-2xl bg-white max-w-[420px] sm:max-w-md mx-auto">

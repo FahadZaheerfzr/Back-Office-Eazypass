@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Avatar({ name, image, border }) {
-  console.log("border is ", border);
   return (
     <div className="flex flex-col items-center text-[#A0AEC0] text-xs capitalize ">
       <div
