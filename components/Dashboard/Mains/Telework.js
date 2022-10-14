@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 
 import Image from 'next/image';
+import { useRouter } from "next/router";
 import React, { useState } from 'react'
 import RangeSlider from '../Components/RangeSlider'
 import Styles from './Dashboard.module.css'
@@ -10,7 +11,7 @@ const DynamicTeleworkTable = dynamic(() => import('../Components/TeleworkTable')
 });
 export default function Telework() {
     const [percentValue, setPercentValue] = useState(20);
-
+    const router = useRouter();
     const decreaseValue = () => {
         if (percentValue > 0) {
             setPercentValue(percentValue - 10);
@@ -22,6 +23,13 @@ export default function Telework() {
             setPercentValue(percentValue + 10);
         }
 
+    }
+    if (router.pathname === '/manager'){
+        return(
+            <div>
+                Manager Telework
+            </div>
+        )
     }
     return (
         <div className={`mt-11 ${Styles.customHeight} py-5 border border-[#E5E5E5] rounded-xl overflow-scroll`}>

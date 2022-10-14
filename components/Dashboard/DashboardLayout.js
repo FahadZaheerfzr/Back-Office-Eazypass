@@ -9,10 +9,12 @@ import Telework from './Mains/Telework'
 import Flex from './Mains/Flex'
 import Settings from './Mains/Settings'
 import Reminders from './Mains/Reminders'
+import { useRouter } from 'next/router'
 
 const pageHeadingText = {
   "Résumé": {
     "heading": "Bienvenue à nouveau, Maxime",
+    "description_manager": "Voici le résumé de la présence des membres de votre service",
     "description": "Voici le résumé de la présence de vos collaborateurs au bureau",
     "icon": "",
     "component": <Dashboard />,
@@ -27,6 +29,7 @@ const pageHeadingText = {
   },
   "Collaborateurs": {
     "heading": "Collaborateurs",
+    "description_manager": "Retrouvez le résumé de votre équipe.",
     "description": "Ajoutez vos nouveaux collaborateurs et supprimez ceux qui ont quitté l’entreprise",
     "icon": "/Dashboard/Sidebar/user-black.svg",
     "component": <Collaborators />,
@@ -39,12 +42,14 @@ const pageHeadingText = {
   },
   "Télétravail": {
     "heading": "Télétravail",
+    "description_manager": "Définissez le planning télétravail/présentiel de votre équipe.",
     "description": "Définissez votre politique de télétravail, par service, par direction,  pour l’ensemble de l’entreprise",
     "icon": "/Dashboard/Sidebar/checkout-black.svg",
     "component": <Telework />,
   },
   "Flex-office": {
     "heading": "Flex-office",
+    "description_manager": "Pilotez l’affluence au bureau ainsi que votre nombre de places",
     "description": "Pilotez l’affluence au bureau ainsi que votre nombre de places",
     "icon": "/Dashboard/Sidebar/case-black.svg",
     "component": <Flex />,
@@ -61,7 +66,8 @@ const pageHeadingText = {
 
 export default function DashboardLayout(props) {
   const [active, setActive] = useState("Résumé");
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
+  const router = useRouter();
   const handleClick = (name) => {
     setActive(name);
   }
@@ -100,9 +106,14 @@ export default function DashboardLayout(props) {
                 </div>
             </div>
         <div className='md:w-[100%] h-screen lg:w-[80%] lg:ml-[20%]'>
-          <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description}
+          {router.pathname === '/manager'?
+          <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description_manager}
             icon={pageHeadingText[active].icon}
           />
+          :<Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description}
+            icon={pageHeadingText[active].icon}
+          />}
+          
           <div className='px-[5%]'>
             {pageHeadingText[active].component}
           </div>
