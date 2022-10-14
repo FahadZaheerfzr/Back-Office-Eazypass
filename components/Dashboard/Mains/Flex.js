@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Stats from '../Components/Stats'
 import Styles from './Dashboard.module.css'
-
+import { useRouter } from 'next/router'
 const stats = [
     {
         "id": 0,
@@ -44,6 +44,7 @@ export default function Flex() {
     const [seats, setSeats] = useState(75);
     const [percentValue, setPercentValue] = useState(37);
     const [visible, setVisible] = useState(true);
+    const router = useRouter();
 
     const decreaseValue = () => {
         if (percentValue > 0) {
@@ -70,6 +71,13 @@ export default function Flex() {
         }
 
     }
+
+    useEffect(()=>{
+        if(router.pathname === '/manager'){
+            setAvg(11);
+            setSeats(13);
+        }
+    }, []);
 
     return (
         <div className='w-full'>
@@ -160,7 +168,7 @@ export default function Flex() {
                         </div>
                     </div>
                 </div>
-
+                {router.pathname === '/manager'? null: 
                 <div className='box-shadow-style h-32 mb-8 mt-8 w-[80%] flex flex-col justify-evenly'>
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center ml-6'>
@@ -188,6 +196,7 @@ export default function Flex() {
                         </div>
                     </div>
                 </div>
+                }
             </div>
 
 

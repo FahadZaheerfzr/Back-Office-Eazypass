@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../../components/Employee/Header";
 import ManagerCalendar from "../../components/Manager/ManagerCalendar";
 import Card from "../../components/Employee/Card";
+import Head from "next/head";
+import DashboardLayout from "../../components/Dashboard/DashboardLayout";
 
 export default function Manager() {
     const Cards = [
@@ -21,7 +23,14 @@ export default function Manager() {
       ];
 
   return (
-    <div className="bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] ">
+    <>
+    <Head>
+      <title>Manager</title>
+    </Head>
+    <div className="hidden md:block">
+      <DashboardLayout title={"Manager"}/>
+    </div>
+    <div className="md:hidden h-screen bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] ">
       <div className="mx-2">
       <Header />
       <ManagerCalendar/>
@@ -39,5 +48,6 @@ export default function Manager() {
       ))}
     </div>
     </div>
+    </>
   );
 }

@@ -2,8 +2,9 @@ import Image from 'next/image'
 import IconText from './IconText'
 import React from 'react'
 import Styles from './Sidebar.module.css'
+import { useRouter } from 'next/router'
 
-const nav_items = [
+const default_nav_items = [
     {
         "id": 0,
         "name": "Résumé",
@@ -56,6 +57,38 @@ const nav_items = [
     },
 ]
 
+const manager_nav_items = [
+    {
+        "id": 0,
+        "name": "Résumé",
+        "icon-active": "/Dashboard/Sidebar/chart.svg",
+        "icon": "/Dashboard/Sidebar/chart-dull.svg",
+        "unread": 0,
+    },
+    {
+        "id": 1,
+        "name": "Télétravail",
+        "icon-active": "/Dashboard/Sidebar/case-black.svg",
+        "icon": "/Dashboard/Sidebar/case.svg",
+        "unread": 0,
+    },
+    {
+        "id": 2,
+        "name": "Collaborateurs",
+        "icon-active": "/Dashboard/Sidebar/user-black.svg",
+        "icon": "/Dashboard/Sidebar/user.svg",
+        "unread": 0,
+    },
+
+    {
+        "id": 3,
+        "name": "Flex-office",
+        "icon-active": "/Dashboard/Sidebar/flex.png",
+        "icon": "/Dashboard/Sidebar/flex-dull.png",
+        "unread": 0,
+    },
+]
+
 const footer_nav = [
     {
         "id": 0,
@@ -74,7 +107,8 @@ const footer_nav = [
     },
 ]
 
-export default function Sidebar({ handleClick, active }) {
+export default function Sidebar({ handleClick, active, nav_items = default_nav_items }) {
+    const router = useRouter();
     return (
             <div className={`h-screen w-full flex flex-col justify-between`}>
                 <div>
@@ -84,11 +118,19 @@ export default function Sidebar({ handleClick, active }) {
                 <div className={`${Styles.container}`}>
                     <div className={`flex flex-col justify-between h-full `}>
                         <div>
-                        {nav_items.map(item => (
+                        {router.pathname === '/manager'? 
+                        manager_nav_items.map(item => (
                             <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
                                 unread={item.unread} active={item.name === active ? true : false} />
                         )
-                        )}
+                        )
+                        :nav_items.map(item => (
+                            <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
+                                unread={item.unread} active={item.name === active ? true : false} />
+                        )
+                        )
+                        }
+                        
                         </div>
                         <div className='mb-7'>
                         {footer_nav.map(item => (

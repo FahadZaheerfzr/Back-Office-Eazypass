@@ -76,11 +76,11 @@ export default function DashboardLayout(props) {
         <title>{props.title}</title>
       </Head>
 
-      <div className='lg:hidden flex text-red-600 h-screen justify-center items-center'>
-        Super Admin needs to login through desktop
+      <div className='md:hidden flex text-red-600 h-screen justify-center items-center'>
+        {props.title} needs to login through desktop
       </div>
       
-      <div className='hidden lg:flex w-full'>
+      <div className='hidden md:flex w-full'>
         <div className={`bg-white md:fixed z-40 ${visible?'md:block':'md:hidden'} lg:block md:w-[30%] lg:w-[20%] lg:fixed`}>
           <Sidebar handleClick={handleClick} active={active} />
         </div>
