@@ -53,18 +53,17 @@ export default function Card3() {
           >
             +
           </div>
-        <span className="mt-2">
-
-          Voir plus
-        </span>
+          <span className="mt-2">Voir plus</span>
         </div>
 
-        {
-            Avatars.map((avatar,index) => (
-                <Avatar key={index} name={avatar.name} image={avatar.image} border={avatar.border} />
-            ))
-
-        }
+        {Avatars.map((avatar, index) => (
+          <Avatar
+            key={index}
+            name={avatar.name}
+            image={avatar.image}
+            border={avatar.border}
+          />
+        ))}
       </div>
     </div>
   );

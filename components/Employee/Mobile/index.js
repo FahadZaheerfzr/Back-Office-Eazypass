@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import SmallCalendar from "./SmallCalendar";
 import Places from "./Places";
-import Avatar from "./Avatar";
+import Avatars from "./Avatar";
 import Card from "./Card";
 
 export default function Mobile() {
@@ -41,7 +41,7 @@ export default function Mobile() {
       <Header />
       <SmallCalendar />
       <Places />
-      <Avatar />
+      <Avatars />
       {Cards.map((card, index) => (
         <Card
           key={index}

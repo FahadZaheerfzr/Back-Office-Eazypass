@@ -1,6 +1,8 @@
 import React from "react";
+import { useRouter } from "next/router";
+export default function Card2() {
+  const router = useRouter();
 
-export default function Card1() {
   return (
     <div
       className="flex p-6 flex-col w-full border border-[#e5e6e6] rounded-[10px] font-Poppins"
@@ -25,6 +27,7 @@ export default function Card1() {
       </div>
       <div className="flex justify-center">
         <div
+          onClick={() => router.push("/employee/planner")}
           className="font-Roboto font-bold text-white text-[20px] rounded-lg py-1.5 px-8"
           style={{
             background:

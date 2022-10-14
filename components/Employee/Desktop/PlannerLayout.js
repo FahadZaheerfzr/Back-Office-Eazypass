@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Topbar from "../../Dashboard/Topbar/ProfileBar";
 import Sidebar from "../../Dashboard/Sidebar/Navbar";
 import Settings from "../../Dashboard/Mains/Settings";
-import EmployeeContainerDesktop from "./EmployeeContainerDesktop";
+import PlannerContainer from "./PlannerContainer";
 
 const pageHeadingText = {
   Télétravail: {
@@ -10,7 +10,7 @@ const pageHeadingText = {
     description:
       "Déclarez votre planning télétravail/présentiel et réservez votre place au bureau",
     icon: "",
-    component: <EmployeeContainerDesktop />,
+    component: <PlannerContainer />,
   },
   Paramètres: {
     heading: "Paramètres",
@@ -35,7 +35,8 @@ const nav_items = [
     unread: 0,
   },
 ];
-export default function Desktop() {
+
+export default function PlannerLayout() {
   const [active, setActive] = useState("Télétravail");
   const [visible, setVisible] = useState(false);
   const handleClick = (name) => {
@@ -64,9 +65,8 @@ export default function Desktop() {
           description={pageHeadingText[active].description}
           icon={pageHeadingText[active].icon}
         />
-        <div className="px-[5%]">{pageHeadingText[active].component}</div>
+        <div className="px-[5%] pb-4">{pageHeadingText[active].component}</div>
       </div>
-      
     </div>
   );
 }

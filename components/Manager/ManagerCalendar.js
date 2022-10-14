@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar from "../Employee/Avatar";
+import Avatars from "../Employee/Mobile/Avatar";
 
 export default function ManagerCalendar() {
   const fullDate = new Date();
@@ -26,7 +26,7 @@ export default function ManagerCalendar() {
         </div>
       </div>
       <div className="bg-black w-full mx-auto justify-self-center mt-8"></div>
-      <Avatar />
+      <Avatars />
     </div>
   );
 }

@@ -99,7 +99,7 @@ export default function Calendar() {
         isEnabled,
       });
       if (isEnabled) {
-        console.log(timestamp, "is enabled");
+        // console.log(timestamp, "is enabled");
       }
     }
     return dates;
@@ -132,7 +132,7 @@ export default function Calendar() {
         isEnabled,
       });
       if (isEnabled) {
-        console.log(timestamp, "is enabled");
+        // console.log(timestamp, "is enabled");
       }
     }
     return dates;
