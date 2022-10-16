@@ -24,7 +24,7 @@ export default function ModeSelector({date, setDate }) {
           <div className="flex  justify-start text-[20px] space-x-8">
             <button
               onClick={() => {
-                console.log('setting morning to "teletravail"');
+                
                 setMorning("Télétravail");
               }}
               className="font-normal font-Roboto h-10 w-2/5 rounded-[20px] text-white"
@@ -39,7 +39,7 @@ export default function ModeSelector({date, setDate }) {
             </button>
             <button
               onClick={() => {
-                console.log('setting morning to "Bureau"');
+                
                 setMorning("Bureau");
               }}
               className="font-normal font-Roboto h-10 w-2/5 rounded-[20px] text-white"
@@ -61,7 +61,7 @@ export default function ModeSelector({date, setDate }) {
           <div className="flex  justify-start text-[20px] space-x-8">
             <button
               onClick={() => {
-                console.log("set noon to teletravail");
+                
                 setNoon("Télétravail");
               }}
               className="font-normal font-Roboto h-10 w-2/5 rounded-[20px] text-white"
@@ -76,7 +76,7 @@ export default function ModeSelector({date, setDate }) {
             </button>
             <button
               onClick={() => {
-                console.log("setting noon to bureau");
+                
                 setNoon("Bureau");
               }}
               className="font-normal font-Roboto h-10 w-2/5 rounded-[20px] text-white"
@@ -94,7 +94,7 @@ export default function ModeSelector({date, setDate }) {
         <div className="w-1/5 flex flex-col items-end justify-end">
             <button
               onClick={() => {
-                console.log('setting morning ',morning, " setting noon ",noon ,' for date ',date.date);
+                
                 setDate((current) =>
                   current.map((obj) => {
                     if (obj.date === date.date) {
@@ -109,7 +109,7 @@ export default function ModeSelector({date, setDate }) {
                     return obj;
                   })
                 );
-                console.log(date.declarationStatus);
+                
                 setMorning("");
                 setNoon("");
               }}

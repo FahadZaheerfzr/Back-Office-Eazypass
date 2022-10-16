@@ -194,7 +194,7 @@ export default function Container() {
               // trigger a click on the input
               onClick={() => {
                 setShowDatePicker(true);
-                console.log("sohwing");
+                
                 if (startDate) {
                   setStartDate(null);
                 }
