@@ -288,11 +288,11 @@ export default function Calendar() {
         {!showNextMonth
           ? emptyDivs > 0 &&
             [...Array(emptyDivs)].map((_, index) => {
-              return <div className="mt-3" key={index}></div>;
+              return <div className="mt-3" key={index} />;
             })
           : emptyDivsNextMonth > 0 &&
             [...Array(emptyDivsNextMonth)].map((_, index) => {
-              return <div className="mt-3" key={index}></div>;
+              return <div className="mt-3" key={index} />;
             })}
 
         {!showNextMonth

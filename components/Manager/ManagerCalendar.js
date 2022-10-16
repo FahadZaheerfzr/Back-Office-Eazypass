@@ -25,7 +25,7 @@ export default function ManagerCalendar() {
           {date + " "} {month}
         </div>
       </div>
-      <div className="bg-black w-full mx-auto justify-self-center mt-8"></div>
+      <div className="bg-black w-full mx-auto justify-self-center mt-8" />
       <Avatar />
     </div>
   );

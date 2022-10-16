@@ -79,9 +79,9 @@ export default function Collaborator({toggleVisible}) {
 
                                             <td role={"button"} onClick={()=>toggleVisible(row.id)} className="relative whitespace-nowrap py-4 pl-3 pr-4 sm:pr-6 md:pr-0">
                                                 <div className="flex" >
-                                                    <div className='w-1 h-1 ml-3 bg-black rounded-full'></div>
-                                                    <div className='w-1 h-1 ml-[2px] bg-black rounded-full'></div>
-                                                    <div className='w-1 h-1 ml-[2px] bg-black rounded-full'></div>
+                                                    <div className='w-1 h-1 ml-3 bg-black rounded-full' />
+                                                    <div className='w-1 h-1 ml-[2px] bg-black rounded-full' />
+                                                    <div className='w-1 h-1 ml-[2px] bg-black rounded-full' />
                                                 </div>
                                             </td>
                                         </tr>
