@@ -16,8 +16,9 @@ export default function Topbar({ name, description, icon }) {
             <div className='w-full mt-10 px-[5%] flex justify-between'>
                 <div className='w-1/2'>
                     <div className=''>
+                    {icon===""? null:
                         <Image src={icon} width={17} height={17} />
-
+                    }
                     </div>
                     <div className=''>
                         <span className='font-Poppins lg:text-lg xl:text-xl'>{name}</span>

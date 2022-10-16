@@ -72,8 +72,8 @@ export default function Settings() {
                         <Image src={"/Dashboard/Sidebar/settings-black.svg"} width={30} height={30} />
                     </div>
 
-                    {addresses.map(address => (
-                        <div className='mt-2 mb-7 ml-8'>
+                    {addresses.map((address,index) => (
+                        <div key={index} className='mt-2 mb-7 ml-8'>
                             <div className='flex'>
                                 <div className=''>
                                     <Image src={"/Dashboard/Settings/home.svg"} width={43} height={34} />

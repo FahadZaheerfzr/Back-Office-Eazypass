@@ -22,12 +22,12 @@ const notification_options = [
 
 const ratio = [
   {
-    id: 1,
+    id: 4,
     title: 'Intense - 2 rappels / jour jusqu’au 1er jour non déclaré',
     icon: "/Dashboard/Notifications/intense.svg",
   },
   {
-    id: 2,
+    id: 5,
     title: 'Normal - 1 rappel / jour jusqu’au 1er jour non déclaré',
     icon: "/Dashboard/Notifications/normal.svg",
   },
@@ -35,14 +35,14 @@ const ratio = [
 
 const triggers = [
   {
-    id: 1,
+    id: 6,
     title: "Déclaration en amont",
     description: "Le planning doit être déclaré au plus tard le dernier jour ouvré de la semaine ou du mois précédents",
     icon: "/Dashboard/Notifications/backward.png",
     additional: true,
   },
   {
-    id: 2,
+    id: 7,
     title: "Déclaration a posteriori",
     description: "Le planning doit être déclaré au plus tard le dernier jour ouvré de la semaine ou du mois en cours",
     icon: "/Dashboard/Notifications/forward.png",
@@ -54,25 +54,25 @@ export default function Reminders() {
   const [active, setActive] = useState(0);
   const [apps, setApps] = useState([
     {
-      id: 1,
+      id: 8,
       title: "Par email",
       icon: "/Dashboard/Notifications/email.svg",
       checked: true,
     },
     {
-      id: 2,
+      id: 9,
       title: "Application",
       icon: "/Dashboard/Notifications/app.svg",
       checked: true,
     },
     {
-      id: 3,
+      id: 10,
       title: "Teams",
       icon: "/Dashboard/Notifications/teams.svg",
       checked: false,
     },
     {
-      id: 4,
+      id: 11,
       title: "Agenda outlook",
       icon: "/Dashboard/Notifications/outlook.svg",
       checked: false,
@@ -215,9 +215,9 @@ export default function Reminders() {
               Déclenchement des notifications
             </span>
           </div>
-          {triggers.map((trigger) => (
-            <>
-              <div key={trigger.id} className='flex items-center mt-5'>
+           {triggers.map((trigger) => (
+            <div key={trigger.id} >
+              <div className='flex items-center mt-5'>
                 <input className='lg:w-[20px] lg:h-[20px] xl:w-[22px] xl:h-[22px]' type={"checkbox"} checked={triggerSelect === trigger.id}
                   onChange={() => setTriggerSelect(trigger.id)}
                 />
@@ -250,8 +250,8 @@ export default function Reminders() {
                 </div>
 
               }
-            </>
-          ))}
+            </div>
+          ))} 
 
 
         </div>
