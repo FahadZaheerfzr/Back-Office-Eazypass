@@ -22,7 +22,7 @@ export default function DateCard({
           onClick={() => {
             if (date.isEnabled) {
               openModal();
-              console.log("date is clicked");
+              
               setClickedDate(date);
             }
           }}
@@ -78,7 +78,7 @@ export default function DateCard({
           )}
         </div>
       ) : (
-        <div className=" h-[86px] items-center text-center border font-medium font-Roboto text-[#2d3748]"></div>
+        <div className=" h-[86px] items-center text-center border font-medium font-Roboto text-[#2d3748]" />
       )}
     </>
   );

@@ -143,7 +143,7 @@ export default function Container() {
           <div className="text-[#1E293B] font-Inter text-center my-6 pl-3 xs:text-xl font-semibold">
             Demande ponctuelle - Télétravail
           </div>
-          <div className="flex flex-col"></div>
+          <div className="flex flex-col" />
           <div className="font-Inter text-[#1E293B] pl-3 text-sm xs:text-lg font-medium">
             Choisissez le jour
           </div>
@@ -194,7 +194,7 @@ export default function Container() {
               // trigger a click on the input
               onClick={() => {
                 setShowDatePicker(true);
-                console.log("sohwing");
+                
                 if (startDate) {
                   setStartDate(null);
                 }
