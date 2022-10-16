@@ -51,7 +51,7 @@ export default function Calendar() {
             />
           </div>
           <div className="my-auto mx-auto">Télétravail</div>
-          <div className="w-16"></div>
+          <div className="w-16" />
         </div>
 
         <div className="bg-white font-Poppins text-xs px-3 py-1 w-fit rounded-lg mt-4">
@@ -68,7 +68,7 @@ export default function Calendar() {
             />
           </div>
           <div className="my-auto mx-auto">Bureau</div>
-          <div className="w-16"></div>
+          <div className="w-16" />
         </div>
 
         <div className="w-full flex justify-center">
