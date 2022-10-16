@@ -17,7 +17,7 @@ const reactDonutChartInnerRadius = 0.7;
 const reactDonutChartSelectedOffset = 0.04;
 const reactDonutChartHandleClick = (item, toggled) => {
   if (toggled) {
-    console.log(item);
+    
   }
 };
 let reactDonutChartStrokeColor = "#FFFFFF";
