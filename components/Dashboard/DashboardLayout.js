@@ -85,35 +85,35 @@ export default function DashboardLayout(props) {
       <div className='md:hidden flex text-red-600 h-screen justify-center items-center'>
         {props.title} needs to login through desktop
       </div>
-      
+
       <div className='hidden md:flex w-full'>
-        <div className={`bg-white md:fixed z-40 ${visible?'md:block':'md:hidden'} lg:block md:w-[30%] lg:w-[20%] lg:fixed`}>
+        <div className={`bg-white md:fixed z-40 ${visible ? 'md:block' : 'md:hidden'} lg:block md:w-[30%] lg:w-[20%] lg:fixed`}>
           <Sidebar handleClick={handleClick} active={active} />
         </div>
-        <div role={"button"} className='h-screen lg:hidden  z-50 flex mt-[40%]' 
-        onClick={()=>toggleVisible()}>
-                <div className='fixed side-panel'>
-                    <div className='side-panel-content'>
-                    { visible?
-                        "X"
-                        :<>
-                        <div className=' w-4 h-[2px] bg-white '></div>
-                        <div className=' mt-1 w-4 h-[2px] bg-white '></div>
-                        <div className=' mt-1 w-4 h-[2px] bg-white '></div>
-                        </>
-                    }
-                    </div>
-                </div>
+        <div role={"button"} className='h-screen lg:hidden  z-50 flex items-center'
+          onClick={() => toggleVisible()}>
+          <div className='fixed side-panel'>
+            <div className='side-panel-content'>
+              {visible ?
+                "X"
+                : <>
+                  <div className=' w-4 h-[2px] bg-white '></div>
+                  <div className=' mt-1 w-4 h-[2px] bg-white '></div>
+                  <div className=' mt-1 w-4 h-[2px] bg-white '></div>
+                </>
+              }
             </div>
+          </div>
+        </div>
         <div className='md:w-[100%] h-screen lg:w-[80%] lg:ml-[20%]'>
-          {router.pathname === '/manager'?
-          <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description_manager}
-            icon={pageHeadingText[active].icon}
-          />
-          :<Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description}
-            icon={pageHeadingText[active].icon}
-          />}
-          
+          {router.pathname === '/manager' ?
+            <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description_manager}
+              icon={pageHeadingText[active].icon}
+            />
+            : <Topbar name={pageHeadingText[active].heading} description={pageHeadingText[active].description}
+              icon={pageHeadingText[active].icon}
+            />}
+
           <div className='px-[5%]'>
             {pageHeadingText[active].component}
           </div>

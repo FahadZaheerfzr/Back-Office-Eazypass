@@ -4,6 +4,11 @@ function MyDocument() {
   return (
     <Html>
       <Head>
+      {/* Aclonica */}
+      <link
+          href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap"
+          rel="stylesheet"
+        />
       {/* Roboto */}
       <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"

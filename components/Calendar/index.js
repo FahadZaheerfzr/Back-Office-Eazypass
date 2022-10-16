@@ -1,12 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
-import Avatars from "../Employee/Avatar";
+import Avatars from "../Employee/Mobile/Avatar";
 import { useRouter } from "next/router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function Container() {
-  const inputRef = useRef(null);
   const router = useRouter();
   // call getDate function on date object and do +- 1 to get the next or previous day
   // use timestamp of middle div to get next or previous day
@@ -48,6 +47,7 @@ export default function Container() {
 
   /* UPDATING DATES */
   const handleNext = () => {
+    setShowDatePicker(false);
     setStartDate(null);
     const date = new Date(dateState.timestamp);
     date.setDate(date.getDate() + 1);
@@ -80,6 +80,7 @@ export default function Container() {
   };
 
   const handlePrev = () => {
+    setShowDatePicker(false);
     setStartDate(null);
     const date = new Date(dateState.timestamp);
     date.setDate(date.getDate() - 1);
@@ -112,7 +113,6 @@ export default function Container() {
     });
   };
 
-  console.log("selected", selectedDay.toLocaleString("fr", { day: "2-digit" }));
   return (
     <>
       <div className="p-4 rounded-2xl bg-white max-w-[420px] sm:max-w-md mx-auto">
