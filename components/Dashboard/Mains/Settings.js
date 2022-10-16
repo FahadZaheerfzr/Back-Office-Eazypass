@@ -51,7 +51,7 @@ export default function Settings() {
                 <div className='mt-4 flex flex-col mr-[50%]'>
                     <label htmlFor='language' className='font-Poppins'>Langues</label>
                     <select id='language' defaultValue={""} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4">
-                        <option></option>
+                        <option />
                         <option>French</option>
                     </select>
                 </div>

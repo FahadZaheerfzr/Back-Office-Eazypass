@@ -29,9 +29,9 @@ export default function RoundedChart() {
             <div className='mt-8 px-5 flex  items-center'>
                 <span className='font-Poppins text-lg font-medium'>Présence / service</span>
 
-                <div className='w-1 h-1 ml-3 bg-black rounded-full'></div>
-                <div className='w-1 h-1 ml-[2px] bg-black rounded-full'></div>
-                <div className='w-1 h-1 ml-[2px] bg-black rounded-full'></div>
+                <div className='w-1 h-1 ml-3 bg-black rounded-full' />
+                <div className='w-1 h-1 ml-[2px] bg-black rounded-full' />
+                <div className='w-1 h-1 ml-[2px] bg-black rounded-full' />
             </div>
             <div className='w-[100%] h-[216px] flex justify-center items-center'>
                 <ResponsiveContainer width="100%" height="100%">
@@ -49,12 +49,12 @@ export default function RoundedChart() {
             </div>
 
             <div className='flex items-center justify-evenly'>
-            <div className='w-2 h-2 rounded-full bg-[#279A44]'></div>
+            <div className='w-2 h-2 rounded-full bg-[#279A44]' />
                 <span className='font-Poppins text-xs'>Marketing</span>
-                <div className='w-2 h-2 rounded-full bg-[#E59523]'></div>
+                <div className='w-2 h-2 rounded-full bg-[#E59523]' />
 
                 <span className='font-Poppins text-xs'>RH</span>
-                <div className='w-2 h-2 rounded-full bg-[#347AE2]'></div>
+                <div className='w-2 h-2 rounded-full bg-[#347AE2]' />
 
                 <span className='font-Poppins text-xs'>Comptabilité</span>
             </div>
