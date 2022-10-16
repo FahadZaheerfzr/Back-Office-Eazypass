@@ -120,9 +120,7 @@ export default function Charts() {
     <div className='mt-8 lg:w-[742px] border border-[#E6EDFF] rounded-xl '>
     <div className='flex px-5 items-center h-8 mt-8'>
       <span className='font-Poppins font-medium md:text-base lg:text-lg'>Présence moyenne au bureau chaque jour</span>
-      <div className='w-2 h-2 mt-1 bg-[#E59523] rounded-full ml-3'>
-
-      </div>
+      <div className='w-2 h-2 mt-1 bg-[#E59523] rounded-full ml-3' />
       <span className='text-xs ml-2 mt-1 font-Poppins'>% de collaborateurs présents</span>
     
       <select className={`ml-3 text-xs ${Styles.chartSelect} box-shadow-style`} defaultValue={"7 days"} onChange={changeData}>
