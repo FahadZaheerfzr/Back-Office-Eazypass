@@ -76,7 +76,7 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
                         <div
                             className="progress absolute h-3 bg-[#E6EEFF] rounded "
                             ref={progressRef}
-                        ></div>
+                         />
                     </div>
 
                     <div className="range-input relative ">

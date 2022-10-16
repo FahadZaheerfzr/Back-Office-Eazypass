@@ -97,9 +97,9 @@ export default function DashboardLayout(props) {
               {visible ?
                 "X"
                 : <>
-                  <div className=' w-4 h-[2px] bg-white '></div>
-                  <div className=' mt-1 w-4 h-[2px] bg-white '></div>
-                  <div className=' mt-1 w-4 h-[2px] bg-white '></div>
+                  <div className=' w-4 h-[2px] bg-white ' />
+                  <div className=' mt-1 w-4 h-[2px] bg-white ' />
+                  <div className=' mt-1 w-4 h-[2px] bg-white ' />
                 </>
               }
             </div>
