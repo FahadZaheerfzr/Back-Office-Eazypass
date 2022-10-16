@@ -105,7 +105,7 @@ export default function Reminders() {
   useEffect(() => {
 
     const keyDownHandler = event => {
-      console.log('User pressed: ', event.key);
+      
 
       if (event.key === 'Escape') {
         event.preventDefault();

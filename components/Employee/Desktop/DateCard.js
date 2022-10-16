@@ -22,7 +22,7 @@ export default function DateCard({
           onClick={() => {
             if (date.isEnabled) {
               openModal();
-              console.log("date is clicked");
+              
               setClickedDate(date);
             }
           }}
