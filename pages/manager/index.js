@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../components/Employee/Header";
+import Header from "../../components/Employee/Mobile/Header";
 import ManagerCalendar from "../../components/Manager/ManagerCalendar";
-import Card from "../../components/Employee/Card";
+import Card from "../../components/Employee/Mobile/Card";
 import Head from "next/head";
 import DashboardLayout from "../../components/Dashboard/DashboardLayout";
 
