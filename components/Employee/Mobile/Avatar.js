@@ -41,7 +41,7 @@ export default function Avatars() {
         }}
         className="flex -space-x-2 relative z-0 py-2 cursor-pointer"
       >
-        <span className="z-50 relative top-3 -left-1 block xs:h-4 xs:w-4 h-3 w-3 rounded-full  bg-green-400"></span>
+        <span className="z-50 relative top-3 -left-1 block xs:h-4 xs:w-4 h-3 w-3 rounded-full  bg-green-400" />
         <img
           className="relative z-30 inline-block h-8 w-8 xs:h-10 xs:w-10 rounded-full "
           src={avatars[0].avatar}
