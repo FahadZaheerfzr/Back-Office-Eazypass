@@ -134,7 +134,7 @@ export default function Sidebar({ handleClick, active, nav_items = default_nav_i
                         </div>
                         <div className='mb-7'>
                         {footer_nav.map(item => (
-                            <IconText key={item.id} name={item.name} icon={item.icon} footer_nav={true} />
+                            <IconText key={item.id} name={item.name} icon={item.icon} footer_nav />
                         )
                         )}
                         </div>

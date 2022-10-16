@@ -277,7 +277,7 @@ export default function PlannerCalendar() {
                     openModal={openModal}
                     prevMode={prevMode}
                     nextMode={nextMode}
-                    blurMonth={true}
+                    blurMonth
                   />
                 </>
               );
@@ -301,7 +301,7 @@ export default function PlannerCalendar() {
                       openModal={openModal}
                       prevMode={prevMode}
                       nextMode={nextMode}
-                      blurMonth={true}
+                      blurMonth
                     />
                   </>
                 );
@@ -373,7 +373,7 @@ export default function PlannerCalendar() {
                     openModal={openModal}
                     prevMode={prevMode}
                     nextMode={nextMode}
-                    blurMonth={true}
+                    blurMonth
                   />
                 </>
               );
