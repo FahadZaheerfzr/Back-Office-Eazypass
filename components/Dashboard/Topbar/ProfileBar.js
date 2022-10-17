@@ -54,6 +54,7 @@ export default function Topbar({ name, description, icon }) {
                         {visible?
                         <div className={`${Styles.changeAccount} z-10 mt-0 pt-3 pb-4 flex flex-col absolute`}>
                             <div className='flex items-center pl-2 cursor-pointer'
+                            onClick={()=>router.push("/admin/dashboard")}
                             >
                                 <div className={`${Styles.profileRectangle} w-10 h-10`}>
                                     <Image src={'/Dashboard/Home/user.svg'} width={100} height={100} />
