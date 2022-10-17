@@ -8,13 +8,6 @@ import Card from "./Card";
 export default function Mobile() {
   const Cards = [
     {
-      title: "Télétravail",
-      desc: "Déclarez votre présence au bureau ou en télétravail chaque semaine.",
-      image: "/Employee/card1.svg",
-      notis: 0,
-      icon: "/Employee/bell.svg",
-    },
-    {
       title: "Déclarer son planning",
       desc: "Déclarez votre présence au bureau et en télétravail",
       image: "/Employee/card2.svg",
