@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Image from 'next/image'
 import { useRouter } from "next/router";
 import React from 'react'
 import Stats from '../Components/Stats'
@@ -55,9 +56,17 @@ export default function Dashboard() {
     return (
         <div className='w-full'>
             <div className='flex justify-end'>
-                <select defaultValue={'Toute l’entreprise'} className={`${Styles.customSelect} mr-5`}>
-                    <option>Toute l’entreprise</option>
-                </select>
+                {
+                    router.pathname === "/manager" ?
+                    <div className={`${Styles.customSelect} mr-5 flex items-center`}>
+                    Service Marketing&nbsp;&nbsp;&nbsp;
+                    <Image src={"/Dashboard/Home/padlock.png"} width={14} height={14} />
+                    </div>
+                    : <select defaultValue={'Toute l’entreprise'} className={`${Styles.customSelect} mr-5`}>
+                            <option>Toute l’entreprise</option>
+                        </select>
+                }
+
                 <select defaultValue={'7 derniers jours'} className={`${Styles.customSelect}`}>
                     <option >7 derniers jours</option>
                 </select>
@@ -75,13 +84,13 @@ export default function Dashboard() {
                 <DynamicRoundedChart />
             </div>
             {
-                router.pathname === "/manager"? null
-                : <div>
-                <Table />
-            </div>
-           
+                router.pathname === "/manager" ? null
+                    : <div>
+                        <Table />
+                    </div>
+
             }
-           
+
         </div>
     )
 }
