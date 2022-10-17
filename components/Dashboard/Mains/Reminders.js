@@ -9,14 +9,20 @@ const notification_options = [
   {
     id: 1,
     color: "#347AE2",
+    title:"Hebdomadaire",
+    description: "Vos collaborateurs déclarent leur planning en télétravail/présentiel chaque semaine.",
   },
   {
     id: 2,
     color: "#E59523",
+    title:"Mensuel",
+    description: "Vos collaborateurs déclarent leur planning en télétravail/présentiel chaque mois.",
   },
   {
     id: 3,
     color: "#279A44",
+    title:"Quotidien",
+    description: "Vos collaborateurs déclarent leur planning en télétravail/présentiel chaque jour.",
   },
 ]
 
@@ -146,10 +152,10 @@ export default function Reminders() {
             </span>
           </div>
 
-          <div className='flex w-full justify-between mt-5'>
+          <div className='flex w-full justify-between mt-5 pr-4'>
             {notification_options.map(option => (
               <NotificationBox key={option.id} id={option.id} color={option.color} myFunction={myFunction} active={option.id === active ? true : false}
-                enabled={active > 0 ? true : false}
+                enabled={active > 0 ? true : false} title={option.title} description={option.description}
               />
             ))
             }

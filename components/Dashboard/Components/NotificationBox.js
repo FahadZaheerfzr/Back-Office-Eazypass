@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function NotificationBox({id, enabled, active, color, myFunction }) {
+export default function NotificationBox({id, enabled, title, description, active, color, myFunction }) {
     return (
         <div className='flex w-[32%]'>
         <div className={`flex items-center text-${active||!enabled ?'white':'[#7C8DB5]'} bg-[${active||!enabled ? color: '#E6EDFF'}] px-3 py-1 box-shadow-style cursor-pointer`}
@@ -10,10 +10,9 @@ export default function NotificationBox({id, enabled, active, color, myFunction 
             onClick={(event)=>myFunction(event, id)} />
 
             <span className='font-Poppins  text-sm'>
-                Hebdomadaire <br/>
+                {title} <br/>
                 <span className={`text-${active||!enabled?'[#E6EDFF]':'[#7C8DB5]'}`} >
-                Vos collaborateurs déclarent leur planning
-                en télétravail/présentiel chaque semaine.
+                {description}
                 </span>
             </span>
         </div>
