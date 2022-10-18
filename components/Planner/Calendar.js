@@ -298,7 +298,7 @@ export default function Calendar() {
         {!showNextMonth
           ? currentMonthList.map((date, index) => {
               return (
-                <>
+                <div key={index}>
                   <DateCard
                     key={index}
                     date={date}
@@ -309,14 +309,13 @@ export default function Calendar() {
                     openModal={openModal}
                     enabledDays={nextWeek}
                   />
-                </>
+                </div>
               );
             })
           : nextMonthList.map((date, index) => {
               return (
-                <>
+                <div key={index}>
                   <DateCard
-                    key={index}
                     date={date}
                     fetchDate={fetchDate}
                     today={today}
@@ -325,7 +324,7 @@ export default function Calendar() {
                     openModal={openModal}
                     enabledDays={nextWeek}
                   />
-                </>
+                </div>
               );
             })}
 

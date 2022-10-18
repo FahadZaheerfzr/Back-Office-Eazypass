@@ -6,7 +6,7 @@ const router = useRouter();
   return (
     <div
       className="flex p-3 flex-col  border border-[#e5e6e6] rounded-[10px] font-Poppins w-full"
-      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);" }}
+      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1)" }}
     >
       <div className="flex">
         <div className="h-16 ">

@@ -6,7 +6,7 @@ export default function Card2() {
   return (
     <div
       className="flex p-6 flex-col w-full border border-[#e5e6e6] rounded-[10px] font-Poppins"
-      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);" }}
+      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1)" }}
     >
       <div className="flex">
         <div className="w-16 ">

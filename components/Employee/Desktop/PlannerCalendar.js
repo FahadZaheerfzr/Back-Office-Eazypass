@@ -268,9 +268,8 @@ export default function PlannerCalendar() {
                   ? prevMonth[index + 1].morningMode
                   : "";
               return (
-                <>
+                <div key={index}>
                   <DateCard
-                    key={index}
                     date={date}
                     fetchDate={fetchDate}
                     setClickedDate={setClickedDate}
@@ -279,7 +278,7 @@ export default function PlannerCalendar() {
                     nextMode={nextMode}
                     blurMonth
                   />
-                </>
+                </div>
               );
             })
           : emptyDivsNextMonth > 0 &&
@@ -292,7 +291,7 @@ export default function PlannerCalendar() {
                     ? currentMonthList[index + 1].morningMode
                     : "";
                 return (
-                  <>
+                  <div key={index}>
                     <DateCard
                       key={index}
                       date={date}
@@ -303,9 +302,9 @@ export default function PlannerCalendar() {
                       nextMode={nextMode}
                       blurMonth
                     />
-                  </>
+                  </div>
                 );
-              } else return <></>;
+              } else return <div key={index}></div>;
             })}
 
         {!showNextMonth
@@ -317,9 +316,8 @@ export default function PlannerCalendar() {
                   ? currentMonthList[index + 1].morningMode
                   : "";
               return (
-                <>
+                <div key={index}>
                   <DateCard
-                    key={index}
                     date={date}
                     fetchDate={fetchDate}
                     setClickedDate={setClickedDate}
@@ -327,7 +325,7 @@ export default function PlannerCalendar() {
                     prevMode={prevMode}
                     nextMode={nextMode}
                   />
-                </>
+                </div>
               );
             })
           : nextMonthList.map((date, index) => {
@@ -339,9 +337,8 @@ export default function PlannerCalendar() {
                   : "";
 
               return (
-                <>
+                <div key={index}>
                   <DateCard
-                    key={index}
                     date={date}
                     fetchDate={fetchDate}
                     setClickedDate={setClickedDate}
@@ -349,7 +346,7 @@ export default function PlannerCalendar() {
                     prevMode={prevMode}
                     nextMode={nextMode}
                   />
-                </>
+                </div>
               );
             })}
 
@@ -364,9 +361,8 @@ export default function PlannerCalendar() {
                   : "";
 
               return (
-                <>
+                <div key={index}>
                   <DateCard
-                    key={index}
                     date={date}
                     fetchDate={fetchDate}
                     setClickedDate={setClickedDate}
@@ -375,9 +371,9 @@ export default function PlannerCalendar() {
                     nextMode={nextMode}
                     blurMonth
                   />
-                </>
+                </div>
               );
-            } else return <></>;
+            } else return <div key={index}></div>;
           })}
       </div>
 
