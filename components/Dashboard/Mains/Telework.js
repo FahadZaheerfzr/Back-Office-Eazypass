@@ -115,7 +115,7 @@ export default function Telework() {
                             {
                                 concerns.map((concern, index) => (
                                     <div key={index} className={`box-shadow-style flex mr-5 justify-center items-center bg-[${concern.color}]`}
-                                    style={{backgroundColor:concern.color}}>
+                                        style={{ backgroundColor: concern.color }}>
                                         <div className='w-2 h-2 bg-[#E6EDFF] rounded-full ' />
                                         <span className='font-Poppins text-xs text-white ml-2'>{concern.tag}</span>
                                     </div>
@@ -236,7 +236,9 @@ export default function Telework() {
                                     <span className='font-Poppins font-semibold'>-</span>
                                 </div>
                                 <span className='font-Poppins font-semibold text-4xl text-[#347AE2] mx-2'>
-                                    {percentValue}%
+                                    {percentValue == 100 ?
+                                        <Image src={"/Dashboard/Telework/infinite.svg"} width={100} height={100} />
+                                        : percentValue + "%"}
                                 </span>
                                 <div className='w-5 h-5 rounded-full bg-[#347AE2] flex justify-center items-center text-white cursor-pointer'
                                     onClick={increaseValue}

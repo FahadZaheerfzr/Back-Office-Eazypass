@@ -80,6 +80,10 @@ const initialRows = {
   ],
 }
 
+const initialVisibility = {
+  fixed: false,
+}
+
 export const CollaboratorContext = createContext(initialRows)
 
 export const CollaboratorProvider = ({ children }) => {
