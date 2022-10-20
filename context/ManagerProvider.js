@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 import ManagerReducer from "./ManagerReducer";
 
 const initialState = {
-    fixed: false
+    fixed: true
 }
 
 export const ManagerContext = createContext(initialState);

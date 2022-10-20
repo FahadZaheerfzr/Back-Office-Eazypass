@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
 import Image from 'next/image'
 import { useRouter } from "next/router";
-import React from 'react'
+import React, { useContext } from 'react'
+import { ManagerContext } from "../../../context/ManagerProvider";
 import Stats from '../Components/Stats'
 import Table from "../Components/Table";
 import Styles from './Dashboard.module.css'
@@ -53,16 +54,18 @@ const stats = [
 
 export default function Dashboard() {
     const router = useRouter();
+    const {fixed} = useContext(ManagerContext);
+    
     return (
         <div className='w-full'>
             <div className='flex justify-end'>
                 {
                     router.pathname === "/manager" ?
-                    <div className={`${Styles.customSelect} mr-5 flex items-center`}>
-                    Service Marketing&nbsp;&nbsp;&nbsp;
-                    <Image src={"/Dashboard/Home/padlock.png"} width={14} height={14} />
-                    </div>
-                    : <select defaultValue={'Toute l’entreprise'} className={`${Styles.customSelect} mr-5`}>
+                        <div className={`${Styles.customSelect} mr-5 flex items-center`}>
+                            Service Marketing&nbsp;&nbsp;&nbsp;
+                            <Image src={"/Dashboard/Home/padlock.png"} width={14} height={14} />
+                        </div>
+                        : <select defaultValue={'Toute l’entreprise'} className={`${Styles.customSelect} mr-5`}>
                             <option>Toute l’entreprise</option>
                         </select>
                 }
@@ -79,10 +82,14 @@ export default function Dashboard() {
                     />
                 ))}
             </div>
-            <div className="flex md:flex-col xl:flex-row">
-                <DynamicChart />
-                <DynamicRoundedChart />
-            </div>
+            {
+                router.pathname === "/manager" && fixed ? null :
+                    <div className="flex md:flex-col xl:flex-row">
+                        <DynamicChart />
+                        <DynamicRoundedChart />
+                    </div>
+            }
+
             {
                 router.pathname === "/manager" ? null
                     : <div>

@@ -135,8 +135,7 @@ const footer_nav = [
 export default function Sidebar({ handleClick, active, nav_items = default_nav_items }) {
     const router = useRouter();
     const { fixed } = useContext(ManagerContext);
-    console.log(fixed);
-
+    
     return (
         <div className={`h-screen w-full flex flex-col justify-between`}>
             <div>

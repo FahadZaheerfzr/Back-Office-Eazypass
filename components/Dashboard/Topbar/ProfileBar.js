@@ -53,9 +53,10 @@ export default function Topbar({ name, description, icon }) {
                         </div>
                         {visible?
                         <div className={`${Styles.changeAccount} z-10 mt-0 pt-3 pb-4 flex flex-col absolute`}>
+                            
                             <div className='flex items-center pl-2 cursor-pointer'
-                            onClick={()=>router.push("/admin/dashboard")}
-                            >
+                            onClick={()=>router.push("/admin/dashboard", undefined, { shallow: true })}>
+                            
                                 <div className={`${Styles.profileRectangle} w-10 h-10`}>
                                     <Image src={'/Dashboard/Home/user.svg'} width={100} height={100} />
                                 </div>
@@ -69,8 +70,8 @@ export default function Topbar({ name, description, icon }) {
                             </div>
 
                             <div className='flex items-center mt-4 pl-2 cursor-pointer'
-                            onClick={()=>router.push("/manager")}
-                            >
+                            onClick={()=>router.push("/manager" , undefined, { shallow: true })}>
+                            
                                 <div className={`${Styles.profileRectangle} w-10 h-10`}>
                                     <Image src={'/Dashboard/Home/manager.svg'} width={100} height={100} />
                                 </div>
@@ -79,8 +80,8 @@ export default function Topbar({ name, description, icon }) {
                             </div>
 
                             <div className='flex items-center mt-4 pl-2 cursor-pointer'
-                            onClick={()=>router.push("/employee")}
-                            >
+                            onClick={()=>router.push("/employee" , undefined, { shallow: true })}>
+                            
                                 <div className={`${Styles.profileRectangle} w-10 h-10 flex justify-center items-center`}>
                                     <Image src={'/Dashboard/Home/person.svg'} width={14} height={14} />
                                 </div>
