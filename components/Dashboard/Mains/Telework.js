@@ -2,7 +2,8 @@ import dynamic from "next/dynamic";
 
 import Image from 'next/image';
 import { useRouter } from "next/router";
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { ManagerContext } from "../../../context/ManagerProvider";
 import RangeSlider from '../Components/RangeSlider'
 import Styles from './Dashboard.module.css'
 
@@ -10,7 +11,7 @@ const DynamicTeleworkTable = dynamic(() => import('../Components/TeleworkTable')
     ssr: false,
 });
 export default function Telework() {
-
+    const {setClick} = useContext(ManagerContext);
     const [concerns, setConcerns] = useState([
         {
             tag: "Toute l’entreprise",
@@ -22,6 +23,10 @@ export default function Telework() {
     const [color, setColor] = useState("");
 
     const [fixed, setFixed] = useState(true);
+
+    useEffect(()=>{
+        setClick();
+    }, [fixed]);
 
     const [percentValue, setPercentValue] = useState(20);
     const router = useRouter();

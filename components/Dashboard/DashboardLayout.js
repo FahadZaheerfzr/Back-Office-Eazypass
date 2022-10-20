@@ -10,6 +10,7 @@ import Flex from './Mains/Flex'
 import Settings from './Mains/Settings'
 import Reminders from './Mains/Reminders'
 import { useRouter } from 'next/router'
+import { ManagerProvider } from '../../context/ManagerProvider'
 
 const pageHeadingText = {
   "Résumé": {
@@ -77,7 +78,7 @@ export default function DashboardLayout(props) {
   }
   return (
 
-    <>
+    <ManagerProvider>
       <Head>
         <title>{props.title}</title>
       </Head>
@@ -120,6 +121,6 @@ export default function DashboardLayout(props) {
 
         </div>
       </div>
-    </>
+    </ManagerProvider>
   )
 }

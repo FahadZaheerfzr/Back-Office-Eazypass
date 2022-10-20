@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import IconText from './IconText'
-import React from 'react'
+import React, { useContext } from 'react'
 import Styles from './Sidebar.module.css'
 import { useRouter } from 'next/router'
+import { ManagerContext } from '../../../context/ManagerProvider'
 
 const default_nav_items = [
     {
@@ -89,6 +90,30 @@ const manager_nav_items = [
     },
 ]
 
+const manager_nav_items_fixed = [
+    {
+        "id": 0,
+        "name": "Résumé",
+        "icon-active": "/Dashboard/Sidebar/chart.svg",
+        "icon": "/Dashboard/Sidebar/chart-dull.svg",
+        "unread": 0,
+    },
+    {
+        "id": 1,
+        "name": "Télétravail",
+        "icon-active": "/Dashboard/Sidebar/case-black.svg",
+        "icon": "/Dashboard/Sidebar/case.svg",
+        "unread": 0,
+    },
+    {
+        "id": 2,
+        "name": "Collaborateurs",
+        "icon-active": "/Dashboard/Sidebar/user-black.svg",
+        "icon": "/Dashboard/Sidebar/user.svg",
+        "unread": 0,
+    },
+]
+
 const footer_nav = [
     {
         "id": 0,
@@ -109,46 +134,55 @@ const footer_nav = [
 
 export default function Sidebar({ handleClick, active, nav_items = default_nav_items }) {
     const router = useRouter();
-    return (
-            <div className={`h-screen w-full flex flex-col justify-between`}>
-                <div>
-                    <Image src={'/Dashboard/Home/eazy-pass-header.svg'} layout={'responsive'} width={264} height={63} />
-                </div>
+    const { fixed } = useContext(ManagerContext);
+    console.log(fixed);
 
-                <div className={`${Styles.container}`}>
-                    <div className={`flex flex-col justify-between h-full `}>
-                        <div>
-                        {router.pathname === '/manager'? 
-                        manager_nav_items.map(item => (
-                            <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
-                                unread={item.unread} active={item.name === active ? true : false} />
-                        )
-                        )
-                        :nav_items.map(item => (
-                            <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
-                                unread={item.unread} active={item.name === active ? true : false} />
-                        )
-                        )
+    return (
+        <div className={`h-screen w-full flex flex-col justify-between`}>
+            <div>
+                <Image src={'/Dashboard/Home/eazy-pass-header.svg'} layout={'responsive'} width={264} height={63} />
+            </div>
+
+            <div className={`${Styles.container}`}>
+                <div className={`flex flex-col justify-between h-full `}>
+                    <div>
+                        {router.pathname === '/manager' ?
+                            fixed?manager_nav_items_fixed.map(item => (
+                                <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
+                                    unread={item.unread} active={item.name === active ? true : false} />
+                            )
+                            )
+                            :
+                            manager_nav_items.map(item => (
+                                <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
+                                    unread={item.unread} active={item.name === active ? true : false} />
+                            )
+                            )
+                            : nav_items.map(item => (
+                                <IconText key={item.id} name={item.name} icon={item.name === active ? item['icon-active'] : item.icon} clickEvent={handleClick}
+                                    unread={item.unread} active={item.name === active ? true : false} />
+                            )
+                            )
                         }
-                        
-                        </div>
-                        <div className='mb-7'>
+
+                    </div>
+                    <div className='mb-7'>
                         {footer_nav.map(item => (
                             <IconText key={item.id} name={item.name} icon={item.icon} footer_nav />
                         )
                         )}
-                        </div>
                     </div>
-
                 </div>
 
-                <div>
-
-                    <Image src={'/Dashboard/Home/eazy-pass-footer.svg'} layout={'responsive'} width={264} height={48} />
-                </div>
             </div>
-            
-     
+
+            <div>
+
+                <Image src={'/Dashboard/Home/eazy-pass-footer.svg'} layout={'responsive'} width={264} height={48} />
+            </div>
+        </div>
+
+
 
     )
 }

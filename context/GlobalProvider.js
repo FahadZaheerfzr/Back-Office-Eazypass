@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useReducer, useState } from "react";
+import React, { createContext, useReducer } from "react";
 import AppReducer from './AppReducer'
 const initialRows = {
   rows: [
@@ -80,9 +80,6 @@ const initialRows = {
   ],
 }
 
-const initialVisibility = {
-  fixed: false,
-}
 
 export const CollaboratorContext = createContext(initialRows)
 
