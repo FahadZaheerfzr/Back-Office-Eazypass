@@ -1,5 +1,9 @@
 import React from "react";
-import DesktopContainer from "../components/Drag/DesktopContainer";
+import dynamic from "next/dynamic";
+const DesktopContainer = dynamic(
+  () => import("../components/Drag/DesktopContainer"),
+  { ssr: false }
+);
 export default function Dragndrop() {
   return (
     <div>
