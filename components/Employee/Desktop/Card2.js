@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/router";
 export default function Card2() {
@@ -6,17 +7,27 @@ export default function Card2() {
   return (
     <div
       className="flex p-6 flex-col w-full border border-[#e5e6e6] rounded-[10px] font-Poppins"
-      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);" }}
+      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1)" }}
     >
       <div className="flex">
         <div className="w-16 ">
-          <img src="/Employee/cal.png" className="w-16" />
+          <Image
+            width={60}
+            height={60}
+            src="/Employee/cal.png"
+            className="w-16"
+          />
         </div>
         <div className="font-medium text-[20px] my-auto ml-2 w-full text-left">
           Planning présentiel/bureau
         </div>
         <div className="w-16 ">
-          <img src="/Employee/warning.png" className="w-14" />
+          <Image
+            width={60}
+            height={60}
+            src="/Employee/warning.png"
+            className="w-14"
+          />
         </div>
       </div>
 

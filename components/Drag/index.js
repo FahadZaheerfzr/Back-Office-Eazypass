@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Image from "next/image";
+
 import {
   DndContext,
   useSensor,
@@ -60,7 +62,9 @@ export default function DnD() {
                   id === "bureau" ? "bg-[#347AE2]" : "bg-[#8572FF] "
                 } mb-2 xs:mb-6 flex justify-center w-full font-normal text-center rounded-[10px] font-Poppins xs:text-xl text-white`}
               >
-                <img
+                <Image
+                  width={30}
+                  height={20}
                   src={`/Employee/${id}.png`}
                   className="h-5 w-5 xs:h-7 xs:w-7"
                 />

@@ -1,6 +1,6 @@
 import React from "react";
 import Avatars from "../Employee/Mobile/Avatar";
-
+import Image from "next/image";
 export default function ManagerCalendar() {
   const fullDate = new Date();
   const day = fullDate.toLocaleString("fr", { weekday: "long" });
@@ -18,7 +18,12 @@ export default function ManagerCalendar() {
     >
       <div className="flex justify-center">
         <div>
-          <img src="/Employee/calendar.png" className="xs:w-20 w-14" />
+          <Image
+            width={100}
+            height={100}
+            src="/Employee/calendar.png"
+            className="xs:w-20 w-14"
+          />
         </div>
         <div className="font-Poppins font-semibold text-lg xs:text-2xl ml-4 my-auto">
           <span className="capitalize">{day + " "}</span>

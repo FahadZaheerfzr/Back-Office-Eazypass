@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Avatar({ name, image, border }) {
   return (
@@ -12,8 +13,10 @@ export default function Avatar({ name, image, border }) {
         }
         `}
       >
-        <img
-          className="inline-block h-14 w-14 rounded-full "
+        <Image
+          width={50}
+          height={50}
+          className="inline-block rounded-full "
           src={image}
           alt="image"
         />

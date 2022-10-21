@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import DateCard from "./DateCard";
-import DialogBox from "../../Planner/DialogBox";
+import Image from "next/image";
 import ModeSelector from "./ModeSelector";
 export default function PlannerCalendar() {
   const fetchDayNumber = (date) => {
@@ -207,7 +207,12 @@ export default function PlannerCalendar() {
     <div className="flex flex-col">
       <div className="flex justify-center">
         <div className="w-20 ">
-          <img src="/Employee/cal.png" className="w-16 " />
+          <Image
+            width={100}
+            height={100}
+            src="/Employee/cal.png"
+            className="w-16 "
+          />
         </div>
         <div className="font-medium text-[20px] my-auto ml-4 w-full">
           Planning de vos jours en télétravail/présentiel

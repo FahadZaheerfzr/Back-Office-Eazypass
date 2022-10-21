@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 export default function Card({
   title = "This is heading",
@@ -21,9 +22,11 @@ export default function Card({
       }}
     >
       <div className="flex font-Poppins font-medium justify-between ">
-        <div className="xs:text-xl  ">
-          {title}
-          {icon && <img src={icon} className="inline" />}
+        <div className="xs:text-xl flex">
+          <div className="my-auto">{title}</div>
+          {icon && (
+            <Image width={50} height={50} src={icon} className="inline" />
+          )}
         </div>
         {notis > 0 && (
           <div className="bg-[#A6231C] xs:text-xl my-auto px-1 xs:px-1.5 xs:p-1 rounded-full font-medium text-white">
@@ -36,7 +39,13 @@ export default function Card({
           {desc}
         </div>
         <div className="flex text-2xl w-1/3 justify-end">
-          <img src={image} alt="image" className="h-28" />
+          <Image
+            width={120}
+            height={120}
+            src={image}
+            alt="image"
+            className="h-28"
+          />
         </div>
       </div>
     </div>

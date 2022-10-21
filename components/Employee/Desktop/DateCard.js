@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 export default function DateCard({
   date,
   setClickedDate,
@@ -59,7 +59,9 @@ export default function DateCard({
             `}
               >
                 <div className="my-auto">
-                  <img
+                  <Image
+                    width={20}
+                    height={12}
                     src={`/Employee/${
                       date.morningMode === "Congés"
                         ? "conges"
@@ -69,7 +71,7 @@ export default function DateCard({
                     }.png`}
                     className="w-6 h-4 inline-block"
                   />
-                  <span className="xl:inline hidden ">
+                  <span className="xl:inline hidden">
                     {date.morningMode !== "" && date.morningMode}
                   </span>
                 </div>

@@ -3,7 +3,7 @@ import styles from "./Modal.module.css";
 import { Dialog, Transition } from "@headlessui/react";
 import { BsSearch } from "react-icons/bs";
 import { IoStar } from "react-icons/io5";
-
+import Image from "next/image";
 export default function index({ isOpen, setIsOpen, avatars }) {
   const month = new Date().toLocaleString("fr", { month: "long" });
   const date = new Date().toLocaleString("fr", { day: "2-digit" });
@@ -31,7 +31,9 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className={`p-2 xs:p-4 xs:w-[85%] w-full min-h-[400px] xs:min-h-[442px]  ${styles.container}`}>
+                <Dialog.Panel
+                  className={`p-2 xs:p-4 xs:w-[85%] w-full min-h-[400px] xs:min-h-[442px]  ${styles.container}`}
+                >
                   <div className="flex flex-col items-center ">
                     <div className="capitalize font-Roboto font-medium text-lg xs:text-2xl">
                       Collaborateurs au bureau
@@ -67,7 +69,9 @@ export default function index({ isOpen, setIsOpen, avatars }) {
                           className="w-full px-2 xs:w-11/12 flex xs:px-4 my-4 justify-between text-left bg"
                         >
                           <div className="space-x-1 xs:space-x-4 flex ">
-                            <img
+                            <Image
+                              width={50}
+                              height={50}
                               className="relative  z-20 inline-block h-8 xs:h-10 w-8 xs:w-10 rounded-full"
                               src={avatar.avatar}
                               alt=""

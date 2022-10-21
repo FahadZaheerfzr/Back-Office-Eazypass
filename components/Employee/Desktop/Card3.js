@@ -1,25 +1,26 @@
 import React from "react";
+import Image from "next/image";
 import Avatar from "./Avatar";
 export default function Card3() {
   const Avatars = [
     {
       name: "Esthera J",
-      image: "https://i.pravatar.cc/300",
+      image: "/Employee/avatars.png",
       border: "green",
     },
     {
       name: "Borris U",
-      image: "https://i.pravatar.cc/300",
+      image: "/Employee/avatars.png",
       border: "green",
     },
     {
       name: "Kay R",
-      image: "https://i.pravatar.cc/300",
+      image: "/Employee/avatars.png",
       border: "red",
     },
     {
       name: "Tom M",
-      image: "https://i.pravatar.cc/300",
+      image: "/Employee/avatars.png",
       border: "green",
     },
   ];
@@ -27,11 +28,16 @@ export default function Card3() {
   return (
     <div
       className="flex p-3 flex-col  border border-[#e5e6e6] rounded-[10px] font-Poppins w-full"
-      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);" }}
+      style={{ boxShadow: "box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1)" }}
     >
       <div className="flex">
         <div className="w-16 ">
-          <img src="/Employee/card3.png" className="w-16" />
+          <Image
+            width={60}
+            height={50}
+            src="/Employee/card3.png"
+            className="w-16"
+          />
         </div>
         <div className="font-medium text-[20px] my-auto ml-2">
           Mes collègues présents au bureau{" "}

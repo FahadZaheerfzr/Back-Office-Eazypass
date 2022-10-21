@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   DndContext,
   useSensor,
@@ -52,7 +53,10 @@ export default function DnD({ items, setItems }) {
                 } mx-auto mb-6 flex justify-between font-normal text-center rounded-[10px] font-Poppins text-white px-2 `}
               >
                 <div className="flex ">
-                  <img
+                  <Image
+                  width={30}
+                    height={20}
+
                     src={`/Employee/${id}.png`}
                     className="h-7 w-7 hidden lg:inline"
                   />
