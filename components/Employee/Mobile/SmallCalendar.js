@@ -5,10 +5,10 @@ export default function SmallCalendar() {
   const day = new Date().toLocaleString("fr", { weekday: "long" });
   return (
     <>
-      <div className="flex h-40 relative justify-center">
+      <div className="flex h-40 xs:h-60 relative justify-center xs:max-w-[390px] mx-auto mb-8 xs:mb-0">
         <div
-          className="relative flex my-auto justify-center items-center xs:rounded-[20px] xs:w-[77px] xs:h-[120px]
-        w-[60px] h-[100px] rounded-xl"
+          className="relative flex my-auto justify-center items-center xs:rounded-[20px] xs:w-1/4 xs:h-[180px]
+        w-[60px] h-[140px] rounded-xl   "
           style={{
             background: "linear-gradient(205.81deg, #25F53A 0%, #555CFF 100%)",
           }}
@@ -17,10 +17,10 @@ export default function SmallCalendar() {
             {month}
           </span>
         </div>
-        <div className="my-auto">
+        <div className="my-auto w-3/4">
           <div
-            className="relative my-auto px-4 py-1.5 box-border xs:rounded-[20px] xs:-left-[5px] xs:w-[265.96px] xs:h-[124px]
-          w-[200px] h-[104px] rounded-xl -left-2 "
+            className="relative my-auto px-4 py-1.5 box-border xs:rounded-[20px] xs:-left-[5%] w-full xs:h-[184px]
+           h-[144px] rounded-xl -left-2 flex flex-col justify-evenly"
             style={{
               background:
                 "linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%)",

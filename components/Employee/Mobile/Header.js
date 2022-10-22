@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
-export default function Header() {
+import BackArrow from "./BackArrow";
+export default function Header({ showBack }) {
   return (
     <>
       <div className="flex flex-col ">
+        {showBack && <BackArrow />}
         <div className="flex  justify-center">
           <div className="w-1/3 "> </div>
           <div className="pt-10 w-1/3 flex justify-center">
