@@ -22,11 +22,27 @@ export default function Telework() {
             color: "#347AE2",
         }
     ]);
+
+    const [sauf, setSauf] = useState([
+        {
+            tag: "Commercial",
+            color: "#E69523",
+        },
+        {
+            tag: "Marketing",
+            color: "#279A44",
+        },
+        {
+            tag: "Comptabilité",
+            color: "#7C8DB5",
+        },
+    ]);
     const [visible, setVisible] = useState(false);
     const [tag, setTag] = useState("");
     const [color, setColor] = useState("#347AE2");
-    const [tempfixed, setTempFixed ] = useState(true);
-    const {fixed} = useContext(ManagerContext);
+    const [tempfixed, setTempFixed] = useState(true);
+    const [saufForm, setSaufForm] = useState(false);
+    const { fixed } = useContext(ManagerContext);
 
     const [percentValue, setPercentValue] = useState(20);
     const router = useRouter();
@@ -43,10 +59,18 @@ export default function Telework() {
     }
 
     const addConcern = () => {
-        setConcerns([...concerns, {
-            tag: tag,
-            color: color,
-        }]);
+
+        if (!saufForm) {
+            setConcerns([...concerns, {
+                tag: tag,
+                color: color,
+            }]);
+        } else {
+            setSauf([...sauf, {
+                tag: tag,
+                color: color,
+            }]);
+        }
         setVisible(false);
     }
 
@@ -210,7 +234,7 @@ export default function Telework() {
 
                                 <div className='mt-8 ml-6 mb-6 pointer-events-none'>
                                     <span className="font-Poppins md:text-xl lg:text-2xl xl:text-4xl font-semibold text-[#347AE2]">
-                                    13 <span className="font-medium md:text-sm lg:text-base text-black">places disponibles pour </span> 13 <span className="font-medium text-base text-black">personnes</span>
+                                        13 <span className="font-medium md:text-sm lg:text-base text-black">places disponibles pour </span> 13 <span className="font-medium text-base text-black">personnes</span>
                                     </span>
                                 </div>
                             </div>
@@ -302,7 +326,7 @@ export default function Telework() {
 
                         </div>
                         <div className='box-shadow-style flex cursor-pointer justify-center items-center bg-[#E6EDFF]'
-                            onClick={() => setVisible(!visible)}>
+                            onClick={() =>{setSaufForm(false); setVisible(!visible)}}>
                             <span className='font-Poppins text-xs'>Modifier</span>
                         </div>
                     </div>
@@ -312,22 +336,20 @@ export default function Telework() {
 
                     <div className='flex justify-between mt-1 mb-5'>
                         <div className='flex'>
-                            <div className='box-shadow-style  flex justify-center items-center bg-[#E69523]'>
-                                <div className='w-2 h-2 bg-[#E6EDFF] rounded-full ' />
-                                <span className='font-Poppins text-xs text-white ml-2'>Commercial</span>
-                            </div>
-                            <div className='box-shadow-style ml-5 flex justify-center items-center bg-[#279A44]'>
-                                <div className='w-2 h-2 bg-[#E6EDFF] rounded-full ' />
-                                <span className='font-Poppins text-xs text-white ml-2'>Marketing</span>
-                            </div>
-                            <div className='box-shadow-style ml-5 flex justify-center items-center bg-[#7C8DB5]'>
-                                <div className='w-2 h-2 bg-[#E6EDFF] rounded-full ' />
-                                <span className='font-Poppins text-xs text-white ml-2'>Comptabilité</span>
-                            </div>
+                            {sauf.map((sau, index) => (
+                                <div key={index} className={`box-shadow-style mr-5  flex justify-center items-center bg-[${sau.color}]`}
+                                style={{ backgroundColor: sau.color }}>
+                                    <div className='w-2 h-2 bg-[#E6EDFF] rounded-full ' />
+                                    <span className='font-Poppins text-xs text-white ml-2'>{sau.tag}</span>
+                                </div>
+                            ))}
+
+
 
                         </div>
 
-                        <div className='box-shadow-style flex justify-center items-center bg-[#E6EDFF]'>
+                        <div className='box-shadow-style flex justify-center items-center bg-[#E6EDFF]'
+                        onClick={() => {setSaufForm(true); setVisible(!visible)}}>
                             <span className='font-Poppins text-xs'>Modifier</span>
                         </div>
                     </div>
@@ -348,8 +370,8 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer" 
-                                    onChange={()=>setTempFixed(!tempfixed)}
+                                <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
+                                    onChange={() => setTempFixed(!tempfixed)}
                                 />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
@@ -367,8 +389,8 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle2" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={tempfixed ? true : false} id="default-toggle2" className="sr-only peer" 
-                                    onChange={()=>setTempFixed(!tempfixed)}
+                                <input type="checkbox" value="" checked={tempfixed ? true : false} id="default-toggle2" className="sr-only peer"
+                                    onChange={() => setTempFixed(!tempfixed)}
                                 />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
