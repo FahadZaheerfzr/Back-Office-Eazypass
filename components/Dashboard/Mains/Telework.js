@@ -24,7 +24,7 @@ export default function Telework() {
     ]);
     const [visible, setVisible] = useState(false);
     const [tag, setTag] = useState("");
-    const [color, setColor] = useState("");
+    const [color, setColor] = useState("#347AE2");
     const [tempfixed, setTempFixed ] = useState(true);
     const {fixed} = useContext(ManagerContext);
 
@@ -260,12 +260,12 @@ export default function Telework() {
                         </div>
                         <div className='mt-4 ml-2 w-2/3 flex flex-col'>
                             <label htmlFor='tag' className='font-Poppins'>Tag</label>
-                            <input id='tag' type={"text"} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4"
+                            <input id='tag' type={"text"} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4 p-2"
                                 onChange={event => (setTag(event.target.value))} />
                         </div>
                         <div className='mt-4 ml-2 w-2/3 flex flex-col'>
                             <label htmlFor='color' className='font-Poppins'>Color</label>
-                            <input id='color' type={"color"} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4"
+                            <input id='color' type={"color"} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4" value={color}
                                 onChange={event => (setColor(event.target.value))} />
 
                         </div>
