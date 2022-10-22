@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import DnD from "./DesktopVersion";
-export default function DesktopContainer() {
+
+export default function DesktopContainer({ option }) {
   const [employees, setEmployees] = useState([
     { id: "1", employeeName: "MURLO Franck", container: "teletravail" },
     { id: "2", employeeName: "COLEN  Christiane", container: "teletravail" },
@@ -148,9 +149,12 @@ export default function DesktopContainer() {
           {fetchMonth(today) + " " + fetchYear(today)}
         </div>
         <div className="flex text-center my-auto space-x-8">
-          <span className="font-Poppins box-shadow-style text-xs my-auto">
-            Organiser une journée d'équipe
-          </span>
+          {option &&
+            <span className="font-Poppins box-shadow-style text-xs my-auto">
+              Organiser une journée d'équipe
+            </span>
+          }
+
           <button
             onClick={handlePrevious}
             className="text-[#7C8DB5] rounded-lg mx-auto shadow py-1 px-4 text-xl "
@@ -176,9 +180,8 @@ export default function DesktopContainer() {
               {
                 <>
                   <div
-                    className={`font-Inter text-lg my-auto font-semibold capitalize ${
-                      index === 3 && "px-4 py-1 bg-black text-white rounded-lg"
-                    }`}
+                    className={`font-Inter text-lg my-auto font-semibold capitalize ${index === 3 && "px-4 py-1 bg-black text-white rounded-lg"
+                      }`}
                   >
                     {date.toLocaleString("fr", { weekday: "short" }) +
                       " " +
@@ -189,13 +192,13 @@ export default function DesktopContainer() {
             </div>
           );
         })}
-      
-      
+
+
         <DnD items={employees} setItems={setEmployees} />
         <DnD items={employees2} setItems={setEmployees2} />
         <DnD items={employees3} setItems={setEmployees3} />
-				<DnD items={employees4} setItems={setEmployees4} />
-				<DnD items={employees5} setItems={setEmployees5} />
+        <DnD items={employees4} setItems={setEmployees4} />
+        <DnD items={employees5} setItems={setEmployees5} />
       </div>
     </div>
   );

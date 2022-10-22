@@ -2,16 +2,19 @@ import dynamic from "next/dynamic";
 
 import Image from 'next/image';
 import { useRouter } from "next/router";
-import React, { useState, useEffect, useContext } from 'react'
-import { ManagerContext } from "../../../context/ManagerProvider";
+import React, { useState, useEffect } from 'react'
+import AvatarTelework from "../Components/AvatarTelework";
 import RangeSlider from '../Components/RangeSlider'
 import Styles from './Dashboard.module.css'
 
 const DynamicTeleworkTable = dynamic(() => import('../Components/TeleworkTable'), {
     ssr: false,
 });
+const DesktopContainer = dynamic(
+    () => import("../../Drag/DesktopContainer"),
+    { ssr: false }
+);
 export default function Telework() {
-    const {setClick} = useContext(ManagerContext);
     const [concerns, setConcerns] = useState([
         {
             tag: "Toute l’entreprise",
@@ -21,12 +24,7 @@ export default function Telework() {
     const [visible, setVisible] = useState(false);
     const [tag, setTag] = useState("");
     const [color, setColor] = useState("");
-
     const [fixed, setFixed] = useState(true);
-
-    useEffect(()=>{
-        setClick();
-    }, [fixed]);
 
     const [percentValue, setPercentValue] = useState(20);
     const router = useRouter();
@@ -74,8 +72,100 @@ export default function Telework() {
 
     if (router.pathname === '/manager') {
         return (
-            <div>
-                Manager Telework
+            <div className="mt-6 w-full">
+                <div className="box-shadow-style w-full border border-[#E6E5E5]">
+                    <div className="mt-2 flex items-center pl-3">
+                        <span className="font-Poppins font-medium mr-3">
+                            Demandes exceptionnelles de télétravail
+                        </span>
+                        <div className="w-5 h-5 flex justify-center items-center bg-[#A6231C] rounded-full text-white font-Poppins text-xs" >
+                            4
+                        </div>
+                    </div>
+
+                    <div className="box-shadow-style w-full mt-7">
+                        <div className="flex w-full items-center mt-6">
+                            <div className="w-[25%] flex justify-between items-center px-[2%]">
+                                <Image src={"/Dashboard/Telework/avatar.svg"} width={76} height={76} />
+                                <span className="font-Poppins font-medium">
+                                    Estelle Darcy <br />
+                                    Copywriter
+                                </span>
+                            </div>
+                            <div className="w-[35%] flex flex-col justify-center items-center px-[2%]">
+                                <span className="font-Poppins font-medium">
+                                    Jeudi 22 sept. 2022
+                                </span>
+                                <span className="font-Poppins text-sm mt-4">
+                                    "Je dois exceptionnellement aller chercher mes enfants à 15h, ils ont un spectacle de danse...."
+                                    <span className=" underline ml-6 text-xs">
+                                        Voir plus
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div className="w-[40%] flex justify-center items-center">
+                                <div>
+                                    <Image src={"/Dashboard/Telework/location.png"} className="z-10 relative" width={32} height={32} />
+                                </div>
+                                <AvatarTelework />
+                                <span className="ml-3 font-medium text-lg font-Inter">
+                                    seront au bureau
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div className="flex justify-end mb-3">
+                            <div className="flex justify-center w-10 h-10 items-center rounded-full border-2 border-[#A6231C]">
+                                <div className="w-4 h-0 border border-[#A6231C]" />
+                            </div>
+
+                            <div className="flex justify-center w-10 h-10 items-center rounded-full border-4 border-[#00b90f] ml-5 text-[#00b90f] text-2xl font-bold">
+                                ✓
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center items-center mt-7 mb-5">
+                        <span className="font-Poppins font-medium mr-2">
+                            Voir plus (3 autres demandes)
+                        </span>
+                        <Image src={"/Dashboard/Telework/chevron-down.svg"} width={11} height={11} />
+
+                    </div>
+                </div>
+
+                <div className="box-shadow-style mx-4 mt-8">
+                    <div className="flex w-full pt-2 pl-3">
+                        <div className=" w-[55%] flex items-center ">
+                            <span className="font-Poppins text-xl font-medium mr-3">
+                                Validation du planning hebdomadaire
+                            </span>
+                            <div className="w-5 h-5 flex justify-center items-center bg-[#A6231C] rounded-full text-white font-Poppins text-xs" >
+                                1
+                            </div>
+                        </div>
+                        <div className=" w-[45%] flex items-center ">
+                            <div className="box-shadow-style bg-[#279A44]">
+                                <span className="font-Poppins text-xs text-white">
+                                    Valider le planinng                                
+                                </span>
+                            </div>
+                            <div className="box-shadow-style bg-[#A6231C] ml-5">
+                                <span className="font-Poppins text-xs text-white">
+                                    Valider le planinng                                
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="mt-7">
+                        <DesktopContainer option={false} />
+                    </div>
+                </div>
             </div>
         )
     }
@@ -177,9 +267,7 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={fixed?false:true} id="default-toggle" className="sr-only peer" 
-                                    onChange={()=>setFixed(false)}
-                                />
+                                <input type="checkbox" value="" checked={fixed ? false : true} id="default-toggle" className="sr-only peer" />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
                         </div>
@@ -196,9 +284,7 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle2" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={fixed?true:false} id="default-toggle2" className="sr-only peer" 
-                                    onChange={()=>setFixed(true)}
-                                />
+                                <input type="checkbox" value="" checked={fixed ? true : false} id="default-toggle2" className="sr-only peer" />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
                         </div>
