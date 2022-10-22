@@ -51,9 +51,8 @@ export default function DnD() {
         {containers.map((id) => (
           // We updated the Droppable component so it would accept an `id`
           // prop and pass it to `useDroppable`
-          <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center " key={id}>
             <Droppable
-              key={id}
               id={id}
               className="rounded-xl my-4 flex-col flex w-full max-w-[224px] xs:w-72 min-h-[120px] xs:min-h-[200px] "
             >
