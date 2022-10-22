@@ -25,7 +25,7 @@ export default function ManagerCalendar() {
             className="xs:w-20 w-14"
           />
         </div>
-        <div className="font-Poppins font-semibold text-lg xs:text-2xl ml-4 my-auto">
+        <div className="font-Poppins font-medium text-2xl xs:text-[32px] ml-4 my-auto">
           <span className="capitalize">{day + " "}</span>
           {date + " "} {month}
         </div>
