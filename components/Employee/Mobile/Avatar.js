@@ -81,7 +81,7 @@ export default function Avatars() {
           +{numberOfAttendees - 4}
         </div>
       </div>
-      <div className="flex my-auto text-[10px] xs:text-xs font-Roboto font-bold ml-1 xs:ml-2">
+      <div className="flex my-auto text-[10px] xs:text-xs font-Inter font-bold ml-1 xs:ml-2">
         sont presents aujourd'hui
       </div>
     </div>
