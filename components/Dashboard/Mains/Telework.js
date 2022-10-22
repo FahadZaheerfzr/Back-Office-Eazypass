@@ -25,7 +25,8 @@ export default function Telework() {
     const [visible, setVisible] = useState(false);
     const [tag, setTag] = useState("");
     const [color, setColor] = useState("");
-    const [fixed, setFixed ] = useState(true);
+    const [tempfixed, setTempFixed ] = useState(true);
+    const {fixed} = useContext(ManagerContext);
 
     const [percentValue, setPercentValue] = useState(20);
     const router = useRouter();
@@ -242,7 +243,7 @@ export default function Telework() {
                             </div>
                         </div>
                     }
-                    <div className="mt-7">
+                    <div className="mt-2">
                         <DesktopContainer option={false} />
                     </div>
                 </div>
@@ -347,8 +348,8 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={fixed ? false : true} id="default-toggle" className="sr-only peer" 
-                                    onChange={()=>setFixed(!fixed)}
+                                <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer" 
+                                    onChange={()=>setTempFixed(!tempfixed)}
                                 />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
@@ -366,8 +367,8 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle2" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={fixed ? true : false} id="default-toggle2" className="sr-only peer" 
-                                    onChange={()=>setFixed(!fixed)}
+                                <input type="checkbox" value="" checked={tempfixed ? true : false} id="default-toggle2" className="sr-only peer" 
+                                    onChange={()=>setTempFixed(!tempfixed)}
                                 />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>

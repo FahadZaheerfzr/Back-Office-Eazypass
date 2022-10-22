@@ -1,8 +1,34 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import { ManagerContext } from "../../context/ManagerProvider";
 import DnD from "./DesktopVersion";
 
+const weekdays = [
+  {
+    id: 0,
+    day: "Lundi",
+  },
+  {
+    id: 1,
+    day: "Mardi",
+  },
+  {
+    id: 2,
+    day: "Mercredi",
+  },
+  {
+    id: 3,
+    day: "Jeudi",
+  },
+  {
+    id: 4,
+    day: "Vendredi",
+  },
+]
+
+
 export default function DesktopContainer({ option }) {
+  const {fixed} = useContext(ManagerContext);
   const [employees, setEmployees] = useState([
     { id: "1", employeeName: "MURLO Franck", container: "teletravail" },
     { id: "2", employeeName: "COLEN  Christiane", container: "teletravail" },
@@ -142,6 +168,55 @@ export default function DesktopContainer({ option }) {
     });
     setDates(newDates);
   };
+
+  if (option === false && fixed){
+    return(
+      <div className="mx-4">
+        <div className="flex justify-between items-center">
+          <span className="font-Poppins font-medium text-xl">
+          Planning de l’équipe
+          </span>
+
+          <span className="box-shadow-style font-Poppins text-xs">
+          Sauvegarder
+          </span>
+        </div>
+
+        <div className="grid grid-cols-5 mt-8">
+        {weekdays.map((weekday, index) => {
+          return (
+            <div
+              suppressHydrationWarning={true}
+              key={index}
+              className="flex flex-col justify-center items-center mb-2"
+            >
+              {
+                <>
+                  <div
+                    className={`font-Inter text-lg my-auto font-semibold capitalize`}>
+                    {weekday.day}
+                  </div>
+                </>
+              }
+            </div>
+          );
+        })}
+
+
+        <DnD items={employees} setItems={setEmployees} />
+        <DnD items={employees2} setItems={setEmployees2} />
+        <DnD items={employees3} setItems={setEmployees3} />
+        <DnD items={employees4} setItems={setEmployees4} />
+        <DnD items={employees5} setItems={setEmployees5} />
+      </div>
+      <div className="mt-4 mb-6 flex justify-center">
+      <span className="box-shadow-style font-Poppins text-xs">
+          Sauvegarder
+          </span>
+      </div>
+      </div>
+    )
+  }
   return (
     <div className=" mx-4 mt-4">
       <div className="flex justify-between">
