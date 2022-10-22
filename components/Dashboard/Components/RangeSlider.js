@@ -32,7 +32,7 @@ const mapping = [
 ]
 
 
-const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
+const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap, disabled }) => {
     const progressRef = useRef(null);
     const [minValue, setMinValue] = useState(initialMin);
     const [maxValue, setMaxValue] = useState(initialMax);
@@ -84,19 +84,21 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
                             onChange={handleMin}
                             type="range"
                             min={min}
+                            disabled={disabled}
                             step={step}
                             max={max}
                             value={minValue}
-                            className="range-min absolute w-full  -top-2  h-1   bg-transparent  appearance-none pointer-events-none"
+                            className="range-min absolute w-full cursor-pointer  -top-2  h-1   bg-transparent  appearance-none pointer-events-none"
                         />
                         <input
                             onChange={handleMax}
                             type="range"
                             min={min}
                             step={step}
+                            disabled={disabled}
                             max={max}
                             value={maxValue}
-                            className="range-max absolute w-full  -top-2 h-1  bg-transparent appearance-none  pointer-events-none"
+                            className="range-max absolute w-full cursor-pointer -top-2 h-1  bg-transparent appearance-none  pointer-events-none"
                         />
                     </div>
 

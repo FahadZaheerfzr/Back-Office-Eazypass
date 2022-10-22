@@ -2,7 +2,8 @@ import dynamic from "next/dynamic";
 
 import Image from 'next/image';
 import { useRouter } from "next/router";
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { ManagerContext } from "../../../context/ManagerProvider";
 import AvatarTelework from "../Components/AvatarTelework";
 import RangeSlider from '../Components/RangeSlider'
 import Styles from './Dashboard.module.css'
@@ -24,7 +25,7 @@ export default function Telework() {
     const [visible, setVisible] = useState(false);
     const [tag, setTag] = useState("");
     const [color, setColor] = useState("");
-    const [fixed, setFixed] = useState(true);
+    const [fixed, setFixed ] = useState(true);
 
     const [percentValue, setPercentValue] = useState(20);
     const router = useRouter();
@@ -138,30 +139,109 @@ export default function Telework() {
                     </div>
                 </div>
 
-                <div className="box-shadow-style mx-4 mt-8">
-                    <div className="flex w-full pt-2 pl-3">
-                        <div className=" w-[55%] flex items-center ">
-                            <span className="font-Poppins text-xl font-medium mr-3">
-                                Validation du planning hebdomadaire
+                {
+                    fixed &&
+                    <div className="border border-[#E6E5E5] mt-8 pl-5 mx-2 rounded-xl">
+                        <div className="mt-5 mb-6">
+                            <span className="font-Poppins font-medium text-xl">
+                                Définition du planning hebdomadaire
                             </span>
-                            <div className="w-5 h-5 flex justify-center items-center bg-[#A6231C] rounded-full text-white font-Poppins text-xs" >
-                                1
-                            </div>
                         </div>
-                        <div className=" w-[45%] flex items-center ">
-                            <div className="box-shadow-style bg-[#279A44]">
-                                <span className="font-Poppins text-xs text-white">
-                                    Valider le planinng                                
-                                </span>
-                            </div>
-                            <div className="box-shadow-style bg-[#A6231C] ml-5">
-                                <span className="font-Poppins text-xs text-white">
-                                    Valider le planinng                                
-                                </span>
+
+                        <div className="flex w-full mt-1">
+                            <div className="w-[45%]">
+                                <div className='big-box rounded-xl  flex items-center justify-between pl-4 pr-8'>
+                                    <div className='flex flex-col my-2'>
+                                        <span className='font-Poppins font-medium'>
+                                            Jauge <span className='text-[#347AE2]'>minimale</span>  de présence / jour
+                                        </span>
+                                        <span className='font-Poppins text-sm text-[#7C8DB5] mt-2'>
+                                            Nombre minimum de coillaborateurs <br /> devant être présents au bureau.
+                                        </span>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <span className='font-Poppins font-semibold text-4xl text-[#347AE2] mx-2'>
+                                            4 <span className="text-base">pers.</span>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
+                            <div className="w-[45%] ml-[5%]">
+                                <div className='big-box rounded-xl  flex items-center justify-between pl-4 pr-8'>
+                                    <div className='flex flex-col my-2'>
+                                        <span className='font-Poppins font-medium'>
+                                            Jauge <span className='text-[#347AE2]'>maximale</span>  de présence / jour
+                                        </span>
+                                        <span className='font-Poppins text-sm text-[#7C8DB5]  mt-2'>
+                                            Nombre maximum de coillaborateurs <br /> devant être présents au bureau.
+                                        </span>
+                                    </div>
+                                    <div className='flex justify-center items-center h-full'>
+                                        <Image src={"/Dashboard/Telework/infinite.svg"} width={85} height={85} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex w-full mt-7 mb-6">
+                            <div className='big-box rounded-xl w-[45%] pl-4 pr-8'>
+                                <div className='mt-4 mb-7'>
+                                    <span className='font-Poppins font-medium'>Nombre de jours en télétravail /semaine</span>
+                                </div>
+
+                                <div className='mt-10 ml-6 mb-6 pointer-events-none'>
+                                    <RangeSlider
+                                        initialMin={1}
+                                        initialMax={3}
+                                        min={0}
+                                        max={6}
+                                        step={1}
+                                        priceCap={2}
+                                        disabled={true}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className='big-box rounded-xl w-[45%] pl-4 pr-8 ml-[5%]'>
+                                <div className='mt-4 mb-7'>
+                                    <span className='font-Poppins font-medium'>Nombre de jours en télétravail /semaine</span>
+                                </div>
+
+                                <div className='mt-8 ml-6 mb-6 pointer-events-none'>
+                                    <span className="font-Poppins md:text-xl lg:text-2xl xl:text-4xl font-semibold text-[#347AE2]">
+                                    13 <span className="font-medium md:text-sm lg:text-base text-black">places disponibles pour </span> 13 <span className="font-medium text-base text-black">personnes</span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                }
+                <div className="box-shadow-style mx-4 mt-8">
+                    {fixed ? null :
+                        <div className="flex w-full pt-2 pl-3">
+                            <div className=" w-[55%] flex items-center ">
+                                <span className="font-Poppins text-xl font-medium mr-3">
+                                    Validation du planning hebdomadaire
+                                </span>
+                                <div className="w-5 h-5 flex justify-center items-center bg-[#A6231C] rounded-full text-white font-Poppins text-xs" >
+                                    1
+                                </div>
+                            </div>
+                            <div className=" w-[45%] flex items-center ">
+                                <div className="box-shadow-style bg-[#279A44]">
+                                    <span className="font-Poppins text-xs text-white">
+                                        Valider le planinng
+                                    </span>
+                                </div>
+                                <div className="box-shadow-style bg-[#A6231C] ml-5">
+                                    <span className="font-Poppins text-xs text-white">
+                                        Refuser le planning
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
                     <div className="mt-7">
                         <DesktopContainer option={false} />
                     </div>
@@ -267,7 +347,9 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={fixed ? false : true} id="default-toggle" className="sr-only peer" />
+                                <input type="checkbox" value="" checked={fixed ? false : true} id="default-toggle" className="sr-only peer" 
+                                    onChange={()=>setFixed(!fixed)}
+                                />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
                         </div>
@@ -284,7 +366,9 @@ export default function Telework() {
                         </div>
                         <div className=''>
                             <label htmlFor="default-toggle2" className="inline-flex relative items-center cursor-pointer">
-                                <input type="checkbox" value="" checked={fixed ? true : false} id="default-toggle2" className="sr-only peer" />
+                                <input type="checkbox" value="" checked={fixed ? true : false} id="default-toggle2" className="sr-only peer" 
+                                    onChange={()=>setFixed(!fixed)}
+                                />
                                 <div className="w-11 h-6 bg-[#737272] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-[#6FCE0F]" />
                             </label>
                         </div>
@@ -347,10 +431,10 @@ export default function Telework() {
                         <div className='big-box mt-10 rounded-xl  flex items-center justify-between pl-4 pr-8'>
                             <div className='flex flex-col my-2'>
                                 <span className='font-Poppins font-medium'>
-                                    Jours fixes
+                                    Jauge <span className='text-[#347AE2]'>maximale</span>  de présence / jour
                                 </span>
-                                <span className='font-Poppins text-sm text-[#7C8DB5] mt-2'>
-                                    Les jours en télétravail de vos collaborateurs <br /> sont définis au préalable et fixes
+                                <span className='font-Poppins text-sm text-[#7C8DB5]  mt-2'>
+                                    Nombre maximum de coillaborateurs <br /> devant être présents au bureau.
                                 </span>
                             </div>
                             <div className='flex justify-center items-center h-full'>
