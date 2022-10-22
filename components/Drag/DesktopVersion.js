@@ -37,7 +37,7 @@ export default function DnD({ items, setItems }) {
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
     >
-      <div className="flex flex-col mx-autojustify-center w-full text-center">
+      <div className="flex flex-col mx-auto justify-center w-full text-center">
         {containers.map((id, index) => (
           // We updated the Droppable component so it would accept an `id`
           // prop and pass it to `useDroppable`
@@ -61,7 +61,7 @@ export default function DnD({ items, setItems }) {
                     className="h-7 w-7 hidden lg:inline"
                   />
                 </div>
-                <div className="mx-2 capitalize text-sm xl:text-lg my-auto font-Poppins">
+                <div className="mx-2 capitalize text-sm md:text-sm my-auto font-Poppins">
                   {id}
                 </div>
 
@@ -77,7 +77,7 @@ export default function DnD({ items, setItems }) {
                     id={item.id}
                     data={item}
                     className="cursor-pointer font-normal rounded-lg text-left px-2 font-Poppins
-                    text-sm my-3 shadow-xl w-fit left-4 lg:left-12 relative"
+                    text-sm md:text-xs my-3 shadow-xl w-fit ml-6"
                   >
                     <div className="">
                       <FaCircle
@@ -88,7 +88,7 @@ export default function DnD({ items, setItems }) {
                             : "text-[#772AD8]"
                         }`}
                       />
-                      <span className="lg:text-base">
+                      <span className="md:text-xs">
 
                       {item.employeeName}
                       </span>
@@ -109,7 +109,6 @@ export default function DnD({ items, setItems }) {
   function handleDragEnd(event) {
     // const prevId = event.active.data.current.container;
     const { over } = event;
-    console.log("over", over);
     setIsDragging(false);
     if (over) {
       //   if (prevId !== over.id && !employeeChanged) {

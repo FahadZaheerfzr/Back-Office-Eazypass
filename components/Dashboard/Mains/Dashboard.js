@@ -7,6 +7,11 @@ import Stats from '../Components/Stats'
 import Table from "../Components/Table";
 import Styles from './Dashboard.module.css'
 
+const DesktopContainer = dynamic(
+  () => import("../../Drag/DesktopContainer"),
+  { ssr: false }
+);
+
 const DynamicRoundedChart = dynamic(() => import('../Components/RoundedChart'), {
     ssr: false,
 });
@@ -91,7 +96,10 @@ export default function Dashboard() {
             }
 
             {
-                router.pathname === "/manager" ? null
+                router.pathname === "/manager" ? 
+                <div className="box-shadow-style mx-4 mt-8">
+                    <DesktopContainer />
+                </div>
                     : <div>
                         <Table />
                     </div>

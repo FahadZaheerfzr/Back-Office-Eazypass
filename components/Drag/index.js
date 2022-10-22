@@ -77,7 +77,7 @@ export default function DnD() {
                     id={item.id}
                     data={item}
                     className="cursor-pointer font-normal rounded-lg text-left px-2 font-Poppins
-                    text-xs xs:text-sm my-2 xs:my-3 shadow-xl w-fit left-12 xs:left-10 relative"
+                    text-base xs:text-base my-2 xs:my-3 shadow-xl w-fit left-12 xs:left-10 relative"
                   >
                     <div className={` `}>
                       <FaCircle

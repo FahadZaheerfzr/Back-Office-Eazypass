@@ -142,13 +142,13 @@ export default function DesktopContainer() {
     setDates(newDates);
   };
   return (
-    <div className=" mx-4">
+    <div className=" mx-4 mt-4">
       <div className="flex justify-between">
-        <div className="font-Poppins text-xl font-semibold capitalize">
+        <div className="font-Poppins text-xl font-medium capitalize">
           {fetchMonth(today) + " " + fetchYear(today)}
         </div>
         <div className="flex text-center my-auto space-x-8">
-          <span className="font-Poppins text-xs my-auto">
+          <span className="font-Poppins box-shadow-style text-xs my-auto">
             Organiser une journée d'équipe
           </span>
           <button
@@ -165,13 +165,13 @@ export default function DesktopContainer() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-5 mt-8">
         {dates.map((date, index) => {
           return (
             <div
               suppressHydrationWarning={true}
               key={index}
-              className="flex flex-col justify-center items-center"
+              className="flex flex-col justify-center items-center mb-2"
             >
               {
                 <>
@@ -189,7 +189,8 @@ export default function DesktopContainer() {
             </div>
           );
         })}
-
+      
+      
         <DnD items={employees} setItems={setEmployees} />
         <DnD items={employees2} setItems={setEmployees2} />
         <DnD items={employees3} setItems={setEmployees3} />
