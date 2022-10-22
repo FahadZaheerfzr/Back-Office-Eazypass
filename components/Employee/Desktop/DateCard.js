@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function DateCard({
   date,
@@ -22,16 +23,15 @@ export default function DateCard({
           onClick={() => {
             if (date.isEnabled) {
               openModal();
-              
+
               setClickedDate(date);
             }
           }}
         >
           <div
-            className={`${
-              date.isToday &&
+            className={`${date.isToday &&
               "w-6 h-6 rounded-full bg-[#AB091C] text-white flex flex-col justify-center text-center"
-            }
+              }
             
             ${blurMonth && "text-[#a0aec0]"}
             `}
@@ -47,26 +47,26 @@ export default function DateCard({
             >
               <div
                 className={` w-full h-5 flex justify-center 
-              ${
-                date.morningMode === "Bureau"
-                  ? "bg-[#347AE2]"
-                  : date.morningMode === "Télétravail"
-                  ? "bg-[#8572FF]"
-                  : "bg-[#AA8A18]"
-              }
+              ${date.morningMode === "Bureau"
+                    ? "bg-[#347AE2]"
+                    : date.morningMode === "Télétravail"
+                      ? "bg-[#8572FF]"
+                      : "bg-[#AA8A18]"
+                  }
               ${date.morningMode !== nextMode ? "rounded-r-full" : ""}
               ${date.morningMode !== prevMode ? "rounded-l-full" : ""}
             `}
               >
                 <div className="my-auto">
-                  <img
-                    src={`/Employee/${
-                      date.morningMode === "Congés"
+                  <Image
+                    width={20}
+                    height={12}
+                    src={`/Employee/${date.morningMode === "Congés"
                         ? "conges"
                         : date.morningMode === "Télétravail"
-                        ? "teletravail"
-                        : "bureau"
-                    }.png`}
+                          ? "teletravail"
+                          : "bureau"
+                      }.png`}
                     className="w-6 h-4 inline-block"
                   />
                   <span className="xl:inline hidden ">

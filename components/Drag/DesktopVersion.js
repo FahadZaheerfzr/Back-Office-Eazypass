@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-
 import {
   DndContext,
   useSensor,
@@ -13,7 +12,7 @@ import { Droppable } from "./Droppable";
 import { Draggable } from "./Draggable";
 import { FaCircle } from "react-icons/fa";
 
-export default function DnD() {
+export default function DnD({ items, setItems }) {
   //  all parent containers have an array of objects with id and name
   // initially all items are in their parent container, they are being mapped inside the parent container
   // when an item is dragged, it is removed from the parent container and added to the droppable container
@@ -22,20 +21,15 @@ export default function DnD() {
   const touchSensor = useSensor(TouchSensor);
   const mouseSensor = useSensor(MouseSensor);
   const sensors = useSensors(touchSensor, mouseSensor);
-  const containers = ["bureau", "teletravail"];
-  const [employeeChanged, setEmployeeChanged] = useState(false);
-  const [items, setItems] = useState([
-    { id: "1", employeeName: "Galo Maeva", container: "bureau" },
-    { id: "2", employeeName: "Tarb Florence", container: "bureau" },
-    { id: "3", employeeName: "Eclesia Sylvie", container: "bureau" },
-    { id: "4", employeeName: "Diakité Mohammed", container: "bureau" },
-    { id: "5", employeeName: "Druide Pascal", container: "teletravail" },
-    { id: "6", employeeName: "Fati Isma", container: "teletravail" },
-    { id: "7", employeeName: "Loutrin Hervé", container: "teletravail" },
-    { id: "8", employeeName: "Debra Laurent", container: "teletravail" },
-    { id: "9", employeeName: "Galo Maeva", container: "teletravail" },
-    { id: "10", employeeName: "Tarb Florence", container: "teletravail" },
-  ]);
+  const containers = ["teletravail", "bureau"];
+  const teletravailCount = items.filter(
+    (item) => item.container === "teletravail"
+  ).length;
+  const bureauCount = items.filter(
+    (item) => item.container === "bureau"
+  ).length;
+
+  //   const [employeeChanged, setEmployeeChanged] = useState(false);
 
   return (
     <DndContext
@@ -44,31 +38,36 @@ export default function DnD() {
       onDragStart={handleDragStart}
     >
       <div className="flex flex-col mx-autojustify-center w-full text-center">
-        <div className={`mx-auto font-semibold font-Inter text-base xs:text-xl `}>
-          Planning soumis par votre équipe
-        </div>
-
-        {containers.map((id) => (
+        {containers.map((id, index) => (
           // We updated the Droppable component so it would accept an `id`
           // prop and pass it to `useDroppable`
-          <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center " key={index}>
             <Droppable
               key={id}
               id={id}
-              className="rounded-xl my-4 flex-col flex w-full max-w-[224px] xs:w-72 min-h-[120px] xs:min-h-[200px] "
+              className="rounded-xl my-4 flex-col flex w-full max-w-[224px]"
             >
               <div
                 className={`${
-                  id === "bureau" ? "bg-[#347AE2]" : "bg-[#8572FF] "
-                } mb-2 xs:mb-6 flex justify-center w-full font-normal text-center rounded-[10px] font-Poppins xs:text-xl text-white`}
+                  id === "bureau" ? "bg-[#1C93D6]" : "bg-[#8572FF] "
+                } mx-auto mb-6 flex justify-between font-normal text-center rounded-[10px] font-Poppins text-white px-2 `}
               >
-                <Image
+                <div className="flex ">
+                  <Image
                   width={30}
-                  height={20}
-                  src={`/Employee/${id}.png`}
-                  className="h-5 w-5 xs:h-7 xs:w-7"
-                />
-                <span className="mx-2 capitalize">{id}</span>
+                    height={20}
+
+                    src={`/Employee/${id}.png`}
+                    className="h-7 w-7 hidden lg:inline"
+                  />
+                </div>
+                <div className="mx-2 capitalize text-sm xl:text-lg my-auto font-Poppins">
+                  {id}
+                </div>
+
+                <div className="text-white bg-black rounded-full px-2 py-0.5 text-sm my-auto">
+                  {id === "bureau" ? bureauCount : teletravailCount}
+                </div>
               </div>
               {items
                 .filter((item) => item.container === id)
@@ -78,41 +77,27 @@ export default function DnD() {
                     id={item.id}
                     data={item}
                     className="cursor-pointer font-normal rounded-lg text-left px-2 font-Poppins
-                    text-xs xs:text-sm my-2 xs:my-3 shadow-xl w-fit left-12 xs:left-10 relative"
+                    text-sm my-3 shadow-xl w-fit left-4 lg:left-12 relative"
                   >
-                    <div className={` `}>
+                    <div className="">
                       <FaCircle
-                        className={`inline-block text-[10px] text-white mr-2
+                        className={`inline-block text-[10px]  text-white mr-2
                         ${
                           item.container == "bureau"
                             ? "text-[#347AE2]"
                             : "text-[#772AD8]"
                         }`}
                       />
+                      <span className="lg:text-base">
+
                       {item.employeeName}
+                      </span>
                     </div>
                   </Draggable>
                 ))}
             </Droppable>
           </div>
         ))}
-
-        {employeeChanged && (
-          <div className="mx-auto mt-6">
-            <button
-              style={{
-                background:
-                  "linear-gradient(136.64deg, #59DD2B 1.59%, #282ECA 98.89%)",
-              }}
-              className="xs:mt-0 mt-4 text-white  xs:w-[146px] font-Roboto font-bold text-xl rounded-[10px] xs:px-0 px-8 xs:py-2 mx-auto"
-              onClick={() => {
-                setEmployeeChanged(false);
-              }}
-            >
-              Valider
-            </button>
-          </div>
-        )}
       </div>
     </DndContext>
   );
@@ -122,15 +107,15 @@ export default function DnD() {
   }
 
   function handleDragEnd(event) {
-    const prevId = event.active.data.current.container;
+    // const prevId = event.active.data.current.container;
     const { over } = event;
     console.log("over", over);
     setIsDragging(false);
     if (over) {
-      if (prevId !== over.id && !employeeChanged) {
-        console.log("first");
-        setEmployeeChanged(true);
-      }
+      //   if (prevId !== over.id && !employeeChanged) {
+      //     console.log("first");
+      //     setEmployeeChanged(true);
+      //   }
 
       setItems((items) =>
         items.map((item) => {

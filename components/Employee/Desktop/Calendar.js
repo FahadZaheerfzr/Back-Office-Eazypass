@@ -1,6 +1,8 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import Image from "next/image";
+
 export default function Calendar() {
   const today = new Date();
   const month = today.toLocaleString("fr", { month: "long" });
@@ -23,7 +25,13 @@ export default function Calendar() {
         </div>
         <div className="flex flex-col w-5/12 ">
           <div className="mx-auto mt-4">
-            <img src={`/Employee/calendar.png`} alt="calendar" className="" />
+            <Image
+              width={100}
+              height={100}
+              src={`/Employee/calendar.png`}
+              alt="calendar"
+              className=""
+            />
           </div>
           <div className="flex mt-4 justify-center">
             <button className="text-white bg-black rounded-lg mx-2 shadow py-0.5 px-2.5 ">
@@ -45,7 +53,9 @@ export default function Calendar() {
         </div>
         <div className="w-full bg-[#8572FF] font-Poppins rounded-[10px] h-[60px] text-white  flex  text-center">
           <div className="w-16">
-            <img
+          <Image
+              width={50}
+              height={50}
               src="/Employee/desktop-teletravail.png"
               className="object-scale-down h-[60px]"
             />
@@ -62,7 +72,9 @@ export default function Calendar() {
         </div>
         <div className="w-full bg-[#1C93D6] font-Poppins rounded-[10px] h-[60px] text-white  flex  text-center">
           <div className="w-16">
-            <img
+          <Image
+              width={60}
+              height={60}
               src="/Employee/desktop-bureau.png"
               className="object-scale-down h-[60px]"
             />

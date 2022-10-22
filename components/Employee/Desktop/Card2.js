@@ -1,5 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
+
 export default function Card2() {
   const router = useRouter();
 
@@ -10,7 +12,12 @@ export default function Card2() {
     >
       <div className="flex">
         <div className="w-16 ">
-          <img src="/Employee/cal.png" className="w-16" />
+          <Image
+            width={60}
+            height={60}
+            src="/Employee/cal.png"
+            className="w-16"
+          />
         </div>
         <div className="font-medium text-[20px] my-auto ml-2 w-full text-left">
           Planning présentiel/bureau

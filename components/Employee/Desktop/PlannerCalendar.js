@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import DateCard from "./DateCard";
 import ModeSelector from "./ModeSelector";
+import Image from "next/image";
+
 export default function PlannerCalendar() {
   const fetchDayNumber = (date) => {
     const day = date.getDay();
@@ -206,7 +208,12 @@ export default function PlannerCalendar() {
     <div className="flex flex-col">
       <div className="flex justify-center">
         <div className="w-20 ">
-          <img src="/Employee/cal.png" className="w-16 " />
+          <Image
+            width={100}
+            height={100}
+            src="/Employee/cal.png"
+            className="w-16 "
+          />
         </div>
         <div className="font-medium text-[20px] my-auto ml-4 w-full">
           Planning de vos jours en télétravail/présentiel
@@ -259,16 +266,40 @@ export default function PlannerCalendar() {
 
         {!showNextMonth
           ? emptyDivs > 0 &&
-            prevMonth.map((date, index) => {
+          prevMonth.map((date, index) => {
+            const prevMode =
+              index > 0 ? prevMonth[index - 1].morningMode : "";
+            const nextMode =
+              index < prevMonth.length - 1
+                ? prevMonth[index + 1].morningMode
+                : "";
+            return (
+              <div key={index}>
+                <DateCard
+                  date={date}
+                  fetchDate={fetchDate}
+                  setClickedDate={setClickedDate}
+                  openModal={openModal}
+                  prevMode={prevMode}
+                  nextMode={nextMode}
+                  blurMonth
+                />
+              </div>
+            );
+          })
+          : emptyDivsNextMonth > 0 &&
+          currentMonthList.map((date, index) => {
+            if (index + emptyDivsNextMonth > currentMonthList.length - 1) {
               const prevMode =
-                index > 0 ? prevMonth[index - 1].morningMode : "";
+                index > 0 ? currentMonthList[index - 1].morningMode : "";
               const nextMode =
-                index < prevMonth.length - 1
-                  ? prevMonth[index + 1].morningMode
+                index < currentMonthList.length - 1
+                  ? currentMonthList[index + 1].morningMode
                   : "";
               return (
                 <div key={index}>
                   <DateCard
+                    key={index}
                     date={date}
                     fetchDate={fetchDate}
                     setClickedDate={setClickedDate}
@@ -279,75 +310,51 @@ export default function PlannerCalendar() {
                   />
                 </div>
               );
-            })
-          : emptyDivsNextMonth > 0 &&
-            currentMonthList.map((date, index) => {
-              if (index + emptyDivsNextMonth > currentMonthList.length - 1) {
-                const prevMode =
-                  index > 0 ? currentMonthList[index - 1].morningMode : "";
-                const nextMode =
-                  index < currentMonthList.length - 1
-                    ? currentMonthList[index + 1].morningMode
-                    : "";
-                return (
-                  <div key={index}>
-                    <DateCard
-                      key={index}
-                      date={date}
-                      fetchDate={fetchDate}
-                      setClickedDate={setClickedDate}
-                      openModal={openModal}
-                      prevMode={prevMode}
-                      nextMode={nextMode}
-                      blurMonth
-                    />
-                  </div>
-                );
-              } else return <div key={index}></div>;
-            })}
+            } else return <div key={index}></div>;
+          })}
 
         {!showNextMonth
           ? currentMonthList.map((date, index) => {
-              const prevMode =
-                index > 0 ? currentMonthList[index - 1].morningMode : "";
-              const nextMode =
-                index < currentMonthList.length - 1
-                  ? currentMonthList[index + 1].morningMode
-                  : "";
-              return (
-                <div key={index}>
-                  <DateCard
-                    date={date}
-                    fetchDate={fetchDate}
-                    setClickedDate={setClickedDate}
-                    openModal={openModal}
-                    prevMode={prevMode}
-                    nextMode={nextMode}
-                  />
-                </div>
-              );
-            })
+            const prevMode =
+              index > 0 ? currentMonthList[index - 1].morningMode : "";
+            const nextMode =
+              index < currentMonthList.length - 1
+                ? currentMonthList[index + 1].morningMode
+                : "";
+            return (
+              <div key={index}>
+                <DateCard
+                  date={date}
+                  fetchDate={fetchDate}
+                  setClickedDate={setClickedDate}
+                  openModal={openModal}
+                  prevMode={prevMode}
+                  nextMode={nextMode}
+                />
+              </div>
+            );
+          })
           : nextMonthList.map((date, index) => {
-              const prevMode =
-                index > 0 ? nextMonthList[index - 1].morningMode : "";
-              const nextMode =
-                index < nextMonthList.length - 1
-                  ? nextMonthList[index + 1].morningMode
-                  : "";
+            const prevMode =
+              index > 0 ? nextMonthList[index - 1].morningMode : "";
+            const nextMode =
+              index < nextMonthList.length - 1
+                ? nextMonthList[index + 1].morningMode
+                : "";
 
-              return (
-                <div key={index}>
-                  <DateCard
-                    date={date}
-                    fetchDate={fetchDate}
-                    setClickedDate={setClickedDate}
-                    openModal={openModal}
-                    prevMode={prevMode}
-                    nextMode={nextMode}
-                  />
-                </div>
-              );
-            })}
+            return (
+              <div key={index}>
+                <DateCard
+                  date={date}
+                  fetchDate={fetchDate}
+                  setClickedDate={setClickedDate}
+                  openModal={openModal}
+                  prevMode={prevMode}
+                  nextMode={nextMode}
+                />
+              </div>
+            );
+          })}
 
         {!showNextMonth &&
           nextMonthList.map((date, index) => {

@@ -1,9 +1,15 @@
 import React from "react";
+import Image from "next/image";
 export default function index() {
   const places = 35;
   return (
     <div className=" bg-white flex flex-col xs:my-6 mx-auto items-center rounded-2xl w-full max-w-[420px] sm:max-w-md">
-      <img src="/Employee/placesBg.png" className="w-full rounded-t-2xl" />
+      <Image
+        width={420}
+        height={200}
+        src="/Employee/placesBg.png"
+        className="w-full rounded-t-2xl"
+      />
 
       <div className="flex flex-row w-full mt-4 justify-evenly ">
         <div className="flex flex-col justify-center">
