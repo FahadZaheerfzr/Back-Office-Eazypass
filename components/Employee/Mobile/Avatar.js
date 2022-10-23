@@ -77,11 +77,11 @@ export default function Avatars() {
             alt=""
           />
         </span>
-        <div className="relative -z-10 flex h-10 w-10 xs:h-10 xs:w-10 rounded-full xs:text-base text-sm bg-black justify-center items-center font-bold text-white ">
+        <div className="relative -z-10 inline-block h-8 w-8 xs:h-10 xs:w-10  rounded-full xs:text-base text-sm bg-black text-center pt-1 xs:pt-1.5 font-bold text-white ">
           +{numberOfAttendees - 4}
         </div>
       </div>
-      <div className="flex my-auto text-[10px] xs:text-xs font-Roboto font-bold ml-1 xs:ml-2">
+      <div className="flex my-auto text-[10px] xs:text-xs font-Inter font-bold ml-1 xs:ml-2">
         sont presents aujourd'hui
       </div>
     </div>

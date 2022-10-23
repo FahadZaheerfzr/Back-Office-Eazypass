@@ -32,14 +32,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                 setConfirmation(false);
               }}
             >
-              <Dialog.Panel
-                style={{
-                  background:
-                    "linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%)",
-                  backdropFilter: "blur(25px)",
-                }}
-                className="max-w-[260px] xs:min-w-min xs:w-[94%] xs:max-w-[371px] transform overflow-hidden relative -top-12 p-6 text-left align-middle shadow-xl transition-all rounded-[20px]"
-              >
+              <Dialog.Panel className="max-w-[260px] xs:min-w-min xs:w-[94%] xs:max-w-[371px] bg-white bg-opacity-95 transform overflow-hidden relative -top-12 p-6 text-left align-middle shadow-xl transition-all rounded-[20px]">
                 {date && !confirmation ? (
                   <div
                     className={`
@@ -134,7 +127,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                               return obj;
                             })
                           );
-                          
+                          console.log(date.declarationStatus);
                           // setNoon("");
                           //   closeModal();
                           setConfirmation(true);
