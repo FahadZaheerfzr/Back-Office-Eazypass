@@ -175,7 +175,13 @@ export default function Telework() {
 
                         <div className="flex w-full mt-1">
                             <div className="w-[45%]">
-                                <div className='big-box rounded-xl  flex items-center justify-between pl-4 pr-8'>
+                                <div className="flex justify-end ">
+                                    <div className="absolute">
+                                        <Image src={"/Dashboard/Telework/lock.svg"} width={40} height={40} />
+                                    </div>
+                                </div>
+                                <div className='big-box rounded-xl pt-2  flex items-center justify-between pl-4 pr-8'>
+
                                     <div className='flex flex-col my-2'>
                                         <span className='font-Poppins font-medium'>
                                             Jauge <span className='text-[#347AE2]'>minimale</span>  de présence / jour
@@ -193,7 +199,12 @@ export default function Telework() {
                             </div>
 
                             <div className="w-[45%] ml-[5%]">
-                                <div className='big-box rounded-xl  flex items-center justify-between pl-4 pr-8'>
+                                <div className="flex justify-end ">
+                                    <div className="absolute">
+                                        <Image src={"/Dashboard/Telework/lock.svg"} width={40} height={40} />
+                                    </div>
+                                </div>
+                                <div className='big-box rounded-xl pt-2  flex items-center justify-between pl-4 pr-8'>
                                     <div className='flex flex-col my-2'>
                                         <span className='font-Poppins font-medium'>
                                             Jauge <span className='text-[#347AE2]'>maximale</span>  de présence / jour
@@ -209,12 +220,18 @@ export default function Telework() {
                             </div>
                         </div>
                         <div className="flex w-full mt-7 mb-6">
-                            <div className='big-box rounded-xl w-[45%] pl-4 pr-8'>
-                                <div className='mt-4 mb-7'>
+                        
+                            <div className='big-box rounded-xl w-[45%] pl-4'>
+                            <div className="flex justify-end ">
+                                    <div className="absolute">
+                                        <Image src={"/Dashboard/Telework/lock.svg"} width={40} height={40} />
+                                    </div>
+                                </div>
+                                <div className='mt-4 mb-7  mr-8'>
                                     <span className='font-Poppins font-medium'>Nombre de jours en télétravail /semaine</span>
                                 </div>
 
-                                <div className='mt-10 ml-6 mb-6 pointer-events-none'>
+                                <div className='mt-10 ml-6 mb-6 pointer-events-none  mr-8'>
                                     <RangeSlider
                                         initialMin={1}
                                         initialMax={3}
@@ -227,12 +244,17 @@ export default function Telework() {
                                 </div>
                             </div>
 
-                            <div className='big-box rounded-xl w-[45%] pl-4 pr-8 ml-[5%]'>
-                                <div className='mt-4 mb-7'>
+                            <div className='big-box rounded-xl w-[45%] pl-4  ml-[5%]'>
+                            <div className="flex justify-end ">
+                                    <div className="absolute">
+                                        <Image src={"/Dashboard/Telework/lock.svg"} width={40} height={40} />
+                                    </div>
+                                </div>
+                                <div className='mt-4 mb-7 mr-8'>
                                     <span className='font-Poppins font-medium'>Nombre de jours en télétravail /semaine</span>
                                 </div>
 
-                                <div className='mt-8 ml-6 mb-6 pointer-events-none'>
+                                <div className='mt-8 ml-6 mb-6 pointer-events-none mr-8'>
                                     <span className="font-Poppins md:text-xl lg:text-2xl xl:text-4xl font-semibold text-[#347AE2]">
                                         13 <span className="font-medium md:text-sm lg:text-base text-black">places disponibles pour </span> 13 <span className="font-medium text-base text-black">personnes</span>
                                     </span>
@@ -326,7 +348,7 @@ export default function Telework() {
 
                         </div>
                         <div className='box-shadow-style flex cursor-pointer justify-center items-center bg-[#E6EDFF]'
-                            onClick={() =>{setSaufForm(false); setVisible(!visible)}}>
+                            onClick={() => { setSaufForm(false); setVisible(!visible) }}>
                             <span className='font-Poppins text-xs'>Modifier</span>
                         </div>
                     </div>
@@ -338,7 +360,7 @@ export default function Telework() {
                         <div className='flex'>
                             {sauf.map((sau, index) => (
                                 <div key={index} className={`box-shadow-style mr-5  flex justify-center items-center bg-[${sau.color}]`}
-                                style={{ backgroundColor: sau.color }}>
+                                    style={{ backgroundColor: sau.color }}>
                                     <div className='w-2 h-2 bg-[#E6EDFF] rounded-full ' />
                                     <span className='font-Poppins text-xs text-white ml-2'>{sau.tag}</span>
                                 </div>
@@ -349,7 +371,7 @@ export default function Telework() {
                         </div>
 
                         <div className='box-shadow-style flex justify-center items-center bg-[#E6EDFF]'
-                        onClick={() => {setSaufForm(true); setVisible(!visible)}}>
+                            onClick={() => { setSaufForm(true); setVisible(!visible) }}>
                             <span className='font-Poppins text-xs'>Modifier</span>
                         </div>
                     </div>
