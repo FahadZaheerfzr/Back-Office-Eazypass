@@ -13,7 +13,7 @@ export default function SmallCalendar() {
             background: "linear-gradient(205.81deg, #25F53A 0%, #555CFF 100%)",
           }}
         >
-          <span className="text-white -rotate-90 tracking-widest capitalize font-medium font-Roboto text-base xs:text-lg">
+          <span className="text-white -rotate-90 tracking-widest capitalize font-medium font-Roboto text-2xl">
             {month}
           </span>
         </div>
@@ -27,32 +27,32 @@ export default function SmallCalendar() {
             }}
           >
             <div>
-              <span className="font-Roboto font-medium text-black block text-sm xs:text-xl capitalize">
+              <span className="font-Roboto font-medium text-black block text-2xl capitalize">
                 {day}
               </span>
-              <span className="font-Roboto font-medium text-black xs:text-2xl">
+              <span className="font-Roboto font-medium text-black text-2xl">
                 {date}
               </span>
             </div>
             <div className="flex my-1 xs:my-0">
-              <div className="font-Roboto text-[#787878] xs:text-base text-xs font-medium w-1/2">
+              <div className="font-Roboto text-[#787878] text-base font-medium w-1/2">
                 Matin
               </div>
-              <div className="font-Roboto text-[#787878] xs:text-base text-xs font-medium w-1/2">
+              <div className="font-Roboto text-[#787878] text-base  font-medium w-1/2">
                 Après-midi
               </div>
             </div>
             <div className="flex list-[circle] text-sm xs:text-2xl">
               <div className="text-[#D0D312] w-1/2">
                 <li>
-                  <span className="relative -left-2 xs:-left-4 font-Roboto xs:text-[15px] text-xs  text-[#5a3a3a]">
+                  <span className="relative -left-2 xs:-left-4 font-Roboto text-[15px]  text-[#5a3a3a]">
                     Télétravail
                   </span>
                 </li>
               </div>
               <div className="text-[#1400FF] w-1/2 ">
                 <li>
-                  <span className="relative -left-2 xs:-left-4 font-Roboto xs:text-[15px] text-xs  text-[#5a3a3a]">
+                  <span className="relative -left-2 xs:-left-4 font-Roboto text-[15px] text-[#5a3a3a]">
                     Bureau
                   </span>
                 </li>

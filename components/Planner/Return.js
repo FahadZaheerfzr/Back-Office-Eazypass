@@ -8,7 +8,7 @@ export default function Return() {
     <>
       <div
         onClick={() => router.back()}
-        className="flex fixed bottom-0 w-full xs:h-12 h-8 rounded-[20px] justify-center cursor-pointer"
+        className="flex  w-full xs:h-12 h-8 rounded-[20px] justify-center cursor-pointer"
         style={{
           background: "linear-gradient(263.44deg, #30D686 0%, #2B54E6 220.87%)",
         }}

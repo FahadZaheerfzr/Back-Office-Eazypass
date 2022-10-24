@@ -26,7 +26,7 @@ export default function Avatars() {
   ];
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center my-6">
       {modalStatus && (
         <Modal
           isOpen={modalStatus}
