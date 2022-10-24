@@ -6,7 +6,7 @@ export default function index() {
     <div className=" bg-white flex flex-col xs:my-6 mx-auto items-center rounded-2xl w-full max-w-[420px] sm:max-w-md">
       <Image
         width={420}
-        height={200}
+        height={150}
         src="/Employee/placesBg.png"
         className="w-full rounded-t-2xl"
       />
