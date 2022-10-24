@@ -23,8 +23,7 @@ export default function SmallCalendar() {
            h-[144px] rounded-xl -left-2 flex flex-col justify-evenly"
             style={{
               background:
-                "linear-gradient(270deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.41) 100%)",
-              backdropFilter: "blur(25px)",
+                "white"
             }}
           >
             <div>
