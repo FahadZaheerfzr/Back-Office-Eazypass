@@ -9,8 +9,8 @@ export default function ManagerCalendar() {
 
   return (
     <div
-      className={`xs:h-[220px] xs:w-[390px] w-11/12 rounded-xl xs:rounded-[20px] 
-      p-2 xs:p-4 flex flex-col my-6 mx-auto max-w-[300px] xs:max-w-none
+      className={` xs:w-[390px]  rounded-xl xs:rounded-[20px] 
+      p-2 xs:p-4 flex flex-col my-6 mx-auto
       `}
       style={{
         background: "linear-gradient(205.81deg, #20DE33 0%, #555CFF 100%)",
