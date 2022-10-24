@@ -370,7 +370,7 @@ export default function Telework() {
 
                         </div>
 
-                        <div className='box-shadow-style flex justify-center items-center bg-[#E6EDFF]'
+                        <div className='box-shadow-style flex justify-center items-center bg-[#E6EDFF] cursor-pointer'
                             onClick={() => { setSaufForm(true); setVisible(!visible) }}>
                             <span className='font-Poppins text-xs'>Modifier</span>
                         </div>
