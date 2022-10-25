@@ -301,15 +301,20 @@ export default function Telework() {
             {visible &&
                 <div className={` absolute  w-2/3 ml-[2%]  h-2/3 backdrop-blur-sm flex items-center justify-center z-10`}>
                     <div className="w-1/2 box-shadow-style bg-white h-full">
-                        <div className='flex justify-center text-xl font-semibold items-center my-10 font-Poppins'>
-                            Add Collaborateurs concernés
+                        <div className="absolute font-Poppins text-3xl ml-2 mt-2 cursor-pointer"
+                            onClick={() => setVisible(false)}
+                        >
+                            &#215;
                         </div>
-                        <div className='mt-4 ml-2 w-2/3 flex flex-col'>
+                        <div className='flex justify-center text-xl font-semibold items-center my-10 font-Poppins'>
+                            Add a new value
+                        </div>
+                        <div className='mt-4 ml-4 w-2/3 flex flex-col'>
                             <label htmlFor='tag' className='font-Poppins'>Tag</label>
                             <input id='tag' type={"text"} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4 p-2"
                                 onChange={event => (setTag(event.target.value))} />
                         </div>
-                        <div className='mt-4 ml-2 w-2/3 flex flex-col'>
+                        <div className='mt-4 ml-4 w-2/3 flex flex-col'>
                             <label htmlFor='color' className='font-Poppins'>Color</label>
                             <input id='color' type={"color"} className="border-2 border-[#E5E5E5] rounded-[7px] h-9 mt-4" value={color}
                                 onChange={event => (setColor(event.target.value))} />
