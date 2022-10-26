@@ -127,7 +127,7 @@ export default function DialogBox({ date, setDate, isOpen, closeModal }) {
                               return obj;
                             })
                           );
-                          console.log(date.declarationStatus);
+                          
                           // setNoon("");
                           //   closeModal();
                           setConfirmation(true);
