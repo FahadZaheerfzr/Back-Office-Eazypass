@@ -123,11 +123,11 @@ export default function DnD() {
   function handleDragEnd(event) {
     const prevId = event.active.data.current.container;
     const { over } = event;
-    console.log("over", over);
+    
     setIsDragging(false);
     if (over) {
       if (prevId !== over.id && !employeeChanged) {
-        console.log("first");
+        
         setEmployeeChanged(true);
       }
 
