@@ -186,7 +186,7 @@ export default function DesktopContainer({ option }) {
         {weekdays.map((weekday, index) => {
           return (
             <div
-              suppressHydrationWarning={true}
+              suppressHydrationWarning
               key={index}
               className="flex flex-col justify-center items-center mb-2"
             >
@@ -248,7 +248,7 @@ export default function DesktopContainer({ option }) {
         {dates.map((date, index) => {
           return (
             <div
-              suppressHydrationWarning={true}
+              suppressHydrationWarning
               key={index}
               className="flex flex-col justify-center items-center mb-2"
             >
