@@ -310,7 +310,7 @@ export default function PlannerCalendar() {
                   />
                 </div>
               );
-            } else return <div key={index}></div>;
+            } else return <div key={index} />;
           })}
 
         {!showNextMonth
