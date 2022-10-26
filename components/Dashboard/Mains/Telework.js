@@ -239,7 +239,7 @@ export default function Telework() {
                                         max={6}
                                         step={1}
                                         priceCap={2}
-                                        disabled={true}
+                                        disabled
                                     />
                                 </div>
                             </div>
