@@ -98,7 +98,7 @@ export default function Dashboard() {
             {
                 router.pathname === "/manager" ? 
                 <div className="box-shadow-style mx-4 mt-8">
-                    <DesktopContainer option={true} />
+                    <DesktopContainer option />
                 </div>
                     : <div>
                         <Table />
