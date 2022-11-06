@@ -10,7 +10,7 @@ export default function Calendar() {
       <title>Policy</title>
     </Head>
     <div className="bg-gradient-to-b from-[rgb(255,255,255,0.66)] to-[#c4c4c479] pb-20">
-      <Header showBack={true} />
+      <Header showBack />
       <Container />
     </div>
     </>
