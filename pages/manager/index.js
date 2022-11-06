@@ -18,6 +18,7 @@ export default function Manager() {
           title: "Demandes exceptionnelles",
           desc: "Approuvez ou refusez les demandes ponctuelles de jours en télétravail.",
           image: "/Employee/card4.svg",
+          redirect: "/manager/documents",
           notis: 0,
         },
       ];
