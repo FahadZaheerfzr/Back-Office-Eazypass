@@ -4,6 +4,7 @@ import Avatars from "../Employee/Mobile/Avatar";
 import { useRouter } from "next/router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Image from "next/image";
 
 export default function Container() {
   const router = useRouter();
@@ -144,6 +145,13 @@ export default function Container() {
             Demande ponctuelle - Télétravail
           </div>
           <div className="flex flex-col" />
+          {router.pathname === "/manager/documents" ? (
+          <div className="flex pl-5 items-center mb-6">
+            <Image src={"/Manager/avatar.svg"} width={76} height={76} />
+            <span className="font-Poppins font-medium ml-10 ">
+              Estelle Darcy <br/> Copywriter
+            </span>
+          </div>) : null}
           <div className="font-Inter text-[#1E293B] pl-3 text-sm xs:text-lg font-medium">
             Choisissez le jour
           </div>
@@ -250,15 +258,31 @@ export default function Container() {
                 className="flex bg-[#F1F5F9] rounded-xl w-full h-[135px] p-2 resize-none text-xs xs:text-base"
                 value={comments}
                 onChange={(event) => setComments(event.target.value)}
+                disabled={router.pathname==="/manager/documents"}
               />
             </div>
             <div className="flex justify-center text-center mt-6 xs:mt-24">
+
+            {router.pathname === "/manager/documents" ? (<div><button
+                onClick={() => router.back()}
+                className="bg-gradient-to-br from-[#59dd2b] to-[#282eca] rounded-lg py-1.5 px-8 text-xl text-white font-Roboto font-bold"
+              >
+                Accepter
+              </button>
+              <button
+                onClick={() => router.back()}
+                className="ml-5 bg-gradient-to-br from-[#59dd2b] to-[#282eca] rounded-lg py-1.5 px-8 text-xl text-white font-Roboto font-bold"
+              >
+                Refuser
+              </button> </div>):(
               <button
                 onClick={() => router.back()}
                 className="bg-gradient-to-br from-[#59dd2b] to-[#282eca] rounded-lg py-1.5 px-8 text-xl text-white font-Roboto font-bold"
               >
                 Soumettre
               </button>
+            )}
+              
             </div>
           </div>
         </div>
