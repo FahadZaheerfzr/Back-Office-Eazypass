@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import Avatars from "../Employee/Mobile/Avatar";
 import { useRouter } from "next/router";
@@ -113,6 +113,12 @@ export default function Container() {
       year: nDate.toLocaleString("fr", { year: "numeric" }),
     });
   };
+
+  useEffect(()=>{
+    if (router.pathname === "/manager/documents"){
+      setComments("Je dois exceptionnellement aller chercher mes enfants à 15h, ils ont un spectacle de danse.")
+    }
+  })
 
   return (
     <>
@@ -255,7 +261,7 @@ export default function Container() {
             <div>
               Commentaire
               <textarea
-                className="flex bg-[#F1F5F9] rounded-xl w-full h-[135px] p-2 resize-none text-xs xs:text-base"
+                className="flex bg-[#F1F5F9] rounded-xl w-full h-[135px] p-4 resize-none text-sm xs:text-sm font-Poppins font-normal"
                 value={comments}
                 onChange={(event) => setComments(event.target.value)}
                 disabled={router.pathname==="/manager/documents"}
