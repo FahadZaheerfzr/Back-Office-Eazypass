@@ -12,7 +12,7 @@ export default function Header({ showBack }) {
   }
   return (
     <>
-      <div className="flex flex-col ">
+      <div className="flex flex-col justify-center ">
         {showBack && <BackArrow />}
         <div className="flex  justify-center">
           <div className="w-1/3 "> </div>
@@ -26,7 +26,7 @@ export default function Header({ showBack }) {
           </div>
           <div className="w-1/3 flex pt-6 pr-6 justify-end "
             onClick={() => toggleVisible()}>
-            <span className="hidden xs:flex">
+            <span className="hidden xs:flex mt-4">
               <Image
                 width={60}
                 height={60}
