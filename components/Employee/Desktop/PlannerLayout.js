@@ -42,9 +42,7 @@ export default function PlannerLayout() {
   const handleClick = (name) => {
     setActive(name);
   };
-  const toggleVisible = () => {
-    setVisible(!visible);
-  };
+
   return (
     <div>
       <div

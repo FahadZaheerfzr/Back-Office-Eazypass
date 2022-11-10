@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import styles from "./Modal.module.css";
 import { Dialog, Transition } from "@headlessui/react";
 import { BsSearch } from "react-icons/bs";

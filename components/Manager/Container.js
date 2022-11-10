@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CalendarCarousel from "./CalendarCarousel";
-import Image from "next/image";
 import DnD from "../Drag";
 
 export default function Container() {

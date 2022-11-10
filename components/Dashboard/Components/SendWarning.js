@@ -5,12 +5,6 @@ import Styles from './Components.module.css'
 
 
 
-const assurance_colors = {
-    "Valide": "#279A44",
-    "Envoyée": "#E59523",
-    "Non envoyée": "#A6231C",
-}
-
 const teletravail_colors = {
     "Fixe 2 jours/semaine": "#347AE2",
     "Télétravail ponctuel": "#E59523",

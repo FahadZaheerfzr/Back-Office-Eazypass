@@ -1,5 +1,4 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Calendar from "./Calendar";
 import Card1 from "./Card1";
 import Card2 from "./Card2";
