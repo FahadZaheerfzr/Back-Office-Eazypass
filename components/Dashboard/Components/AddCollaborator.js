@@ -38,7 +38,7 @@ export default function AddCollaborator({ toggleVisible }) {
         <span className='font-Poppins font-medium text-xl'>Ajouter un collaborateur</span>
         <div className='flex items-center'>
           <span className='font-Poppins font-medium underline mr-6'>Importer une photo</span>
-          <Image className='rounded-xl' src={"/Dashboard/Collaborator/dummy-profile.svg"} width={50} height={50} />
+          <Image src={"/Dashboard/Collaborator/dummy-profile.svg"} width={50} height={50} style={{borderRadius:12}} />
         </div>
       </div>
       <form>
