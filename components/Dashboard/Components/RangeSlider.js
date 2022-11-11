@@ -31,7 +31,9 @@ const mapping = [
     }
 ]
 
-
+/*
+ * This component is for the range slider
+ */
 const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap, disabled }) => {
     const progressRef = useRef(null);
     const [minValue, setMinValue] = useState(initialMin);

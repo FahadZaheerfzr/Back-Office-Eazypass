@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
 
+/*
+ * This component is for the document verification section
+ */
 export default function Document({heading, description, image, unread}) {
   return (
     <div className='w-1/3 px-2'>

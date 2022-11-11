@@ -15,6 +15,9 @@ const teletravail_colors = {
     "Libre et illimité" : "#E6EDFF",
 }
 
+/*
+ * This component is used to display the collaborators table
+ */
 export default function Collaborator({toggleVisible}) {
     const {rows} = useContext(CollaboratorContext);
     return (

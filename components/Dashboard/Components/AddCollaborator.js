@@ -3,6 +3,9 @@ import React, { useContext, useState } from 'react'
 import { CollaboratorContext } from '../../../context/GlobalProvider';
 import Styles from './Components.module.css'
 
+/*
+ * This component is used to add a collaborator to the database  
+ */
 export default function AddCollaborator({ toggleVisible }) {
   const [name, setName] = useState("");
   const [func, setFunc] = useState("");

@@ -101,6 +101,9 @@ const data_90_days = [
 
 ];
 
+/*
+ * This component draws a line chart on the dashboard of admin
+ */ 
 export default function Charts() {
   const [activeData, setActiveData] = useState(data);
 

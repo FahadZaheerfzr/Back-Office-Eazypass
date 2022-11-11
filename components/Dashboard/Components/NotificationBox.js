@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
 
+/*
+ * This component displays the options for notifications available
+ * to the admin
+ */
 export default function NotificationBox({id, enabled, title, description, active, color, myFunction }) {
     return (
         <div className='flex w-[32%]'>

@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
+/*
+ * This component is used to display the avatars
+ */
 export default function AvatarTelework() {
   const numberOfAttendees = 8;
 
