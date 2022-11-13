@@ -91,7 +91,7 @@ export default function DashboardLayout(props) {
         <div className={`bg-white md:fixed z-40 ${visible ? 'md:block' : 'md:hidden'} lg:block md:w-[30%] lg:w-[20%] lg:fixed`}>
           <Sidebar handleClick={handleClick} active={active} />
         </div>
-        <div role={"button"} className='h-screen lg:hidden  z-50 flex items-center'
+        <div aria-hidden role={"button"} className='h-screen lg:hidden  z-50 flex items-center'
           onClick={() => toggleVisible()}>
           <div className='fixed side-panel'>
             <div className='side-panel-content'>
