@@ -62,9 +62,11 @@ export default function Topbar({ name, description, icon }) {
                                 </div>
                                 <span className='font-Poppins ml-2'>Administrateur</span>
                               
+                                {router.pathname === "/admin/dashboard"? 
                                 <div className='ml-4'>
                                 <Image src={'/Dashboard/Home/active.svg'} width={15} height={15} />
                                 </div>
+                                :null}
                             
                                
                             </div>
@@ -76,6 +78,12 @@ export default function Topbar({ name, description, icon }) {
                                     <Image src={'/Dashboard/Home/manager.svg'} width={100} height={100} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Manager</span>
+                                {router.pathname === "/manager"? 
+                                <div className='ml-4'>
+                                <Image src={'/Dashboard/Home/active.svg'} width={15} height={15} />
+                                </div>
+                                :null}
+                                
                                
                             </div>
 
@@ -86,6 +94,11 @@ export default function Topbar({ name, description, icon }) {
                                     <Image src={'/Dashboard/Home/person.svg'} width={14} height={14} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Collaborateur</span>
+                                {router.pathname === "/employee"? 
+                                <div className='ml-4'>
+                                <Image src={'/Dashboard/Home/active.svg'} width={15} height={15} />
+                                </div>
+                                :null}
                                 
                             </div>
                         </div>:null
