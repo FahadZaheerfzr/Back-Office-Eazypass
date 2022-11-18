@@ -38,7 +38,7 @@ export default function Topbar({ name, description, icon }) {
                     <div className={`${visible? '${Styles.changeAccount}': ''} md:ml-5 lg:ml-7 xl:ml-9 py-2 px-1`}>
                         <div className='flex items-center'>
                             <div className=''>
-                                <Image src={'/Dashboard/Home/avatar.svg'} width={42} height={42} priority/>
+                                <Image src={'/Dashboard/Home/avatar.svg'} width={42} height={42} priority={true}/>
                             </div>
 
 
@@ -48,7 +48,7 @@ export default function Topbar({ name, description, icon }) {
                             </div>
                             <div className='mt-1 md:ml-2 xl:ml-3 cursor-pointer'
                             onClick={()=>toggleVisible()}>
-                                <Image src={'/Dashboard/Home/chevron-down.svg'} width={15} height={15} priority />
+                                <Image src={'/Dashboard/Home/chevron-down.svg'} width={15} height={15} priority={true} />
                             </div>
                         </div>
                         {visible?
@@ -58,7 +58,7 @@ export default function Topbar({ name, description, icon }) {
                             onClick={()=>router.push("/admin/dashboard", undefined, { shallow: true })}>
                             
                                 <div className={`${Styles.profileRectangle} w-10 h-10`}>
-                                    <Image src={'/Dashboard/Home/user.svg'} width={100} height={100} priority />
+                                    <Image src={'/Dashboard/Home/user.svg'} width={100} height={100} priority={true} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Administrateur</span>
                               
@@ -91,7 +91,7 @@ export default function Topbar({ name, description, icon }) {
                             onClick={()=>router.push("/employee" , undefined, { shallow: true })}>
                             
                                 <div className={`${Styles.profileRectangle} w-10 h-10 flex justify-center items-center`}>
-                                    <Image src={'/Dashboard/Home/person.svg'} width={14} height={14} />
+                                    <Image src={'/Dashboard/Home/person.svg'} width={14} height={14} priority={true} />
                                 </div>
                                 <span className='font-Poppins ml-2'>Collaborateur</span>
                                 {router.pathname === "/employee"? 
