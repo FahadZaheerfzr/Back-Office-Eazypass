@@ -27,7 +27,7 @@ export default function Login() {
                     </div>
                     <div className={`${styles.inverted} flex justify-center`}>
                         <div className={`${styles.imageLogin}`}>
-                            <Image src={'/Login/Login Image.svg'} layout={'fill'} />
+                            <Image src={'/Login/Login Image.svg'} layout={'fill'} priority/>
                         </div>
                     </div>
 
